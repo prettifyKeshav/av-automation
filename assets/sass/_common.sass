@@ -1,0 +1,1338 @@
+@import './_var'
+@import './_form'
+*,
+*::before,
+*::after
+    padding: 0
+    margin: 0
+    list-style: none
+    box-sizing: border-box
+
+$scrollwidth: 10px
+
+html 
+  scroll-behavior: smooth
+.mb-0
+    margin-bottom: 0 !important
+:root
+    --headerpadding: 35px
+    // --headerheight: 108px
+    --headerheight: 83px
+    --headerfixed: 65px
+    --footerstrip: 66px
+    @include media(768)
+        --headerfixed: 50px
+    @include media(540)
+        --headerheight: 75px
+    // New Variable define=================
+    --primary: #05B4C4
+    --secondary: #00838F
+    --bgcolor: $white
+    --primary-hover: #000
+    // New Variable define=================
+
+    --gradient-a: linear-gradient(90deg, #0AA5B3 0%, #00838F 100%)
+    --gradient-b: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%)
+    --gradient-c: linear-gradient(270deg, #D8D8D8 0%, #EBEBEB 50%, #C5C5C5 100%)
+    --gradient-d: linear-gradient(360deg, #E6E6E6 0%, #C6C6C6 100%)
+    --gradient-e: linear-gradient(180deg, #E5E5E5 0%, #FFFFFF 46.5%, #F6F6F6 100%)
+    --text: #666666
+    --green: green
+    --white: #FFFFFF
+    --litewhite:#c0c0c0
+    --black: #000000
+    --black-light: #313131
+    --gray: #F6F6F6
+    --container: 1280px
+    // --containerfluid: 2rem
+    --containerfluid: 3rem
+
+    @include media(1152)
+        --containerfluid: 1rem
+    @include media(991)
+        --containerfluid: 15px
+    @include media(320)
+        --containerfluid: 10px
+body
+    background: var(--bgcolor)
+    &::-webkit-scrollbar
+        width: $scrollwidth
+        background: $black
+    &::-webkit-scrollbar-track
+        box-shadow: none
+    &::-webkit-scrollbar-thumb
+        background-color: $primary
+    &.overflow-hidden
+        overflow: hidden
+        margin-right: $scrollwidth
+        @include media(991)
+            margin-right: 0
+        header
+            width: calc(100% - $scrollwidth)
+            @include media(991)
+                width: 100%
+
+
+// ::-webkit-scrollbar
+//   width: 7px !important
+
+// ::-webkit-scrollbar-track
+//     box-shadow: inset 0 0 5px grey
+//     border-radius: 10px
+ 
+
+::-webkit-scrollbar-thumb
+    background: $primary !important
+    // border-radius: 10px
+
+::-webkit-scrollbar-thumb:hover 
+    background: var(--bgcolor)
+
+body
+    position: relative
+    min-height: 100%
+    top: 0px
+    background: url("/assets/images/grainy.jpg")
+
+body,html
+    font-size: 16px
+    line-height: 1.5
+    font-optical-sizing: auto
+    font-style: normal
+    font-weight: normal
+    font-family: $Montserrat
+b
+    @include font(500)
+
+small
+    font-size: 14px
+    line-height: 22px
+    display: block
+
+// .svg
+//     path
+//         transition: none
+//         &[stroke],&[fill="none"]
+//             stroke: currentColor
+//         &[fill]
+//             fill: currentColor
+
+.gray-bg
+    background: #F3F3F3
+
+.primary-bg
+    background: $primary
+
+.c-primary
+    color: $primary
+.c-text
+    color: $text
+.c-red
+    color: red
+.c-green,.green-color
+    color: #13bb75 !important
+
+.fw-medium
+    @include font(500)
+.fw-semibold
+    @include font(600)
+
+.fs-14
+    font-size: 14px
+.fs-18
+    font-size: 18px
+
+select
+    display: none
+a[href]
+    text-decoration: none
+    cursor: pointer
+    transition: .5s ease
+    &.logo
+        display: block
+        line-height: 0
+svg
+    path
+        transition: .5s ease
+.position-relative
+    position: relative
+
+.lh-normal
+    line-height: normal
+.cursor-pointer
+    cursor: pointer !important
+.container
+    @include container
+.container-fluid
+    padding: 0 var(--containerfluid)
+    display: block
+    margin: 0 auto
+
+.social-icons
+    user-select: none
+
+h1,h2,h3,h4,h5,h6
+    font-weight: normal
+
+ul 
+    li
+        font-family: $Montserrat
+        color: $text
+
+h1
+    font-weight: 700
+    font-size: 36px
+    line-height: 1.05
+    @include media(1024)
+        font-size: 58px
+    @include media(991)
+        font-size: 54px
+    @include media(768)
+        font-size: 48px
+    @include media(540)
+        font-size: 38px
+h2
+    font-family: Montserrat
+    font-weight: 700
+    font-size: 48px
+    line-height: 1.3
+    color: #000000
+    @include media(540)
+        font-size: 29px
+        line-height: 1.3
+        margin-bottom: 10px
+    span
+        color: $primary
+
+h3
+    font-weight: 400
+    
+h4
+    font-size: 36px
+    line-height: 1.28
+h5
+    font-size: 24px
+    line-height: 1.167
+    @include media(1152)
+        font-size: 22px
+    @include media(675)
+        font-size: 20px
+h6
+    font-size: 20px
+
+a,p
+    font-family: $Montserrat
+p
+    font-weight: 500
+    font-size: 16px
+    line-height: 1.4
+    color: $text
+    @include media(540)
+        line-height: 1.5
+
+
+.sec-pad
+    padding: 50px 0 
+    @include media(540)
+        padding: 40px 0
+.flex-box
+    display: flex
+.grid-box
+    display: grid
+.text-center
+    text-align: center
+.text-left
+    text-align: left
+.text-right
+    text-align: right
+.text-uppercase
+    text-transform: uppercase
+
+.flex
+    @include flex
+.justify-between
+    justify-content: space-between
+.align-center
+    align-items: center
+
+.inline-flex
+    --gap: 12px
+    display: inline-flex
+    align-items: center
+    gap: 0 var(--gap)
+img
+    max-width: 100%
+button,select
+    font-family: inherit
+    font-size: inherit
+    cursor: pointer
+input
+    font-family: $Montserrat
+    font-size: inherit
+    border-radius: 0
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+    &[type=number]
+        -moz-appearance: textfield
+video
+    pointer-events: none
+    user-select: none
+button
+    border: none
+    background: none
+    appearance: none
+    cursor: pointer
+.tab-nav
+    cursor: default
+    [data-tab]
+        cursor: pointer
+        caret-color: transparent
+.tab-nav-content
+    position: relative
+    .tabs
+        &:not(.active)
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            pointer-events: none
+            user-select: none
+            opacity: 0
+            height: 0
+            overflow: hidden
+.item-md
+    position: relative
+    display: block
+    @include before
+    @include after
+    &::before,&::after
+        z-index: 1
+    &::after
+        content: none
+    figure,.figure
+        display: block
+        overflow: hidden
+        line-height: 0
+        height: 100%
+        img,video,iframe
+            height: 100%
+            width: 100%
+            object-fit: cover
+            transition: .5s ease
+    figcaption
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 2
+    .link-md
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 3
+    &.center-item
+        figcaption
+            bottom: auto
+            top: 50%
+            translate: 0 -50%
+.overlay
+    position: fixed
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    z-index: 5
+    opacity: 0
+    // background: rgb(0 0 0 /.5)
+    background: #00000075
+    transform: translateY(100%)
+    transition: 0s ease .5s,opacity .5s ease
+    cursor: pointer
+    @include media(991)
+        z-index: 2
+    @include media(675)
+        // display: none
+    &.is-open
+        transition: opacity 1s ease
+        opacity: 1
+        transform: translateY(0%)
+
+.btn
+    font-family: $Montserrat
+    font-weight: 700
+    font-size: 14px
+    text-transform: uppercase
+    display: flex
+    justify-content: center
+    align-items: center
+    white-space: nowrap
+
+    width: fit-content
+    gap: 10px
+    padding: 14px 21px
+    color: $white
+    transition: 0.5s ease
+    position: relative
+    line-height: 1
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(92.79deg, $primary -2.2%, $secondary 291.65%)
+        transition: 0.5s ease
+        z-index: -1
+    &::after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(270deg, $primary -2.2%, $secondary 291.65%)
+        transition: 0.5s ease
+        opacity: 0
+        z-index: -1
+    span 
+        line-height: 0
+        svg
+            path
+                fill: $white
+    &:hover
+        &::after
+            opacity: 1
+        
+.btn2
+    display: inline-block
+    border-radius: 25px
+    padding: 12px 24px
+    font-family: $Montserrat
+    font-weight: 600
+    font-size: 16px
+    line-height: 1
+    color: $white
+    transition: 0.4s ease
+    position: relative
+    @include media(540)
+        padding: 10px 20px
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 25px
+        border: 1px solid white
+        background: transparent
+        z-index: -1
+        transition: 0.4s ease
+    &::after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 25px
+        background: $gradient-a
+        border: 1px solid $primary
+        z-index: -1
+        transition: 0.4s ease
+        opacity: 0
+    &:hover
+        &::after
+            opacity: 1
+        &::before 
+            opacity: 0
+    &.primaryBorder
+        color: $primary
+        &::before
+            border: 1px solid $primary
+        &:hover
+            color: $white
+            &::before
+                opacity: 0
+    &.primary
+        text-align: center
+        margin: auto
+        color: $white
+        &::before
+            border: 1px solid $primary
+            background: $primary
+            color: $white
+        &:hover
+            color: white
+            &::before
+                opacity: 0
+    &.primarywhite
+        text-align: center
+        margin: auto
+        color: $primary
+        &::before
+            border: 1px solid white
+            background: $white
+        &:hover
+            color: white
+            &::before
+                opacity: 0
+            &::after
+                border: none
+
+
+.bottom-btn
+    display: flex
+    align-items: center
+    justify-content: start
+    gap: 10px
+    width: fit-content
+    padding:  10px 0
+    margin-top: 20px
+    position: relative
+    transition: 0.5s ease
+    @include media(768)
+        margin: auto
+        margin-top: 20px
+    &::before
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 2px
+        background: $white
+        transition: 0.5s ease
+        z-index: -1
+    span
+        font-weight: 400
+        font-size: 12px
+        letter-spacing: 1px
+        text-transform: uppercase
+        color: $white
+        transition: 0.5s ease
+    &:hover
+        padding: 10px 14px
+        span
+            color: $black
+        svg
+            path
+                stroke: $black !important
+        &::before
+            height: 100%
+    figure
+        width: 20px
+        width: fit-content
+        line-height: 0
+        height: fit-content
+        img
+            height: 100%
+            width: 100%
+            object-fit: contain
+        svg
+            path
+                stroke: $white !important
+                transition: 0.5s ease
+
+
+.model
+    position: fixed
+    top: 0
+    bottom: 0
+    z-index: 70
+    background: $white
+    // background: linear-gradient(270deg, #03052E 0%, #03052E 100%)
+    background-position: 0% 80%
+    background-size: 75%
+    max-width: 435px
+    width: 100%
+    .close
+        cursor: pointer
+        &:not(.btn,.close-video,.not-ab)
+            position: absolute
+            top: 0
+            right: 0
+            top: 25px
+            right: 25px
+            line-height: 0
+            z-index: 1
+            @include media(520)
+                top: 20px
+                right: 20px
+            path
+                stroke: $black
+
+.form-grid
+    --item: 1
+    --gaplr: 30px
+    --gaptb: 32px
+    display: grid
+    grid-template-columns: repeat(var(--item), calc((100% - (var(--gaplr) * (var(--item) - 1))) / var(--item)))
+    gap: var(--gaptb) var(--gaplr)
+    .full
+        grid-column: span var(--item)
+
+// swiper
+
+.btn-div-btm
+    > *
+        &:not(:last-child)
+            margin-right: 14px
+            @include media(675)
+                margin-right: 8px
+    .btn
+        @include media(675)
+            --padding: 12px
+            font-size: 14px
+.swiper-slide
+    height: auto
+
+.swiper-nav
+    line-height: 0
+    &.center-full
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        z-index: 2
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        max-width: 100%
+        margin: 0 auto
+        pointer-events: none
+        user-select: none
+        @include media(540)
+            display: none
+        .swiper-prev,.swiper-next
+            pointer-events: all
+            user-select: auto
+    &.hide-btn-no-loop
+        .swiper-prev,.swiper-next
+            &.swiper-button-disabled
+                opacity: 0
+                pointer-events: none
+    &.swiper-group
+        display: inline-flex
+        align-items: center
+        gap: 10px
+.swiper-prev, .certificate-prev
+    svg,img
+        transform: scaleX(-1)
+
+.swiper-nav
+    display: flex
+    align-items: center
+    gap: 20px
+    flex-direction: row-reverse
+    .swiper-prev,.swiper-next
+        --size: 45px
+        height: var(--size)
+        width: var(--size)
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: .5s ease
+        color: $white
+        cursor: pointer
+        border: 1px solid $secondary
+        background: $white
+        svg path
+            transition: 0.5s ease
+            fill: $secondary
+        &:hover
+            background: $primary
+            border-color: $primary
+            svg
+                path 
+                    fill: $white
+
+
+    // &.no-background
+    //     height: auto
+    //     width: auto
+    //     display: block
+    //     background: none
+    //     border: none
+    //     line-height: 0
+    //     &:hover
+    //         background: none
+    // &.white
+    //     background: $white
+    //     border-color: $white
+    //     color: $secondary
+    //     &:hover
+    //         &:not(.swiper-button-disabled)
+    //             background: $secondary
+    //             border-color: $secondary
+    //             color: $white
+    // &.secondary-border
+    //     border-color: $secondary
+    //     background: none
+    //     color: $secondary
+    //     &:hover
+    //         &:not(.swiper-button-disabled)
+    //             background: $secondary
+    //             color: $white
+    // &.white-border
+    //     border-color: $white
+    //     background: none
+    //     color: $white
+    //     &:hover
+    //         &:not(.swiper-button-disabled)
+    //             background: $white
+    //             color: $secondary
+    // &.gray-border
+    //     border-color: var(--black)
+    //     background: none
+    //     color: $text
+    //     &:hover
+    //         &:not(.swiper-button-disabled)
+    //             border-color: $primary
+    //             background: $primary
+    //             color: $white
+    // &.green-border
+    //     border-color: var(--primary)
+    //     background: none
+    //     color: $text
+    //     &:hover
+    //         &:not(.swiper-button-disabled)
+    //             border-color: $primary
+    //             background: $primary
+    //             color: $white
+    // &.gray-arrow
+    //     color: #888888
+    // &.black-arrow
+    //     color: $black
+    //     &:hover
+    //         &:not(.swiper-button-disabled)
+    //             color: $secondary
+    // &.swiper-button-disabled
+    //     cursor: no-drop
+    //     opacity: .4
+    // &.swiper-button-lock
+    //     display: none !important
+
+// Other
+
+.play-btn
+    --btnsize: 51px
+    --border: 1px
+    --bordercolor: var(--white)
+    --playbtncolor: var(--white)
+    height: var(--btnsize)
+    width: var(--btnsize)
+    border-radius: 50%
+    border: var(--border) solid var(--bordercolor)
+    position: relative
+    background: none
+    @include media(1024)
+        --btnsize: 50px
+    @include media(675)
+        --btnsize: 45px
+        --border: 1px
+    &::before
+        width: 100%
+        height: 100%
+        top: 50%
+        right: 0
+        bottom: 0
+        left: 50%
+        position: absolute
+        content: ""
+        transform: translateX(-50%) translateY(-50%)
+        background: var(--bordercolor)
+        border-radius: 50%
+        display: block
+        animation: pulse-border 1500ms ease-out infinite
+        @keyframes pulse-border
+            0%
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1)
+                opacity: 0.5
+            100%
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5)
+                opacity: 0
+    &::after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 0
+        height: 0
+        border-top: calc(var(--btnsize) / 8) solid transparent
+        border-bottom: calc(var(--btnsize) / 8) solid transparent
+        border-left: calc(var(--btnsize) / 5.6) solid var(--playbtncolor)
+
+.website-content
+    > :first-child
+        margin-top: 0 !important
+    > :last-child
+        margin-bottom: 0 !important
+    h1
+        font-size: 48px
+        margin-bottom: 45px
+        text-align: center
+        font-weight: normal
+        @include media(675)
+            font-size: 34px
+        @include media(520)
+            font-size: 30px
+            font-weight: bold
+    h2
+        font-size: 34px
+        @include font(500)
+        @include media(675)
+            font-size: 24px
+    h3
+        font-size: 28px
+        line-height: 1.21
+        @include font(500)
+        @include media(675)
+            font-size: 22px
+    h4
+        font-size: 24px
+        @include font(500)
+        @include media(675)
+            font-size: 20px
+    h5
+        font-size: 20px
+        line-height: 1.3
+        @include font(600)
+        @include media(675)
+            font-size: 18px
+    h6
+        font-size: 18px
+        line-height: 1.3
+        @include font(600)
+    h2,h3,h4
+        margin: 0px 0 18px
+    h5,h6
+        margin: 22px 0 18px
+    p,li
+        color: $text
+        text-align: justify
+        hyphens: auto
+        // word-spacing: -0.07em
+        // @include font(500)
+        @include media(520)
+            font-size: 14px
+        b
+            @include font(600)
+            color: $black
+    a
+        color: $black
+        &:hover
+            text-decoration: underline
+    p,ul
+        margin-bottom: 30px
+    ul
+        padding-left: 18px
+        @include media(675)
+            padding-left: 10px
+        li
+            position: relative
+            padding-left: 28px
+            @include media(675)
+                padding-left: 20px
+            &:not(:last-child)
+                margin-bottom: 6px
+            &::before
+                content: ''
+                position: absolute
+                top: 8px
+                left: 0
+                width: 10px
+                aspect-ratio: 1
+                border-radius: 50%
+                background: var(--primary)
+                @include media(520)
+                    width: 6px
+    &.website-content-medium
+        h2,h3,h4
+            margin: 20px 0 18px
+            font-size: 20px
+            @include font(500)
+        h5,h6
+            font-size: 18px
+            @include font(500)
+        p,ul
+            margin-bottom: 20px
+
+
+
+[data-video],[data-model],[data-scrollTo]
+    cursor: pointer
+
+//banner
+
+.mt-hdr
+    margin-top: var(--headerheight)
+
+.mt-hdrfix
+    margin-top: var(--headerfixed)
+
+.banner
+    position: relative
+    &:not(.banner-banner)
+        // @include before
+        // &::before
+        //     background: linear-gradient(360deg, rgba(0, 0, 0, 0) 29%, rgba(0, 0, 0, 0.95) 100%),linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
+    &.center-banner
+        .banner-wrapper
+            bottom: 50%
+            translate: 0 50%
+    &.common-banner
+        padding: 90px 0
+    .bg
+        line-height: 0
+        height: 100vh
+        @include media(1152)
+            height: 520px
+        @include media(520)
+            height: 320px
+        video,img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            // opacity: 0.3
+    .banner-wrapper
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 15%
+        z-index: 3
+        @include media(520)
+            bottom: 18%
+    .content
+        &.content-white
+            > *
+                &:not(.btn)
+                    color: $white
+        &.content-font2
+            h1
+                color: $black-light
+                @include font(600)
+                line-height: 1.25
+        &.ttl-m
+            h1
+                font-size: 36px
+        &.f-semibold
+            h1
+                @include font(600)
+        .ico
+            line-height: 0
+            margin-bottom: 30px
+            img
+                width: 68px
+        h1
+            font-weight: 600
+            font-size: 36px
+            line-height: 45px
+            max-width: 527px
+            @include font(600)
+            @include media(1152)
+                font-size: 42px
+            @include media(767)
+                font-size: 34px
+            &:has(~ *)
+                margin-bottom: 10px
+        p
+            @include font(500)
+            @include media(520)
+                font-size: 14px
+            &:has(~ *)
+                margin-bottom: 10px
+        h6
+            font-size: 18px
+            line-height: 1.34
+            color: $text
+            margin-top: 12px
+            @include font(500)
+            @include media(520)
+                font-size: 14px
+            &:has(~ *)
+                margin-bottom: 10px
+        h4
+            font-size: 24px
+            &:has(~ *)
+                margin-bottom: 10px
+        h5
+            font-size: 20px
+            line-height: 1.5
+            color: $text
+            margin-bottom: 10px
+            &:has(~ *)
+                margin-bottom: 10px
+
+
+.swiper-pagination-bullets
+    --swiper-pagination-bullet-size: 13px
+    --swiper-pagination-color: var(--primary)
+    @include media(540)
+        --swiper-pagination-bullet-size: 10px
+
+.btn-div-wrap
+    > *
+        &:not(:last-child)
+            margin-right: 20px
+            @include media(675)
+                margin-right: 5px
+    .btn
+        @include media(675)
+            --padding: 10px
+
+
+.common-grid-wrap
+    display: grid
+    grid-template-columns: repeat(3,1fr)
+    grid-gap: 30px 25px
+    @include media(991)
+        grid-template-columns: repeat(2,1fr)
+    @include media(675)
+        grid-template-columns: 100%
+
+
+.slider-section
+    .upper-sec
+        position: relative
+        padding-top: 4rem
+        .swiper-nav
+            position: absolute
+            right: 0
+            bottom: 0
+            z-index: 2
+            @include media(675)
+                display: none
+
+
+
+.news-col
+    display: flex
+    flex-direction: column
+    // background: $white
+    border-radius: 15px
+    overflow: hidden
+    box-shadow: 0px 3px 8px 0px #0000003D
+    &:has(.figure:is(a):hover,.figcaption .ttl:is(a):hover, .figcaption .read-more-btn:is(a):hover)
+        .figure
+            &::before
+                animation: shine 0.4s linear
+            img
+                transform: scale(1.04)
+                width: 100%
+        .figcaption
+            .ttl
+                color: $primary
+            .desc
+                color: $black
+            .date
+                color: $text
+            .read-more-btn
+                border-color: $primary
+                background: $primary
+                color: $black
+    .figure
+        height: 361px
+        line-height: 0
+        display: block
+        overflow: hidden
+        @include shine
+        // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%)
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%)
+        img
+            width: 100%
+            height: 100%
+            aspect-ratio: 1.2
+            transition: .5s ease
+            position: relative
+            z-index: -1
+            object-fit: cover
+    .figinfo
+        position: absolute
+        color: white
+        text-align: center
+        width: 100%
+        top: 80%
+        left: 50%
+        -ms-transform: translate(-50%, -50%)
+        transform: translate(-50%, -50%)
+        h5
+            font-weight: 700
+            font-size: 28px
+            line-height: 45px
+            margin-bottom: 10px
+        p
+            font-weight: 500
+            font-size: 16px
+            line-height: 16px
+            color: var(--white)
+            text-align: center
+
+
+
+    .figcaption
+        --pdt: 18px
+        --pdlr: 24px
+        --pdb: -40px
+        --btnsize: 40px
+        --btnmargin: 27px
+        padding: var(--pdt) var(--pdlr) calc(var(--pdb) + var(--btnmargin) + var(--btnsize))
+        position: relative
+        flex: 1
+        .btn-div
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            bottom: 0
+            z-index: 1
+            padding: 0 var(--pdlr) var(--pdb)
+        .ttl
+            display: block
+            font-size: 22px
+            @include font(600)
+            line-height: 1.5
+            color: $black
+            margin-bottom: 10px
+        .desc,.date
+            @include font(500)
+            transition: .5s ease
+        .desc
+            color: rgb(0 0 0 / .7)
+            margin-bottom: 16px
+        .date
+            color: $primary
+            line-height: 1.375
+
+.product-item
+    &:has(.figure:is(a):hover,.figcaption .dtl-btn:is(a):hover)
+        .figure
+            img
+                transform: scale(1.04)
+        .figcaption
+            .dtl-btn
+                background: $black
+                color: $white
+    .figure
+        display: block
+        line-height: 0
+        img
+            width: 100%
+            transition: 1s ease
+    .figcaption
+        padding-top: 30px
+        text-align: center
+        h4
+            font-size: 32px
+        h5
+            font-size: 24px
+        h4,h5
+            line-height: 1.167
+            @include font(600)
+            margin-bottom: 2rem
+
+
+.breadcrumps
+    @include media(520)
+        white-space: nowrap
+        width: 100%
+        overflow: hidden
+    li
+        display: inline-block
+        vertical-align: middle
+        position: relative
+        &::before
+            content: '>'
+            position: absolute
+            left: 100%
+            top: 50%
+            translate: 0 -50%
+            font-size: 12px
+            color: $text
+        &:last-child
+            &::before
+                display: none
+        a
+            color: $text
+            font-size: 14px
+            @include font(500)
+            @include media(520)
+                font-size: 12px
+                text-overflow: ellipsis
+            &.active
+                color: $black
+        &:not(:last-child)
+            position: relative
+            padding-right: 20px
+            @include media(520)
+                padding-right: 8px
+        &:not(:first-child)
+            padding-left: 20px
+            @include media(520)
+                padding-left: 8px
+
+
+.bg-circle
+    @include bgCircleBlur
+
+.common-slider-1 
+    .swiper 
+        max-width: calc(100% - 45px)
+        @include media(540)
+            max-width: 100%
+
+.swiper-prev.has-shadow, .swiper-next.has-shadow
+    box-shadow: 0px 1px 3px 1px rgba(60, 64, 67, 0.1490196078), 0px 1px 2px 0px rgba(60, 64, 67, 0.3019607843)
+
+@keyframes scroll 
+    0%
+        transform: translateY(10px)
+    50%
+        transform: translateY(20px)
+    100%
+        transform: translateY(10px)
+  
+
+.sticky
+    position: sticky
+    top: var(--headerheight)
+    z-index: 1
+
+.form-grid
+    .phone_input
+        padding-left: 76px
+    .iti__selected-flag
+        position: absolute
+        bottom: -16px
+        left: -9px
+        display: flex
+        align-items: center
+
+    .iti--allow-dropdown
+        width: 100%
+    .iti__flag-container
+        position: absolute
+        top: 10px
+        left: 10px
+        display: flex
+        align-items: center
+        gap: 6px
+        width: 100%
+    .iti__country-list
+        background: $white
+        z-index: 2
+        height: 220px
+        overflow: auto
+
+
+.load-more
+    text-align: center
+    display: block
+    width: fit-content
+    margin: auto
+    margin-bottom: 40px
+    cursor: pointer
+    @include media(540)
+        margin-bottom: 0
+    &:hover
+        figure
+            img
+                transform: rotate(720deg)
+    figure
+        width: 45px
+        height: 48px
+        margin: auto
+        margin-bottom: 5px
+        img
+            height: 100%
+            width: 100%
+            object-fit: contain
+            transition: 0.5s ease
+    p
+        font-weight: 400
+        font-size: 16px
+        color: $black
+
+
+
+.commen-second-last-sec
+    .bg-wrapper
+        height: 100vh
+        overflow: hidden
+        position: relative
+        @include media(768)
+            height: 60vh
+        @include media(540)
+            height: 50vh
+        video
+            height: 100%
+            width: 100%
+            object-fit: cover
+            scale: 1.01
+            
+.commen-last-sec
+    background: $white
+    position: relative
+    z-index: 1
+    background: $white
+    .container
+        max-width: 1180px
+        width: 100%
+        margin: 0 auto
+        border-radius: 15px
+        padding: 50px 0 0 0
+        transform: translateY(-100px)
+        background: white
+        @include media(1024)
+            max-width: 880px
+        @include media(768)
+            max-width: 710px
+        @include media(540)
+            transform: translateY(-20px)
+        .heading
+            figure
+                width: 51px
+                height: 76px
+                line-height: 0
+                margin: auto
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: contain
+            h2
+                font-size: 36px
+                max-width: 398px
+                margin: 20px auto 0
+                text-align: center
+                line-height: 1.2
+                @include media(540)
+                    font-size: 29px
+                    line-height: 1.2
+                    max-width: 88%
+                    margin: 20px auto 0
+        .form
+            --item: 4
+            padding: 50px 0 0 0
+            max-width: 1040px
+            margin: auto
+            @include media(768)
+                --item: 2
+            @include media(540)
+                --item: 1
+                max-width: 80%
+                margin: auto
+                --gaptb: 24px
+                padding: 30px 0 0 0
+            .btn2
+                margin-top: 40px
+                @include media(540)
+                    margin: 10px auto 30px

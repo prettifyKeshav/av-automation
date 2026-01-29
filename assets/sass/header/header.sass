@@ -1,0 +1,1051 @@
+@import ../_common
+
+header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 5
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        background: $primary
+        height: 0
+        box-shadow: 0 2px 5px 2px rgba(99, 99, 99, .2)
+        z-index: -1
+        transition: 0.7s ease
+    &.header-fixed::before, &.header-fill::before
+        height: 100%
+    &.header-fixed .header-wrapper
+        // padding: 15px 0
+
+    .colA
+        flex: 0 1 115px
+
+    .header-wrapper
+        // padding: 30px 0
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        transition: 0.7s ease
+        justify-content: space-between
+        .colA
+            flex: 0 1 326px
+            transition: 0.7s ease
+        .colB
+            display: grid
+            @include media(1024)
+                display: none
+            .menu-list
+                display: flex
+                align-items: center
+                justify-content: end
+                gap: 25px
+                li
+                    a
+                        color: $white
+                        display: flex
+                        gap: 7px
+                        align-items: center
+                        font-weight: 700
+                        font-size: 16px
+                        span
+                            display: flex
+                            svg
+                                width: 16px
+                                height: 16px
+                                transition: 0.5s ease
+                    &.hasDropdown
+                        // position: relative
+                        position: initial
+                        padding: 32px 0
+                        >a
+                            display: flex
+                            align-items: center
+                            position: relative
+                            // padding: 0 0 15px 0
+                            &::after
+                                content: ""
+                                background-image: url(/assets/icon/arrow-down-white.svg)
+                                background-repeat: no-repeat
+                                background-position-x: 100%
+                                background-position-y: 50%
+                                background-size: var(--arrowsize) auto
+                                padding-right: calc(var(--arrowsize) + var(--space))
+                            &::before
+                                content: ""
+                                position: absolute
+                                bottom: -133%
+                                left: 0
+                                width: 0%
+                                height: 5px
+                                background: $white
+                                z-index: 1
+                                transition: .5s ease
+                        &:hover
+                            >a
+                                position: relative
+                                span
+                                    svg
+                                        transform: rotate(-180deg)
+                                &::after
+                                    transform: rotate(90deg)
+                                &::before
+                                    width: 100%
+                            .dropdown-menu
+                                opacity: 1
+                                transform: scale3d(1, 1, 1) 
+                                // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+                                ul 
+                                    li
+                                        &:hover
+                                            svg path
+                                                stroke: #fff
+                                        svg path
+                                            stroke: #43ADFF
+                                            transition: 0.5s ease
+                        .dropdown-menu
+                            --triangle: 0px
+                            position: absolute
+                            top: calc(100% + var(--triangle))
+                            right: 0
+                            // translate: -23% 0
+                            transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
+                            transform-origin: top
+                            transition: .4s ease
+                            opacity: 0
+                            width: 100%
+                            min-width: 100%
+                            height: 100%
+                            min-height: 468px
+                            background: white
+                            border-bottom-left-radius: 0px
+                            border-bottom-right-radius: 0px
+                            border-top: 1px solid #C5C5C5
+                            border-bottom: 5px solid #05B4C4
+                            overflow: hidden
+                            // &::before
+                            //     content: ''
+                            //     display: block
+                            //     position: absolute
+                            //     bottom: calc(100% - (var(--triangle) / 2))
+                            //     left: 50%
+                            //     translate: -50% 0
+                            //     width: var(--triangle)
+                            //     height: var(--triangle)
+                            //     background: #E3E3E3
+                            //     transform: rotate(45deg)
+                            //     z-index: -1
+                    &.catSubCatHasDropdown
+                        .dropdown-menu
+                            display: flex
+                            .categories
+                                background: #EFEFEF
+                                height: 100%
+                                flex: 0 1 30%
+                                width: 100%
+                                max-width: 349px
+                                padding: 20px 0
+                                li
+                                    padding: 10px 31px
+                                    transition: 0.5s ease
+                                    a
+                                        color: #0000005E
+                                        font-weight: 600
+                                        font-size: 20px
+                                        line-height: 24px
+                                        transition: 0.5s ease
+                                    &.active
+                                        background: $primary
+                                        position: relative
+                                        --triangle: 15px
+                                        &::before
+                                            content: ''
+                                            display: block
+                                            position: absolute
+                                            bottom: calc(100% - (var(--triangle) / 2))
+                                            top: 30%
+                                            left: 100%
+                                            translate: -50% 0
+                                            width: var(--triangle)
+                                            height: var(--triangle)
+                                            background: $white
+                                            transform: rotate(45deg)
+                                            z-index: 1
+                                            transition: 0.5s ease 
+                                        a
+                                            color: white
+                            .subCategories
+                                padding: 50px 
+                                flex: 1
+                                h5
+                                    font-weight: 700
+                                    color: $primary
+                                    font-size: 24px
+                                    line-height: 1
+                                    margin-bottom: 20px
+                                .subcat
+                                    display: none
+                                    &.active
+                                        display: block
+                                    .flex-box
+                                        gap: 50px
+                                        .left
+                                            width: 330px
+                                            display: inline
+                                            ul
+                                                margin: 0 0 0 6px
+                                                li
+                                                    margin: 0 0 20px 0
+                                                    position: relative
+                                                    padding: 0 0 0 20px
+                                                    transition: 0.5s ease
+                                                    &:hover
+                                                        padding: 0 0 0 30px
+                                                        a
+                                                            color: $primary
+                                                    &::before
+                                                        content: ""
+                                                        position: absolute
+                                                        top: 2px
+                                                        left: 0
+                                                        width: 9px
+                                                        height: 16px
+                                                        background: url('../../../assets/icon/right-primary.svg') no-repeat
+                                                    a
+                                                        font-weight: 600
+                                                        font-size: 16px
+                                                        line-height: 1.2
+                                                        color: $text
+                                                        max-width: 288px
+                                            .btn2
+                                                display: inline-block
+                                                border-radius: 25px
+                                                padding: 12px 24px
+                                                font-weight: 600
+                                                font-size: 16px
+                                                line-height: 1
+                                                color: $white
+                                                transition: 0.4s ease
+                                                position: relative
+                                                margin-top: 20px
+                                                @include media(540)
+                                                    padding: 10px 20px
+                                                &::before
+                                                    content: ""
+                                                    position: absolute
+                                                    top: 0
+                                                    left: 0
+                                                    width: 100%
+                                                    height: 100%
+                                                    border-radius: 25px
+                                                    border: 1px solid white
+                                                    background: transparent
+                                                    z-index: -1
+                                                    transition: 0.4s ease
+                                                &::after
+                                                    content: ""
+                                                    position: absolute
+                                                    top: 0
+                                                    left: 0
+                                                    width: 100%
+                                                    height: 100%
+                                                    border-radius: 25px
+                                                    background: linear-gradient(90deg, #0AA5B3 0%, #19DAEB 100%)
+                                                    border: 1px solid $primary
+                                                    z-index: -1
+                                                    transition: 0.4s ease
+                                                    opacity: 0
+                                                &:hover
+                                                    &::after
+                                                        opacity: 1
+                                                    &::before 
+                                                        opacity: 0
+                                                &.primaryBorder
+                                                    text-align: center
+                                                    color: $primary
+                                                    &::before
+                                                        border: 1px solid $primary
+                                                    &:hover
+                                                        color: $white
+                                                        &::before
+                                                            opacity: 0
+                                        .right
+                                            flex: 1
+                                            display: inline
+                                            figure
+                                                width: 462px
+                                                height: 308px
+                                                img
+                                                    height: 100%
+                                                    width: 100%
+                                                    object-fit: contain
+                    &.industriesHasDropdown
+                        .dropdown-menu
+                            padding: 31px
+                            min-height: fit-content
+                            h3
+                                font-weight: 700
+                                font-size: 32px
+                                color: $black
+                                margin-bottom: 10px
+                            p
+                                font-weight: 500
+                                font-size: 16px
+                                max-width: 1087px
+                            .grid-box
+                                display: grid
+                                grid-template-columns: repeat(5,1fr)
+                                gap: 20px
+                                margin-top: 30px
+                                .grid-item
+                                    border-radius: 5px
+                                    padding: 20px 5px
+                                    border: 1px solid #E8E8E8
+                                    display: initial
+                                    transition: 0.5s ease
+                                    position: relative
+                                    height: 132px
+                                    &::before
+                                        content: ""
+                                        position: absolute
+                                        top: 0
+                                        left: 0
+                                        width: 100%
+                                        height: 100%
+                                        background: linear-gradient(90deg, #0AA5B3 0%, #00838F 100%)
+                                        border-radius: 5px
+                                        z-index: -1
+                                        opacity: 0
+                                        transition: 0.5s ease
+                                    &:hover
+                                        &::before
+                                            opacity: 1
+                                        figure
+                                            top: 46%
+                                            margin: 0
+                                            svg
+                                                path
+                                                    stroke: white
+                                        span
+                                            color: white
+                                            bottom: 50%
+                                    figure
+                                        width: 54px
+                                        height: 54px
+                                        margin: 0 auto 5px 
+                                        line-height: 0
+                                        display: block
+                                        position: absolute
+                                        top: 0%
+                                        left: 50%
+                                        transform: translate(-50%)
+                                        margin: 20px 0
+                                        transition: 0.5s ease
+                                        img,svg
+                                            height: 100%
+                                            width: 100%
+                                            object-fit: contain
+                                            path
+                                                stroke: $primary
+                                    span
+                                        font-weight: 500
+                                        font-size: 16px
+                                        color: $text
+                                        text-align: center
+                                        display: block
+                                        transition: 0.5s ease
+
+                                        position: absolute
+                                        left: 50%
+                                        bottom: 0%
+                                        transform: translate(-50%)
+                                        padding: 20px 0
+                                        width: 100%
+                    &.singleHasDropdown
+                        position: relative
+                        .dropdown-menu
+                            right: initial
+                            left: 0
+                            min-width: 350px
+                            min-height: fit-content
+                            padding: 10px 0
+                            ul
+                                li
+                                    transition: 0.5s ease
+                                    border-bottom: 1px solid #cccccc4d
+                                    &:last-child
+                                        border: none
+                                    a
+                                        color: #0000005E
+                                        font-weight: 600
+                                        font-size: 14px
+                                        line-height: 1.4
+                                        padding: 8px 10px 8px 20px
+                                        transition: 0.5s ease
+                                    &:hover
+                                        background: $primary
+                                        position: relative
+                                        --triangle: 15px
+                                        a
+                                            color: white
+                    &.fit-contentli
+                        .dropdown-menu
+                            min-width: fit-content
+                            ul
+                                li
+                                    a
+                                        white-space: nowrap
+                                        padding-right: 70px
+
+                .ham-parent
+                    display: flex
+                    .ham-btn
+                        flex: 0 1 auto
+                        line-height: 0
+                        height: 24px
+                        width: 30px
+                        margin-left: auto
+                        flex-direction: column
+                        gap: 8px
+                        --lineheight:2px
+                        position: relative
+                        span:nth-child(1)
+                            position: absolute
+                            top: 0px
+                            left: 0px
+                        span:nth-child(2)
+                            position: absolute
+                            top: 9px
+                            right: 0px
+                        span:nth-child(3)
+                            position: absolute
+                            top: 18px
+                            left: 0px
+                            width: 20px
+                        span
+                            display: block
+                            height: var(--lineheight)
+                            width: inherit
+                            background: $white
+
+@media (max-width: 1024px)
+    header.header-fixed .header-wrapper .colA
+        flex: 0 1 255px
+        @include media(768)
+            flex: 0 1 110px
+        @include media(540)
+            flex: 0 1 80px
+
+@media (max-width: 1024px)
+    header .header-wrapper .colA
+        // flex: 0 1 105px
+
+@media (max-width: 991px)
+    header .header-wrapper .ham-btn
+        display: flex
+                                
+.cl-wht-icon
+  display: inline-block
+  border-left: 2px solid white
+  margin: 0px 0px  0px 30px
+  li
+    padding: 0px 0px 0 20px
+    &:nth-child(2)
+      padding-right: 35px
+    a
+      img
+        width: 25px
+
+@media (max-width: 520px)
+  .mobile-nav
+    padding: 90px 40px 40px
+
+@media (max-width: 991px)
+  .mobile-nav.is-open
+    transform: translateX(0)
+
+@media (max-width: 991px)
+  .mobile-nav .close
+    display: block
+
+@media (max-width: 520px)
+  .mobile-nav .close
+    right: 25px
+
+@media (max-width: 991px)
+  .mobile-nav ul
+    display: block
+    text-align: left
+
+@media (max-width: 991px)
+  .mobile-nav ul li
+    button, a
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      background-image: var(--gradient)
+      font-size: 42px
+      color: var(--black)
+      text-transform: uppercase
+
+@media only screen and (max-width: 365px)
+  .mobile-nav ul li
+    button, a
+      font-size: 34px
+
+@media (max-width: 991px)
+  .mobile-nav ul.menu-list li
+    display: block
+
+@media (max-width: 1230px)
+  .mobile-nav ul.menu-list li:not(:last-child)
+    margin-right: 20px
+
+@media (max-width: 991px)
+  .mobile-nav ul.menu-list li:not(:last-child)
+    margin-right: 0
+    margin-bottom: 20px
+
+@media (max-width: 520px)
+  .mobile-nav ul.menu-list li:not(:last-child)
+    margin-bottom: 16px
+
+@media (max-width: 1230px)
+  .mobile-nav ul.enquire-menu
+    padding-left: 20px
+
+@media (max-width: 991px)
+  .mobile-nav ul.enquire-menu
+    display: none
+
+@media (max-width: 1230px)
+  .mobile-nav ul.enquire-menu li:not(:last-child)
+    margin-right: 15px
+
+footer
+    position: relative
+    overflow: hidden
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(270deg, #087DE2 0%, #143550 100%)
+        z-index: -1
+    .bottom-sec
+        padding: 50px 0 50px 0
+        @include media(540)
+            padding: 50px 0 0 0
+        .grid-box
+            display: grid
+            grid-template-columns: 0.4fr 1.6fr
+            position: relative
+            z-index: 1
+            @include media(1024)
+                grid-template-columns: repeat(1,1fr)
+            @include media(991)
+                grid-template-columns: repeat(2, 1fr)
+                grid-gap: 40px
+            @include media(768)
+                grid-template-columns: repeat(1, 1fr)
+            @include media(540)
+                gap: 40px
+            // @include media(675)
+            //     grid-template-columns: repeat(1,1fr)
+            //     grid-gap: 40px
+            .grid-box-item:nth-child(1)
+                figure
+                    width: 133px
+                    height: 102px
+                    @include media(1024)
+                        width: 140px
+                        margin: 0 auto 40px
+                    @include media(768)
+                        margin: auto
+                        height: auto
+                        width: 100px
+                    @include media(540)
+                        width: 100px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: contain
+                    @include media(768)
+                        text-align: center
+
+            .grid-box-item:nth-child(2)
+                display: flex
+                gap: 60px
+                justify-content: space-between
+                @include media(1024)
+                    gap: 20px
+                @include media(768)
+                    display: grid
+                    grid-template-columns: 1fr 1fr 1fr
+                    gap: 40px 20px 
+                @include media(540)
+                    display: grid
+                    grid-template-columns: repeat(2,1fr)
+                    margin-bottom: 40px
+                    gap: 30px 20px
+                .col-md
+                    @include media(540)
+                        width: 100%
+                    &:last-child
+                        text-align: right
+                        @include media(768)
+                            grid-column: span 3
+                            text-align: center
+                        @include media(768)
+                            grid-column: span 3
+                            width: 100%
+                            display: flex
+                            justify-content: center
+                            gap: 40px
+                            align-items: center
+                            .btn2
+                                margin: 0
+                        @include media(540)
+                            grid-column: span 2
+                            width: 100%
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            gap: 0
+                    &:nth-child(3)
+                        @include media(540)
+                            grid-column: span 2
+                            width: 100%
+                    h6
+                        font-weight: 700
+                        font-size: 14px
+                        text-transform: uppercase
+                        color: $white
+                        margin-bottom: 20px
+                    ul li
+                        margin-bottom: 10px 
+                        a
+                            font-weight: 400
+                            font-size: 16px
+                            line-height: 16px
+                            color: white
+                            @include media(540)
+                            &:hover
+                                color: $white
+                    .location
+                        .one
+                            margin-bottom: 30px
+                            display: flex
+                            gap: 20px
+                            @include media(540)
+                                margin-bottom: 10px
+                            p 
+                                line-height: 24px
+                                font-weight: 400
+                                font-size: 16px
+                                color: white
+                                max-width: 225px
+                                @include media(540)
+                                    max-width: 95%
+                        .two
+                            display: flex
+                            align-items: center
+                            gap: 20px
+                            margin-bottom: 30px
+                            @include media(540)
+                                margin-bottom: 0px
+                            a
+                                line-height: 24px
+                                font-weight: 400
+                                font-size: 16px
+                                color: white
+                                @include media(540)
+                                    font-size: 14px
+                                &:hover
+                                    color: $white
+                    .btn2
+                        margin: 30px 0 auto
+                        @include media(768)
+                            margin: 10px 0 auto
+                    .social-icons
+                        a
+                            display: inline-flex
+                            vertical-align: middle
+                            align-items: center
+                            justify-content: center
+                            height: 40px
+                            width: 40px
+                            border-radius: 50%
+                            line-height: 0
+                            overflow: hidden
+                            @include before($gradient-a)
+                            color: $black
+                            padding: 10px
+                            &:hover
+                                background: white
+                                svg
+                                    path
+                                        fill: $primary
+
+                            &::before
+                                border-radius: 50%
+                                transform: scale(1.5)
+                                z-index: -1
+                                opacity: 0
+                                transition: .2s ease
+                            &:not(:last-child)
+                                margin-right: 4px
+                            svg
+                                width: 24px
+                                height: 24px
+                                path
+                                    fill: white 
+
+    .bottom-footer
+        border-top: 1px solid #FFFFFF2B
+        padding: 20px 40px 
+        display: flex
+        justify-content: center
+        align-items: center
+        line-height: 0
+        @include media(540)
+            padding-bottom: 100px
+            flex-direction: column-reverse
+            gap: 20px
+        .flex-box
+            display: flex
+            gap: 10px
+            align-items: center
+            @include media(540)
+                flex-direction: column
+                text-align: center
+            p
+                font-size: 14px
+                color: white
+                @include media(540)
+                    line-height: 1.1
+            .prettify
+                display: flex
+                gap: 10px
+                align-items: center
+                figure
+                    width: 57px
+                    height: 21px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: contain
+                span
+                    display: block
+            span
+                font-weight: 500
+                color: #FFFFFF
+                font-size: 14px
+                @include media(540)
+                    display: none
+        ul
+            display: flex
+            justify-content: center
+            gap: 30px
+            li
+                a
+                    font-weight: 700
+                    color: #9C9A9A
+                    font-size: 14px
+                    line-height: 24px
+                    @include media(540)
+                        color: rgba(255, 255, 255, 0.6980392157)
+                    
+
+
+.ham-pop
+    right: 0
+    max-width: 480px
+    transform: translateX(100%)
+    transition: .5s ease
+    background-color: #fff
+    &.is-open
+        transform: translateX(0%)
+    .close
+        path
+            stroke: $white
+            stroke-width: 2 !important
+    .model-body
+        padding: 25px 40px 30px
+        height: 100%
+        overflow-y: auto
+        display: flex
+        flex-direction: column
+        position: relative
+        @include media(540)
+            gap: 30px
+        &::before
+            content: ""
+            position: absolute
+            bottom: 0
+            right: 0
+            width: 35%
+            height: 247px
+            background: url('../../images/ham-bg.svg') no-repeat
+            background-size: contain
+            background-position: center
+            opacity: 0.1
+            filter: invert(0.3) brightness(0.8)
+
+        @include scrollbar(6px,$white,#5e5e5e,8px)
+        @include media(520)
+            padding: 20px 20px
+
+        .logo
+            margin-bottom: 20px
+            width: 70px
+        .ico
+            max-width: 70px
+            margin-bottom: 55px
+            line-height: 0
+            img,svg
+                width: 100%
+                height: auto
+        .nav-list
+            flex: 1
+            >li
+                &:not(:last-child)
+                    margin-bottom: 22px
+                    @include media(1366)
+                        margin-bottom: 20px
+                >a
+                    font-size: 28px
+                    line-height: 1.06
+                    color: #444
+                    font-weight: 600
+                    display: inline-block
+                    transition: 0.5s ease
+                    @include font(500)
+                    @include media(1366)
+                        font-size: 28px
+                    @include media(675)
+                        font-size: 21px
+                    &:hover
+                        color: $primary
+                        padding-left: 10px
+               
+                
+
+        .bottom-list
+            border-top: 1px solid #444
+            margin-top: 2rem
+            padding-top: 1rem
+            display: flex
+            align-items: center
+            gap: 1rem
+            .social-icons
+                a
+                    display: inline-flex
+                    vertical-align: middle
+                    align-items: center
+                    justify-content: center
+                    height: 40px
+                    width: 40px
+                    border-radius: 50%
+                    line-height: 0
+                    overflow: hidden
+                    @include before($gradient-a)
+                    color: $black
+                    &::before
+                        border-radius: 50%
+                        transform: scale(1.5)
+                        z-index: -1
+                        opacity: 0
+                        transition: .2s ease
+                    &:not(:last-child)
+                        margin-right: 4px
+                    svg
+                        width: 24px
+                        height: 24px
+                        path
+                            transition: none
+                            &[stroke],&[fill="none"]
+                                // stroke: currentColor
+                                stroke: #444
+                            &[fill]
+                                // fill: currentColor
+                        &:hover
+                            path
+                                &[fill]
+                                    fill: var(--primary)
+                                    transition: 0.4s
+                    &:hover
+                        color: $white
+                        // &::before
+                        //     transition: .5s ease
+                        //     opacity: 1
+                        //     transform: scale(1)
+
+.enquire-pop
+    right: 0
+    transform: translateX(100%)
+    transition: .5s ease
+    background: var(--white)
+    &.is-open
+        transform: translateX(0%)
+    .model-body
+        padding: 60px 35px 30px
+        height: 100%
+        overflow-y: auto
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            bottom: 0
+            right: 0
+            width: 38%
+            height: 247px
+            background: url('../../images/ham-bg.svg') no-repeat
+            background-size: contain
+            background-position: center
+            opacity: 0.1
+            filter: invert(0.3) brightness(0.8)
+        @include scrollbar(3px,$white,#5e5e5e,8px)
+        @include media(675)
+            padding: 70px 20px 30px
+        .title
+            text-align: center
+            margin-bottom: 2rem
+            h4
+                font-size: 32px
+                color: $black
+                @include font(600)
+            p
+                color: black
+                margin-top: 10px
+                font-size: 14px
+                line-height: 20px
+                max-width: 317px
+                margin-left: auto
+                margin-right: auto
+                @include media(675)
+                    font-size: 14px
+                    max-width: 300px
+        .form
+            --gaptb: 35px
+            --inputsize: 32px
+            input:not(.no-focus):focus ~ label,textarea:not(.no-focus):focus ~ label
+                color: $black
+            label,input 
+                color: $black
+            .form-group input.valid ~ label,textarea.valid ~ label
+                color: $black
+            .form-group::after
+                width: 0
+                background: black
+            .phone-field
+                display: flex
+                align-items: center
+                gap: 20px
+                .iti--separate-dial-code .iti__selected-flag
+                    background-color: unset
+
+        // .btn2
+        //     text-align: center
+        //     margin: auto
+        //     color: $primary
+        //     &::before
+        //         border: 1px solid black
+        //     &:hover
+        //         color: white
+        //         &::before
+        //             opacity: 0
+          
+.video-pop
+    left: 0
+    right: 0
+    // background: #0000007a
+    background: #03052e7d
+    z-index: 90
+    max-width: 100%
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+    .close-video
+        position: absolute
+        bottom: calc(100% + 20px)
+        top: auto
+        right: -40px
+        height: 50px
+        width: 50px
+        border-radius: 50%
+        background: $secondary
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: .5s ease
+        @include media(675)
+            right: 0
+        &:hover
+            background: $primary
+        svg
+            height: 35%
+            width: 35%
+        path
+            stroke-width: 2
+            stroke: $white
+    .model-body
+        position: absolute
+        top: 50%
+        left: 50%
+        translate: -50% -50%
+        width: 100%
+        max-width: 50%
+        @include media(675)
+            max-width: 95%
+        iframe
+            width: 100%
+            aspect-ratio: 1.9
+            border: 2px solid $white
+            background: $white
+
+.footer-strip
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 40
+    background: $gradient-a
+    display: none
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px
+    @include media(675)
+        display: block
+    ul
+        @include flex
+        li
+            flex: 1
+            &:not(:last-child)
+                border-right: 1px solid rgb(256 256 256 / 10%)
+            a
+                display: flex
+                flex-direction: column
+                align-items: center
+                padding: 10px
+                gap: 5px
+                color: $white
+                font-size: 14px
+                height: var(--footerstrip)
+                text-transform: uppercase
+                svg
+                    width: 20px
+                    height: 20px
+                    &[stroke]
+                        stroke: $white
+                    &[fill]
+                        fill: $white
+                    path
+                        &[stroke]
+                            // stroke: $white
+                        &[fill]
+                            // fill: $white
