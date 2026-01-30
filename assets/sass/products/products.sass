@@ -1,0 +1,92 @@
+@import '../_var'
+
+section:has(.home-secB)
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        top: 7%
+        left: -1%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1)
+    &::after
+        content: ""
+        position: absolute
+        bottom: -15%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        
+.product-banner
+    position: relative
+    color: white
+    overflow: hidden
+    height: 100vh
+    z-index: 1
+    @include media(1024)
+        height: 80vh
+    @include media(991)
+        height: 50vh
+    @include media(540)
+        height: 60vh
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%)
+    .video-background 
+        video 
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            z-index: -1
+        .container
+            @include media(540)
+                padding: 0
+            .bg-wrapper
+                position: absolute
+                z-index: 1
+                width: 90%
+                left: 50%
+                bottom: 15%
+                transform: translate(-50%)
+                @include media(991)
+                    bottom: 10%
+                @include media(540)
+                    bottom: 10%
+                    margin-left: 0
+                h1
+                    max-width: 612px
+                    font-weight: 800
+                    font-size: 48px
+                    line-height: 55px
+                    padding-left: 30px
+                    @include media(991)
+                        max-width: 70%
+                        line-height: 1.2
+                        font-size: 40px
+                    @include media(540)
+                        max-width: 100%
+                        font-size: 35px
+                        line-height: 1.1
+                        text-align: center
+                        padding: 0 20px
+                        margin-bottom: 20px
+                p
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 24px
+                    color: $white
+                    max-width: 517px

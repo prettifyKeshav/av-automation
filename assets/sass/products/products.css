@@ -1,0 +1,135 @@
+@keyframes shine {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+section:has(.home-secB) {
+  position: relative;
+}
+section:has(.home-secB)::before {
+  content: "";
+  position: absolute;
+  top: 7%;
+  left: -1%;
+  width: 350px;
+  height: 538px;
+  background: url("../../../assets/images/Vectors/vector.png") no-repeat;
+  z-index: -1;
+  transform: scaleY(-1);
+}
+section:has(.home-secB)::after {
+  content: "";
+  position: absolute;
+  bottom: -15%;
+  right: 0%;
+  width: 350px;
+  height: 538px;
+  background: url("../../../assets/images/Vectors/vector.png") no-repeat;
+  z-index: -1;
+  transform: scaleY(-1) scaleX(-1);
+}
+
+.product-banner {
+  position: relative;
+  color: white;
+  overflow: hidden;
+  height: 100vh;
+  z-index: 1;
+}
+@media only screen and (max-width: 1024px) {
+  .product-banner {
+    height: 80vh;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .product-banner {
+    height: 50vh;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .product-banner {
+    height: 60vh;
+  }
+}
+.product-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%);
+}
+.product-banner .video-background video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+@media only screen and (max-width: 540px) {
+  .product-banner .video-background .container {
+    padding: 0;
+  }
+}
+.product-banner .video-background .container .bg-wrapper {
+  position: absolute;
+  z-index: 1;
+  width: 90%;
+  left: 50%;
+  bottom: 15%;
+  transform: translate(-50%);
+}
+@media only screen and (max-width: 991px) {
+  .product-banner .video-background .container .bg-wrapper {
+    bottom: 10%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .product-banner .video-background .container .bg-wrapper {
+    bottom: 10%;
+    margin-left: 0;
+  }
+}
+.product-banner .video-background .container .bg-wrapper h1 {
+  max-width: 612px;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 55px;
+  padding-left: 30px;
+}
+@media only screen and (max-width: 991px) {
+  .product-banner .video-background .container .bg-wrapper h1 {
+    max-width: 70%;
+    line-height: 1.2;
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .product-banner .video-background .container .bg-wrapper h1 {
+    max-width: 100%;
+    font-size: 35px;
+    line-height: 1.1;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+}
+.product-banner .video-background .container .bg-wrapper p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--white);
+  max-width: 517px;
+}/*# sourceMappingURL=products.css.map */

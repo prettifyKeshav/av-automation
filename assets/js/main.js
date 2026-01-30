@@ -449,11 +449,11 @@ $(function () {
 
 
     // MORE BLOG DETAILS PAGE SLIDER START ======================>
-    new Swiper('.blog-details-slider', {
+    new Swiper('.blogs-swiper', {
         loop: false,
         navigation: {
-            prevEl: '.blog-details-prev',
-            nextEl: '.blog-details-next',
+            prevEl: '.blogs-swiper-prev',
+            nextEl: '.blogs-swiper-next',
         },
         breakpoints: {
             0: {
@@ -467,7 +467,7 @@ $(function () {
                 speed: 1000,
             },
             992: {
-                slidesPerView: 3,
+                slidesPerView: 2.5,
                 spaceBetween: 20,
                 speed: 1000,
             }
@@ -1123,3 +1123,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // CUSTOM DROPDOWN ADD CLASS AND REMOVE ===================================
 
+function clearFormWhenClosing() {
+    const closeButton = document.querySelector('.model.enquire-pop .close');
+    if (!closeButton) {
+        console.warn("Close button not found");
+        return;
+    }
+    closeButton.addEventListener('click', () => {
+        const modal = document.querySelector('.model.enquire-pop');
+        if (!modal) return;
+        const inputs = modal.querySelectorAll('.form-group input, textarea');
+        inputs.forEach(input => {
+            input.value = '';
+            input.classList.remove('error', 'valid', 'dirty', 'touched');
+        });
+    });
+}
+clearFormWhenClosing();

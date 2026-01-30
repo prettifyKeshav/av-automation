@@ -447,11 +447,24 @@ button
         z-index: -1
         transition: 0.4s ease
         opacity: 0
+    svg
+        width: 30px
+        height: 30px
+        path
+            fill: $primary
     &:hover
         &::after
             opacity: 1
         &::before 
             opacity: 0
+        svg
+            path
+                fill: $white
+    &.flex-box
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 5px
     &.primaryBorder
         color: $primary
         &::before
