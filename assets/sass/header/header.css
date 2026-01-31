@@ -3256,6 +3256,19 @@ footer .bottom-footer ul li a {
   transition: 0.5s ease;
   background-color: #fff;
 }
+.ham-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 250px;
+  height: 388px;
+  background: url(../../../assets/images/Vectors/vector.png) no-repeat;
+  z-index: 1;
+  transform: scaleY(-1) scaleX(-1);
+  background-size: contain;
+  opacity: 0.4;
+}
 .ham-pop.is-open {
   transform: translateX(0%);
 }
@@ -3305,6 +3318,7 @@ footer .bottom-footer ul li a {
 }
 .ham-pop .model-body .nav-list {
   flex: 1;
+  z-index: 1;
 }
 .ham-pop .model-body .nav-list > li:hover a {
   color: var(--primary);
@@ -3513,6 +3527,19 @@ footer .bottom-footer ul li a {
   transform: translateX(100%);
   transition: 0.5s ease;
   background: var(--white);
+}
+.enquire-pop::before {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  width: 250px;
+  height: 388px;
+  background: url(../../../assets/images/Vectors/vector.png) no-repeat;
+  z-index: 1;
+  transform: scaleY(-1) scaleX(-1);
+  background-size: contain;
+  opacity: 0.4;
 }
 .enquire-pop.is-open {
   transform: translateX(0%);
