@@ -46,7 +46,7 @@
 
 </head>
 
-<body class="home-page">
+<body>
 
     <!-- ================= HEADER START ================= -->
     <header class="header-fixed">
@@ -427,7 +427,7 @@
     <main>
         <section>
             <div class="product-banner">
-                <div class="video-background">
+                <div class="common-background">
                     <img src="assets/images/other/product/product-banner.jpg" alt="product banner">
 
                     <div class="container">
@@ -456,7 +456,7 @@
         </section>
 
         <section>
-            <div class="service-secB">
+            <div class="product-secB">
 
                 <div class="flex-box">
                     <div class="container">
@@ -469,7 +469,7 @@
                             <h3>Conveyors</h3>
                             <p>Designed for continuous material flow, conveyors streamline handling, reduce manual
                                 effort, and improve productivity.</p>
-                            <a href="javscript:void(0);" class="btn2 primary">Explore Products</a>
+                            <a href="products-listing.html" class="btn2 primary">Explore Products</a>
                         </div>
                     </div>
                 </div>
@@ -486,7 +486,7 @@
                             <p>A high-speed, space-efficient solution designed to sort parcels, polybags, and cartons
                                 with precision, ideal for streamlining material flow in distribution centers and
                                 fulfillment operations.</p>
-                            <a href="javscript:void(0);" class="btn2 primary">Explore Products</a>
+                            <a href="products-listing.html" class="btn2 primary">Explore Products</a>
 
                         </div>
                     </div>
@@ -505,7 +505,7 @@
                                 insights into evolving markets, industry trends, and competitive landscapes. These
                                 studies offer reliable, data-backed intelligence designed to support informed strategic
                                 decisions.</p>
-                            <a href="javscript:void(0);" class="btn2 primary">Explore Products</a>
+                            <a href="products-listing.html" class="btn2 primary">Explore Products</a>
                         </div>
                     </div>
                 </div>
@@ -523,7 +523,7 @@
                                 insights into evolving markets, industry trends, and competitive landscapes. These
                                 studies offer reliable, data-backed intelligence designed to support informed strategic
                                 decisions.</p>
-                            <a href="javscript:void(0);" class="btn2 primary">Explore Products</a>
+                            <a href="products-listing.html" class="btn2 primary">Explore Products</a>
                         </div>
                     </div>
                 </div>
@@ -986,7 +986,10 @@
         const lenis = new Lenis({
             smoothWheel: true,
             smoothTouch: false,
-            lerp: 0.05
+            lerp: 0.05,
+            prevent: (node) => {
+                return node.closest('.scroll, .list, .custom-select, .modal, .model-body ') !== null;
+            }
         });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);

@@ -54,7 +54,10 @@ html
     @include media(320)
         --containerfluid: 10px
 body
-    background: var(--bgcolor)
+    position: relative
+    min-height: 100%
+    top: 0px
+    background: url("/assets/images/grainy.jpg")
     &::-webkit-scrollbar
         width: $scrollwidth
         background: $black
@@ -87,12 +90,6 @@ body
 
 ::-webkit-scrollbar-thumb:hover 
     background: var(--bgcolor)
-
-body
-    position: relative
-    min-height: 100%
-    top: 0px
-    background: url("/assets/images/grainy.jpg")
 
 body,html
     font-size: 16px
@@ -197,8 +194,10 @@ h2
     font-size: 48px
     line-height: 1.3
     color: #000000
+    @include media(768)
+        font-size: 38px
     @include media(540)
-        font-size: 29px
+        font-size: 25px
         line-height: 1.3
         margin-bottom: 10px
     span
@@ -229,6 +228,7 @@ p
     color: $text
     @include media(540)
         line-height: 1.5
+        font-size: 14px
 
 
 .sec-pad
@@ -420,6 +420,7 @@ button
     color: $white
     transition: 0.4s ease
     position: relative
+    z-index: 1
     @include media(540)
         padding: 10px 20px
     &::before

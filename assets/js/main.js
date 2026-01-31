@@ -353,11 +353,16 @@ $(function () {
                 speed: 500,
             },
             675: {
-                slidesPerView: 2,
-                spaceBetween: 12,
+                slidesPerView: 1.5,
+                spaceBetween: 50,
                 speed: 1000,
             },
             992: {
+                slidesPerView: 1.9,
+                spaceBetween: 100,
+                speed: 1000,
+            },
+            1300: {
                 slidesPerView: 2.3,
                 spaceBetween: 100,
                 speed: 1000,

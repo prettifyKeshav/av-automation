@@ -109,6 +109,8 @@ $white-filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%
         filter: blur(60px)
         border-radius: 50%
         z-index: -1
+        @include media(540)
+            content: none
 
 @mixin primaryLayerBlur
     position: relative
@@ -124,6 +126,8 @@ $white-filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%
         filter: blur(60px)
         border-radius: 50%
         z-index: -1
+        @include media(540)
+            content: none
 
 @mixin beforeLayerBlur
     position: relative
@@ -139,6 +143,8 @@ $white-filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%
         filter: blur(60px)
         border-radius: 50%
         z-index: -1
+        @include media(540)
+            content: none
 
     
 @mixin before($background: none)
