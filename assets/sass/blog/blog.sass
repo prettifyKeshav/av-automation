@@ -1,0 +1,476 @@
+@import '../_var'
+
+.blog-banner
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        bottom: -238%
+        right: 0%
+        width: 340px
+        height: 468px
+        background: url(../../../assets/images/Vectors/vector.png) no-repeat
+        z-index: 0
+        transform: scaleY(1) scaleX(-1)
+        background-size: contain
+        opacity: 0.4
+    &::after
+        content: ""
+        position: absolute
+        bottom: -338%
+        left: 0%
+        width: 340px
+        height: 468px
+        background: url(../../../assets/images/Vectors/vector.png) no-repeat
+        z-index: 0
+        transform: scaleY(1)
+        background-size: contain
+        opacity: 0.4
+    .bg-wrapper
+        margin-top: 160px
+        position: relative
+        z-index: 1
+        h1
+            max-width: 576px
+            margin-bottom: 20px
+            margin: 0 auto 20px
+            text-align: center
+            font-weight: 700
+            font-size: 48px
+
+        p
+            max-width: 548px
+            margin: auto
+            font-weight: 500
+            font-size: 16px
+            line-height: 1.3
+            color: $black
+            text-align: center
+            @include media(540)
+                max-width: 90%
+                margin: 20px  auto 0
+
+
+.blog-listing-banner
+    padding: 100px 0 40px 0
+    margin-top: var(--headerheight)
+    text-align: center
+    h1
+        font-weight: 700
+        font-size: 48px
+        line-height: 50px
+        text-align: center
+        color: $white
+        margin-bottom: 10px
+    p
+        font-weight: 400
+        font-size: 16px
+        line-height: 22px
+        color: $white
+        text-align: center
+        max-width: 521px
+        margin: auto
+
+.blog-secA
+    padding: 0 0 50px 0  
+    .grid-box
+        display: grid
+        grid-template-columns: repeat(3 , 1fr)
+        grid-gap: 20px
+        padding: 70px 0 50px 0
+        @include media(991)
+            grid-template-columns: repeat(2 , 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1 , 1fr)
+            
+        .grid-box-item
+            width: 100%
+            border-radius: 5px
+            background: $white
+            overflow: hidden
+            position: relative
+            transition: 0.4s ease
+            box-shadow: 0px 8px 24px 0px #959DA533
+            border: 1px solid #D4D4D4
+            z-index: 1
+            &:hover
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+                .btn2
+                    color: white
+                    &::after
+                        opacity: 1
+                .top
+                    img
+                        scale: 1.2
+            .top
+                height: 230px
+                overflow: hidden
+                position: relative
+                @include shine
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    transition: 0.5s ease
+                .date
+                    position: absolute
+                    bottom: 0 
+                    left: 0
+                    margin: 0 20px 20px 0
+                    background: $gradient-a
+                    border-top-right-radius: 5px
+                    border-bottom-right-radius: 5px
+                    padding: 10px 20px 10px 25px
+                    text-align: center
+                    p:first-child
+                        font-weight: 700
+                        font-size: 16px
+                        color: $white
+                        line-height: 20px
+
+            figcaption
+                padding: 30px
+                @include media(540)
+                    padding: 20px
+                h4
+                    font-weight: 700
+                    color: black
+                    font-size: 18px
+                    margin-bottom: 10px
+                p
+                    font-weight: 400
+                    font-size: 14px
+                    line-height: 20px
+                    color: $text
+
+                    display: -webkit-box
+                    -webkit-line-clamp: 3
+                    -webkit-box-orient: vertical
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    margin-bottom: 90px
+                    @include media(540)
+                        padding-bottom: 20px
+                .btn2
+                    z-index: 1
+                    position: absolute
+                    bottom: 30px
+                    &:hover
+                        color: white
+                        &::before
+                            opacity: 0
+
+                
+// ========================================================= BLOG DETAILS ========================================================= //
+
+.blog-detail-banner
+    position: relative
+    color: white
+    overflow: hidden
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    @include media(1024)
+        height: 80vh
+    @include media(991)
+        height: 50vh
+    @include media(540)
+        height: 60vh
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.19%, rgba(0, 0, 0, 0.6) 68.38%)
+        @include media(540)
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.19%, rgba(0, 0, 0, 0.6) 68.38%)
+    .banner-wrapper 
+        width: 100%
+        .bg-image
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -1
+            height: 100%
+            width: 100%
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+        .container
+            @include media(540)
+                padding: 0
+            .bg-wrapper
+                // max-width: 50%
+                position: absolute
+                z-index: 1
+                width: 100%
+                bottom: 20%
+                margin-left: 10px
+                @include media(991)
+                    bottom: 40%
+                @include media(768)
+                    bottom: 10%
+                @include media(540)
+                    bottom: 14%
+                    margin-left: 0
+                .content
+                    h1
+                        font-weight: 400
+                        font-size: 32px
+                        line-height: 38px
+                        max-width: 523px
+                        text-transform: capitalize
+                        @include media(991)
+                            max-width: 70%
+                            line-height: 1.2
+                            font-size: 30px
+                        @include media(540)
+                            max-width: 100%
+                            font-size: 25px
+                            line-height: 1.1
+                            text-align: center
+                            padding: 0 20px
+                            margin-bottom: 8px
+
+                    p
+                        font-weight: 500
+                        font-size: 16px
+                        line-height: 22px
+                        color: $white
+                        width: 450px
+                        margin-bottom: 20px
+                        @include media(991)
+                            max-width: 100%
+                            color: #ffffffe0
+                        @include media(540)
+                            max-width: 100%
+                            font-size: 13px
+                            line-height: 1.2
+                            text-align: center
+                            color: #ffffffdb
+                .share-btn
+                    background: $white
+                    border-radius: 50px
+                    display: flex
+                    justify-content: center
+                    align-content: center
+                    width: fit-content
+                    padding: 8px 24px
+                    gap: 10px 
+                    @include media(540)
+                        margin: 40px auto 0
+                    &:hover
+                        background: $primary
+                        figure svg path
+                            fill: $white
+                            stroke: $white
+                        p
+                            color: $white
+                    figure
+                        line-height: 0
+                        width: 20px
+                        height: 20px
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        img,svg
+                            width: 100%
+                            height: 100%
+                            object-fit: contain
+                            path
+                                fill: $black
+                                stroke: $black
+                                transition: 0.5s ease
+                    p
+                        font-weight: 700
+                        font-style: Bold
+                        font-size: 14px
+                        vertical-align: middle
+                        color: $black
+                        transition: 0.5s ease
+
+.blog-details-secA
+    padding: 50px 0
+    .flex-box
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        @include media(768)
+            flex-direction: column
+        .left
+            flex: 0 1 100%
+            max-width: 880px
+            margin: auto
+            .content
+                figure
+                    height: 450px
+                    line-height: 0 
+                    @include media(540)
+                        height: fit-content
+                    img 
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                p
+                    font-weight: 400
+                    font-size: 16px
+                    text-align: justify
+                    margin-bottom: 25px
+                h2
+                    font-weight: 600
+                    font-size: 25px
+                    color: black
+                    margin: 40px 0 10px 0
+                h3
+                    font-weight: 600
+                    font-size: 18px
+                    color: black
+                    margin: 40px 0 10px 0
+                h4
+                    font-weight: 600
+                    font-size: 16px 
+                    color: black
+                    margin: 40px 0 10px 0
+                h5
+                    font-weight: 600
+                    font-size: 14px
+                    color: black
+                    margin: 40px 0 10px 0
+                ul
+                    margin-bottom: 20px
+                    margin-left: 10px
+                    li
+                        position: relative
+                        padding-left: 30px
+                        margin-bottom: 10px
+                        &::before
+                            content: ""
+                            position: absolute
+                            left: 0
+                            top: 50%
+                            width: 14px
+                            aspect-ratio: 1
+                            border-radius: 50%
+                            background: $primary
+                            transform: translateY(-50%)
+.blog-details-secB
+    position: relative
+    .upper-sec
+        padding: 0 !important
+    .swiper-nav
+        justify-content: space-between
+        position: absolute
+        z-index: 2
+        width: 98%
+        left: 50%
+        top: 50%
+        transform: translate(-50%)
+        @include media(540)
+            display: none
+        button
+            width: 44px
+            height: 44px
+            box-shadow: 0px 2px 8px 0px #63636333
+            background: $white
+            border-radius: 50%
+            cursor: pointer
+            display: flex
+            justify-content: center
+            align-items: center
+            &:hover
+                background: $primary
+            svg
+                height: 30px
+                width: 30px
+    .swiper-wrapper
+        padding: 30px 0 50px 0 
+        @include media(768)
+            padding: 30px 0 0 0
+        @include media(540)
+            padding: 20px 0px 50px 0
+        .swiper-slide
+            line-height: 0
+            box-shadow: 0px 8px 24px 0px #959DA533
+            border: 1px solid #D4D4D4
+            background: $white
+            border-radius: 5px
+            overflow: hidden
+            transition: 0.4s ease
+            .grid-box-item
+                width: 100%
+                border-radius: 5px
+                background: $white
+                overflow: hidden
+                position: relative
+                transition: 0.4s ease
+                box-shadow: 0px 8px 24px 0px #959DA533
+                border: 1px solid #D4D4D4
+                &:hover
+                    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px
+                    .btn2
+                        color: white
+                        &::after
+                            opacity: 1
+                    .top
+                        img
+                            scale: 1.2
+                .top
+                    height: 230px
+                    overflow: hidden
+                    position: relative
+                    @include shine
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        transition: 0.5s ease
+                    .date
+                        position: absolute
+                        bottom: 0 
+                        left: 0
+                        margin: 0 20px 20px 0
+                        background: $gradient-a
+                        border-top-right-radius: 5px
+                        border-bottom-right-radius: 5px
+                        padding: 10px 20px 10px 25px
+                        text-align: center
+                        p:first-child
+                            font-weight: 700
+                            font-size: 16px
+                            color: $white
+                            line-height: 20px
+
+                figcaption
+                    padding: 30px
+                    @include media(540)
+                        padding: 20px
+                    h4
+                        font-weight: 700
+                        color: black
+                        font-size: 18px
+                        margin-bottom: 10px
+                    p
+                        font-weight: 400
+                        font-size: 14px
+                        line-height: 20px
+                        color: $text
+
+                        display: -webkit-box
+                        -webkit-line-clamp: 3
+                        -webkit-box-orient: vertical
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        margin-bottom: 90px
+                    .btn2
+                        z-index: 1
+                        position: absolute
+                        bottom: 30px
+                        white-space: nowrap
+                        &:hover
+                            color: white
+                            &::before
+                                opacity: 0

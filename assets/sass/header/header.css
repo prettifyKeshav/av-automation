@@ -3610,6 +3610,8 @@ footer .bottom-footer ul li a {
 .enquire-pop .model-body .form {
   --gaptb: 35px;
   --inputsize: 32px;
+  z-index: 1;
+  position: relative;
 }
 .enquire-pop .model-body .form input:not(.no-focus):focus ~ label, .enquire-pop .model-body .form textarea:not(.no-focus):focus ~ label {
   color: var(--black);

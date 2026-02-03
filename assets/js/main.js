@@ -46,6 +46,7 @@ $(function () {
 
     //
 
+    // Image to SVG Converter =====================================>>>
     document.querySelectorAll('img.svg').forEach(img => {
         fetch(img.src)
             .then(response => response.text())
@@ -57,6 +58,7 @@ $(function () {
                 }
             });
     });
+    // Image to SVG Converter =====================================>>>
 
     //
     $(document).on('click', '.tab-nav [data-tab]:not(.disabled-btn)', function () {
@@ -1145,3 +1147,76 @@ function clearFormWhenClosing() {
     });
 }
 clearFormWhenClosing();
+
+
+
+
+
+
+
+//   if ($(window).width() < 991) {
+//     $(".tab-filter").each(function () {
+//       var $this = $(this);
+//       setTimeout(function () {
+//         var activeText = $this.find("li.active").text();
+//         $this
+//           .find("ul")
+//           .before(`<span class="tab-filter-span">${activeText}</span>`);
+//       }, 0);
+
+//       $(document).on("click", ".tab-filter-span", function () {
+//         $(this).siblings("ul").stop().slideToggle();
+//       });
+//     });
+
+//     $(document).on("click", function (e) {
+//       if (!$(e.target).closest(".tab-filter-span").length) {
+//         $(".tab-filter ul").stop().slideUp();
+//       }
+//     });
+//   }
+
+
+// // filter product
+// $(document).ready(function () {
+//   const toggleActiveState = ($element, contentSelector, className) => {
+//     $(className).not($element).removeClass("active").find(contentSelector).slideUp(300);
+//     $element.toggleClass("active").find(contentSelector).slideToggle(300);
+//   };
+
+//   // $(".category:first").addClass("active").find(".category-content").slideDown(300);
+//   // $(".filter-option-group:first").addClass("active").find(".filter-options").slideDown(300);
+
+//   $(".category-header").click(function () {
+//     const $category = $(this).closest(".category");
+//     toggleActiveState($category, ".category-content", ".category");
+
+//     $(".category-header svg").removeClass("active");
+//     $(this).find("svg").toggleClass("active");
+//   });
+
+//   $(".filter-option-header").click(function (e) {
+//     e.stopPropagation();
+//     const $group = $(this).closest(".filter-option-group");
+//     toggleActiveState($group, ".filter-options", ".filter-option-group");
+
+//     $(".filter-option-header .icon").removeClass("active");
+//     $(this).find(".icon").toggleClass("active");
+//   });
+// });
+
+
+
+// $(document).ready(function () {
+//     const pathSegments = window.location.pathname.split('/').filter(Boolean);
+//     const secondLastSegment = pathSegments[pathSegments.length - 2];
+//     const lastSegment = pathSegments[pathSegments.length - 1];
+//     console.log(pathSegments)
+    
+//     console.log(secondLastSegment)
+//     console.log(lastSegment)
+    
+   
+
+    
+// });
