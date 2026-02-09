@@ -285,30 +285,27 @@ $(function () {
     // Home-Swiper==========================>>>>
 
 
-    new Swiper(".ourculture-slider", {
-        loop: true,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            // pauseOnMouseEnter: true,
-            reverseDirection: true
-
+    new Swiper('.options-available-slider .swiper', {
+        loop: false,
+        navigation: {
+            prevEl: '.options-available-prev',
+            nextEl: '.options-available-next',
         },
         breakpoints: {
             0: {
                 slidesPerView: 1.2,
-                spaceBetween: 20,
-                speed: 3000,
+                spaceBetween: 10,
+                speed: 500,
             },
-            540: {
-                slidesPerView: 2.2,
-                spaceBetween: 20,
-                speed: 3000,
+            675: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                speed: 1000,
             },
-            1024: {
-                slidesPerView: 3.2,
+            992: {
+                slidesPerView: 4,
                 spaceBetween: 20,
-                speed: 3000
+                speed: 1000,
             }
         }
     });
@@ -1149,6 +1146,82 @@ function clearFormWhenClosing() {
 clearFormWhenClosing();
 
 
+// function filterOpenClose(){
+//     const filter_group = document.querySelectorAll('.filter-option-group')
+//     const inputs = document.querySelectorAll('.filter-option-group .filter-option-header input')
+//     inputs.forEach((input)=>{
+//         // filter_group.forEach((cl)=>{
+//         //     cl.classList.remove("open")
+//         // })
+//         this.closest('.filter-option-group').classList.toggle('open');
+//         input.addEventListener("change", ()=>{
+//             input.classList.add("clicked")
+//         })
+//     })
+// }
+// filterOpenClose()
+
+
+// function filterOpenClose() {
+//     const radioInputs = document.querySelectorAll('.filter-option-group .filter-option-header input');
+
+//     radioInputs.forEach((input) => {
+
+//         input.addEventListener('change', function () {
+//             document.querySelectorAll('.filter-option-group').forEach(group => group.classList.remove('open'));
+//             this.closest('.filter-option-group').classList.toggle('open');
+//         });
+
+//         // input.addEventListener('change', function () {
+//         //     const parentGroup = this.closest('.filter-option-group');
+
+//         //     // remove open from all groups (optional – accordion behavior)
+//         //     document.querySelectorAll('.filter-option-group').forEach(group => group.classList.remove('open'));
+            
+//         //     // add open only to clicked one
+//         //     parentGroup.classList.add('open');
+//         // });
+//     });
+// }
+// filterOpenClose();
+
+
+function filterOpenClose() {
+    const filterGroups = document.querySelectorAll('.filter-option-group');
+
+    filterGroups.forEach(group => {
+        const header = group.querySelector('.filter-option-header');
+        const body = group.querySelector('.filter-options-body');
+
+        header.addEventListener('click', () => {
+
+            // Close all others
+            filterGroups.forEach(g => {
+                g.classList.remove('open');
+                g.querySelector('.filter-options-body').style.display = 'none';
+            });
+
+            // Toggle current
+            const isOpen = group.classList.contains('open');
+
+            if (!isOpen) {
+                group.classList.add('open');
+                body.style.display = 'block';
+            } else {
+                group.classList.remove('open');
+                body.style.display = 'none';
+            }
+        });
+    });
+}
+
+// Run after DOM loads
+document.addEventListener('DOMContentLoaded', filterOpenClose);
+
+
+
+
+
 
 
 
@@ -1216,7 +1289,5 @@ clearFormWhenClosing();
 //     console.log(secondLastSegment)
 //     console.log(lastSegment)
     
-   
-
     
 // });

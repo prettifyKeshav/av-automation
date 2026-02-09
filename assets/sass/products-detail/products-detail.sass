@@ -1,75 +1,9 @@
 @import '../_var'
-        
-.product-listing-banner
-    position: relative
-    color: white
-    overflow: hidden
-    height: 100vh
-    z-index: 1
-    @include media(1024)
-        height: 80vh
-    @include media(991)
-        height: 50vh
-    @include media(540)
-        height: 60vh
-    &::before
-        content: ''
-        position: absolute
-        top: 0
-        left: 0
-        width: 100%
-        height: 100%
-        background: $gradient-a
-    .common-background
-        video,img
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            object-fit: cover
-            z-index: -1
-        .container
-            @include media(540)
-                padding: 0
-            .bg-wrapper
-                position: absolute
-                z-index: 1
-                width: 90%
-                left: 50%
-                bottom: 38%
-                transform: translate(-50%)
-                @include media(991)
-                    bottom: 10%
-                @include media(540)
-                    bottom: 10%
-                    margin-left: 0
-                h1
-                    max-width: 612px
-                    font-weight: 800
-                    font-size: 48px
-                    line-height: 55px
-                    padding-left: 20px
-                    border-left: 8px solid $primary
-                    margin-bottom: 10px
-                    @include media(991)
-                        max-width: 70%
-                        line-height: 1.2
-                        font-size: 40px
-                    @include media(540)
-                        max-width: 100%
-                        font-size: 35px
-                        line-height: 1.1
-                        text-align: center
-                        padding: 0 20px
-                        margin-bottom: 20px
-                p
-                    font-weight: 600
-                    font-size: 16px
-                    line-height: 24px
-                    color: $white
-                    max-width: 517px
 
+.stikcy-breadcrumb
+    position: sticky
+    top: var(--headerheight)
+    z-index: 3
 .breadcrumb
     background: #F4F4F4
     ul
@@ -94,285 +28,325 @@
                 height: 8px
                 line-height: 0
         
-
-
- 
-.product_listingA
+.product-details-banner
     position: relative
-    // overflow: hidden
-    // &::before
-    //     content: ''
-    //     position: absolute
-    //     z-index: 0
-    //     left: 0
-    //     top: 10px
-    //     width: 100%
-    //     height: fit-content
-    //     border-bottom: 2px dashed var(--secondary)
-    // &::after
-    //     content: ""
-    //     position: absolute
-    //     right: 2px
-    //     top: 3px
-    //     transform: rotate(1deg)
-    //     width: 215px
-    //     height: 76px
-    //     z-index: 0
-    //     background: url(../../images/home/pin.svg) no-repeat
-    //     background-position: 100% 100%
-    .main_wrapper
-        gap: 30px
-        @include media(768)
-            flex-direction: column
-            gap: 40px
-        .colA
-            flex: 0 1 25%
-            .filter_option_wrapper
-                position: sticky
-                top: calc( var(--headerheight) + 20px )
-                border-radius: 10px
-                background: $white
-                box-shadow: 0 1px 4px 0 #00000040
-                .title_head
+    margin-top: 90px
+    padding: 50px 0
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(270deg, #05B4C4 0%, #03565E 100%)
+        z-index: 0
+    &::after
+        content: ""
+        position: absolute
+        top: 37%
+        left: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: 0
+        transform: scaleY(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+    .flex-box
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 50px
+        position: relative
+        z-index: 1
+        .flex-box-item:first-child
+            flex: 0 1 50%
+            h1
+                font-weight: 600
+                font-size: 36px
+                max-width: 551px
+                color: $white
+                margin-bottom: 15px
+            p
+                font-weight: 500
+                font-size: 16px
+                line-height: 1.4
+                color: $white
+                max-width: 517px
+            .btn-flex
+                display: flex
+                align-items: center
+                gap: 30px
+                justify-content: start
+                margin-top: 40px
+                .wtp
+                    line-height: 0
+                .btn2
+                    &.primary
+                        margin: initial
+                .whitewhtie
+                    color: $primary
+                    &::before
+                        background: white
+                        color: $primary
+                    &:hover
+                        color: $white
+                        &::before
+                        &::after
+                            border: 1px solid var(--white)
+                            background: transparent
+            .desclaimer
+                font-style: Italic
+                font-size: 13px
+                line-height: 24px
+                color: $white
+                margin-top: 20px
+                strong
+                    font-weight: 700
+
+            .bottom-flex
+                display: flex
+                align-items: center
+                gap: 25px
+                margin-top: 100px
+                span
+                    border: 1px solid #FFFFFF80
+                    height: 30px
+                .col
+                    display: flex
                     justify-content: space-between
-                    padding: 10px 20px
-                    background: $gradient-a
-                    border-radius: 10px 10px 0 0 
-                    h6
-                        font-size: 20px
+                    align-items: center
+                    gap: 10px
+                    figure
+                        height: 26px
+                        width: 26px
+                        img
+                            height: 100%
+                            width: 100%
+                            object-fit: contain
+                    span
                         font-weight: 600
-                        color: $white
-                    .clear_all_btn
                         font-size: 14px
-                        font-weight: 500
+                        text-align: center
                         color: $white
-                .filter_options
-                    .col
-                        &.active
-                            .title
-                                h6
-                                    color: var(--primary)
-                                .icon
-                                    --bgcolor: var(--primary)
-                                    &::after
-                                        transform: scale(0)
-                        .title
-                            padding: 10px 20px
-                            border-bottom: 1px solid #D9D9D9
-                            display: flex
-                            align-items: center
-                            h6
-                                flex: 1
-                                font-size: 16px
-                                font-weight: 500
-                                color: $black
-                            .icon
-                                flex: 0 1 auto
-                                --size: 18px
-                                --border: 2px
-                                --bgcolor: var(--black)
-                                height: var(--size)
-                                width: var(--size)
-                                position: relative
-                                &::before, &::after
-                                    content: ""
-                                    position: absolute
-                                    left: 0
-                                    right: 0
-                                    z-index: 0 
-                                    transition: .5s ease
-                                    background: var(--bgcolor)
-                                &::after
-                                    left: calc( var(--size) / 2  )
-                                    translate: -50% 0
-                                    right: auto
-                                    width: var(--border)
-                                    height: 100%
-                                &::before
-                                    top: calc( var(--size) / 2 - var(--border) / 2 )
-                                    bottom: auto
-                                    height: var(--border)
-                                    width: 100%
-
-                        article
-                            padding: 10px 30px 10px 0
-
-                            .hasDropdown
-                                position: relative
-                                .plu-ico
-                                    position: absolute
-                                    right: 0
-                                    top: 0px
-                                    --sizeplu: 22px
-                                    height: var(--sizeplu)
-                                    width: var(--sizeplu)
-                                    cursor: pointer
-                                    &::before,&::after
-                                        content: ''
-                                        position: absolute
-                                        top: 50%
-                                        translate: 0 -50%
-                                        left: 0
-                                        right: 0
-                                        height: 2px
-                                        width: 100%
-                                        background: $black
-                                        transition: .5s ease
-                                    &::before
-                                        transform: rotate(90deg)
-                                    &.active
-                                        &::before
-                                            transform: rotate(0deg)
-                                            opacity: 0
-                                .dropdown-menu-ham
-                                    display: none
-                                    border: 1px solid #ccc
-                                    border-right: none
-                                    border-left: none
-                                    margin: 12px 0
-                                    padding: 15px 0
-                                    li
-                                        padding-left: 10px
-                                        &.hasDropdownChild
-                                            position: relative
-                                            .plu-ico-child
-                                                position: absolute
-                                                right: 0
-                                                top: 0px
-                                                --sizeplu: 16px
-                                                height: var(--sizeplu)
-                                                width: var(--sizeplu)
-                                                cursor: pointer
-                                                &::before,&::after
-                                                    content: ''
-                                                    position: absolute
-                                                    top: 50%
-                                                    translate: 0 -50%
-                                                    left: 0
-                                                    right: 0
-                                                    height: 2px
-                                                    width: 100%
-                                                    background: $black
-                                                    transition: .5s ease
-                                                &::before
-                                                    transform: rotate(90deg)
-                                                &.active
-                                                    &::before
-                                                        transform: rotate(0deg)
-                                                        opacity: 0
-                                            .dropdown-menu-ham-child
-                                                display: none
-                                                border: 1px solid #ccc
-                                                border-right: none
-                                                border-left: none
-                                                margin: 12px 0
-                                                padding: 15px 0
-                                                li
-                                                    padding-left: 10px
-                                                    &:not(:last-child)
-                                                        margin-bottom: 5px
-                                                    a
-                                                        color: $text
-                                                        &:hover
-                                                            color: $black
-                                        &:not(:last-child)
-                                            margin-bottom: 5px
-                                        a
-                                            color: #444
-                                            font-size: 20px
-                                            font-weight: 600
-                                            @include media(540)
-                                                &:first-child
-                                                    color: $text
-                                                    font-size: 16px
-                                                    font-weight: normal
-                                            &:hover
-                                                color: $black
-
-
-                            .scroll
-                                // border-right: 1px solid #D9D9D9
-                            ul
-                                margin-right: -5px
-                                // border-bottom: 1px solid #D9D9D9
-                                padding: 10px 0
-                                overflow-y: auto
-                                max-height: 200px
-                                &::-webkit-scrollbar                                            
-                                    width: 8px
-                                    height: 4px
-                                &::-webkit-scrollbar-thumb
-                                    border-radius: 25px
-                                    background-color: var(--primary) 
-                                li
-                                    padding: 3px 20px
-                                    display: flex
-                                    position: relative
-                                    align-items: center
-                                    gap: 12px
-                                    input
-                                        position: absolute
-                                        left: 0
-                                        top: 0
-                                        width: 100%
-                                        height: 100%
-                                        appearance: none
-                                        opacity: 0
-                                    .chk_box    
-                                        --chk_height: 20px
-                                        height: var(--chk_height)
-                                        width: var(--chk_height)
-                                        border-radius: 5px
-                                        background-color: #D9D9D9
-                                        position: relative
-                                        transition: .5s ease
-                                        @include before(url(../../icon/tick-white.svg))
-                                        &::before
-                                            background-repeat: no-repeat
-                                            background-size: 48%
-                                            background-position: center center
-                                            opacity: 0
-                                    &:has(input:checked) .chk_box
-                                        background-color: var(--secondary)
-                                        border-color: var(--secondary)
-                                        transition: .5s ease
-                                        &::before
-                                            opacity: 1
-                                    
-        .colB
-            flex: 1
-            width: 100%
+                        border: none
+                        line-height: 2
+        .flex-box-item:last-child
+            figure
+                height: 412px
+                border-radius: 10px
+                overflow: hidden
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: cover
             .grid-box
                 display: grid
-                grid-template-columns: repeat(3, 1fr)
-                gap: 20px
-                @include media(991)
-                    grid-template-columns: repeat(2, 1fr)
-                @include media(540)
-                    grid-template-columns: repeat(1, 1fr)
-                .col
-                    background: $white
+                grid-template-columns: repeat(6, 1fr)
+                gap: 15px
+                margin-top: 15px
+                .grid-box-item
+                    width: 86px
+                    height: 77px
+                    border-radius: 5px
+                    overflow: hidden
+                    opacity: 0.5
+                    cursor: pointer
+                    &.active
+                        opacity: 1
+                    img
+                        height: 100%
+                        width: 100%
+                        object-fit: cover
+
+.prodcut-details-secA
+    padding: 50px 0
+    .tab-nav
+        display: flex
+        justify-content: center
+        gap: 80px
+        li 
+            color: #00000080
+            font-weight: 600
+            font-size: 24px
+            line-height: 24px
+            transition: 0.5s ease
+            position: relative
+            padding-bottom: 15px
+            &::before
+                content: ""
+                position: absolute
+                bottom: 0%
+                left: 0
+                width: 0
+                height: 4px
+                background: $primary
+                transition: 0.5s ease
+            &.active
+                color: $black
+                &::before
+                    width: 100%
+    .flex-box
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 50px
+        padding: 50px 0
+        figure
+            width: 580px
+            height: 416px
+            border-radius: 10px
+            overflow: hidden
+            img
+                height: 100%
+                width: 100%
+                object-fit: cover
+        .tab-nav-content
+            .tabs
+                transform: translateY(100px)
+                opacity: 0
+                transition: 1s ease
+                &.active
+                    transform: translateY(0)
+                    opacity: 1
+                
+                .content
+                    p
+                        max-width: 501px
+                    ul
+                        margin-top: 15px
+                        li
+                            margin-bottom: 10px
+                            padding-left: 20px
+                            position: relative
+                            &::before
+                                content: ""
+                                position: absolute
+                                top: 50%
+                                left: 0
+                                transform: translate(-50%, -50%)
+                                width: 15px
+                                height: 15px
+                                background: url("../../../assets/icon/primary-right-arrow.svg")
+                    .btn2 
+                        margin-top: 30px
+
+.prodcut-details-secB
+    padding: 50px 0 
+    .table-container
+        max-width: 969px
+        margin: 0 auto
+        background: $white
+        overflow: hidden
+        table
+            width: 100%
+            border-collapse: collapse
+            thead th
+                background: #F3F3F3
+                color: $text
+                font-weight: bold
+                text-align: left
+            .model-title
+                background: #F3F3F3
+                color: $text
+                font-weight: bold
+                text-align: right
+                padding: 10px
+            .highlight
+                font-weight: bold
+                color: $text
+            th, td
+                padding: 12px 15px
+                text-align: left
+                border-bottom: 1px solid #DADADA
+                border-right: 1px solid #DADADA
+                color: $text
+                font-weight: 500
+                font-size: 14px
+                line-height: 20px
+
+
+
+
+
+
+.prodcut-details-secC
+    padding: 50px 0
+    h2
+        text-align: center
+        font-weight: 700
+        font-size: 36px
+        line-height: 48px
+    .options-available-slider
+        position: relative
+        .swiper-nav
+            top: 42%
+    .swiper
+        padding: 40px 0
+        max-width: 1230px
+        .swiper-wrapper
+            .swiper-slide
+                figure
+                    height: 181px
                     border-radius: 10px
                     overflow: hidden
-                    &:hover
-                        figure
-                            img
-                                scale: 1.1
-                    figure
-                        height: 218px
-                        line-height: 0
-                        overflow: hidden
-                        @include shine
-                        img
-                            width: 100%
-                            height: 100%
-                            object-fit: cover
-                            transition: 0.5s ease
-                            
-                    figcaption
+                    @include shine
+                    img
+                        height: 100%
+                        width: 100%
+                        object-fit: cover
+                figcaption
+                    h4
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 24px
+                        color: $black
+                        text-align: center
                         padding: 20px
-                        h6
-                            font-weight: 600
-                            font-size: 16px
-                            text-align: center
+
+.prodcut-details-secD
+    .container
+        background: $white
+        border-radius: 10px
+        border-bottom: 5px solid #05B4C4
+        padding: 30px 60px 30px 30px
+        margin-bottom: 50px
+        .flex-box
+            display: flex
+            justify-content: space-between
+            gap: 50px
+            .line
+                border-left: 1px solid #00000036 
+            .col
+                flex: 0 1 50%
+                h2
+                    font-weight: 700
+                    font-size: 32px
+                    line-height: 48px
+                    color: $black
+                    border-left: 5px solid $primary
+                    padding: 0 0 0 20px
+                    line-height: 1.1
+                    margin-bottom: 30px
+                ul
+                    li
+                        margin-bottom: 20px
+                        padding-left: 20px
+                        position: relative
+                        &::before
+                            content: ""
+                            position: absolute
+                            top: 0
+                            left: 0
+                            transform: translate(-50%, 40%)
+                            width: 15px
+                            height: 15px
+                            background: url("../../../assets/icon/primary-right-arrow.svg")
+                        strong
                             color: $black
+            
+
