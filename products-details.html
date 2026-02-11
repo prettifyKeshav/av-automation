@@ -25,7 +25,8 @@
 
     <!-- CUSTOM FONT -->
     <link rel="stylesheet" href="assets/font/font.css">
-    `
+
+
     <!-- intl-tel-input CDN -->
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.min.css" rel="stylesheet">
@@ -45,7 +46,7 @@
 
 </head>
 
-<body class="product-detail-page">
+<body>
 
     <!-- ================= HEADER START ================= -->
     <header class="header-fixed">
@@ -280,7 +281,7 @@
                         </li>
 
                         <li class="hasDropdown industriesHasDropdown">
-                            <a aria-haspopup="true" aria-expanded="false" href="javascript:void(0)">
+                            <a aria-haspopup="true" aria-expanded="false" href="industries-listing.html">
                                 Industries
                                 <span>
                                     <img class="svg" width="16" src="assets/icon/arrow-down-white.svg" alt="" />
@@ -402,10 +403,10 @@
                             </div>
                         </li>
 
-                        <li><a class="btn2" href="javascript:void(0);">Contact us</a></li>
+                        <li><a class="btn2 primarywhite" href="javascript:void(0);">Contact us</a></li>
                         <li>
-                            <a href="javascript:void(0);">
-                                <img src="assets/icon/search-icon.svg" alt="search-icon">
+                            <a href="javascript:void(0);" class="search-icon">
+                                <img class="svg" src="assets/icon/search-icon.svg" alt="search-icon">
                             </a>
                         </li>
 
@@ -1296,6 +1297,32 @@
         requestAnimationFrame(raf);
     </script>
     <!-- FOR smooth scrolig JS END -->
+
+
+    <script>
+        // White Header Aplly script ================================================
+        const addClassHeader = () => {
+            const urlPath = window.location.pathname
+            const mainHeader = document.querySelector("header")
+
+            if (urlPath.includes("products-details.html")) {
+                mainHeader.classList.add("apply-white-header")
+            }
+        }
+        addClassHeader()
+
+        const logoChange = () => {
+            const logoImg = document.querySelector("header .colA .logo img")
+            const mainHeader = document.querySelector("header")
+            const primaryLogo = "assets/images/primary-logo.svg"
+
+            if (mainHeader && mainHeader.classList.contains("apply-white-header")) {
+                logoImg.setAttribute("src", primaryLogo);
+            }
+        }
+        logoChange()
+        // White Header Aplly script ================================================
+    </script>
 
 </body>
 

@@ -447,6 +447,36 @@ header
                             width: inherit
                             background: $white
 
+.apply-white-header
+    &::before
+        background: $white 
+        box-shadow: none
+    .header-wrapper .colB .menu-list li a
+        color: $text
+    .header-wrapper .colB .menu-list li a span svg path
+        fill: $text
+    .header-wrapper .colB .menu-list li.hasDropdown > a::before
+        background: $primary
+    .header-wrapper .colB .menu-list .ham-parent .ham-btn span
+        background: $primary
+    .header-wrapper .colB .menu-list li .search-icon
+        svg
+            path
+                fill: $primary
+    .header-wrapper .colB .menu-list li .btn2::before
+        background: $primary
+        border: 1px solid $primary
+    .header-wrapper .colB .menu-list li .btn2
+        color: white
+        &:hover
+            color: $primary
+            &::before
+                background: transparent
+            &::after
+                border: 1px solid $primary
+                
+
+
 @media (max-width: 1024px)
     header.header-fixed .header-wrapper .colA
         flex: 0 1 326px

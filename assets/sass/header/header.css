@@ -2725,6 +2725,42 @@ header .header-wrapper .colB .menu-list .ham-parent .ham-btn span {
   background: var(--white);
 }
 
+.apply-white-header::before {
+  background: var(--white);
+  box-shadow: none;
+}
+.apply-white-header .header-wrapper .colB .menu-list li a {
+  color: var(--text);
+}
+.apply-white-header .header-wrapper .colB .menu-list li a span svg path {
+  fill: var(--text);
+}
+.apply-white-header .header-wrapper .colB .menu-list li.hasDropdown > a::before {
+  background: var(--primary);
+}
+.apply-white-header .header-wrapper .colB .menu-list .ham-parent .ham-btn span {
+  background: var(--primary);
+}
+.apply-white-header .header-wrapper .colB .menu-list li .search-icon svg path {
+  fill: var(--primary);
+}
+.apply-white-header .header-wrapper .colB .menu-list li .btn2::before {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+}
+.apply-white-header .header-wrapper .colB .menu-list li .btn2 {
+  color: white;
+}
+.apply-white-header .header-wrapper .colB .menu-list li .btn2:hover {
+  color: var(--primary);
+}
+.apply-white-header .header-wrapper .colB .menu-list li .btn2:hover::before {
+  background: transparent;
+}
+.apply-white-header .header-wrapper .colB .menu-list li .btn2:hover::after {
+  border: 1px solid var(--primary);
+}
+
 @media (max-width: 1024px) {
   header.header-fixed .header-wrapper .colA {
     flex: 0 1 326px;

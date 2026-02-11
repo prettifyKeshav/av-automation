@@ -280,7 +280,7 @@
                         </li>
 
                         <li class="hasDropdown industriesHasDropdown">
-                            <a aria-haspopup="true" aria-expanded="false" href="javascript:void(0)">
+                            <a aria-haspopup="true" aria-expanded="false" href="industries-listing.html">
                                 Industries
                                 <span>
                                     <img class="svg" width="16" src="assets/icon/arrow-down-white.svg" alt="" />
@@ -404,8 +404,8 @@
 
                         <li><a class="btn2 primarywhite" href="javascript:void(0);">Contact us</a></li>
                         <li>
-                            <a href="javascript:void(0);">
-                                <img src="assets/icon/search-icon.svg" alt="search-icon">
+                            <a href="javascript:void(0);" class="search-icon">
+                                <img class="svg" src="assets/icon/search-icon.svg" alt="search-icon">
                             </a>
                         </li>
 
@@ -1022,6 +1022,33 @@
         requestAnimationFrame(raf);
     </script>
     <!-- FOR smooth scrolig JS -->
+
+
+    <script>
+        // White Header Aplly script ================================================
+        const addClassHeader = () => {
+            const urlPath = window.location.pathname;
+            const mainHeader = document.querySelector("header");
+
+            if (urlPath.includes("industries-details.html")) {
+                mainHeader.classList.add("apply-white-header");
+            }
+        }
+        addClassHeader();
+
+
+        const logoChange = () => {
+            const logoImg = document.querySelector("header .colA .logo img")
+            const mainHeader = document.querySelector("header")
+            const primaryLogo = "assets/images/primary-logo.svg"
+
+            if (mainHeader && mainHeader.classList.contains("apply-white-header")) {
+                logoImg.setAttribute("src", primaryLogo);
+            }
+        }
+        logoChange()
+        // White Header Aplly script ================================================
+    </script>
 
 </body>
 
