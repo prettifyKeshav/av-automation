@@ -1,5 +1,73 @@
 @import '../_var'
 
+section:has(.prodcut-details-secA)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        bottom: -15%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+section:has(.prodcut-details-secB)
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        top: -33%
+        left: -1%
+        width: 350px
+        height: 540px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+section:has(.prodcut-details-secD)
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        bottom: -53%
+        left: -1%
+        width: 350px
+        height: 540px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+section:has(.prodcut-details-secF)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        bottom: 4%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
 .stikcy-breadcrumb
     position: sticky
     top: var(--headerheight)
@@ -30,7 +98,7 @@
         
 .product-details-banner
     position: relative
-    margin-top: 90px
+    margin-top: 65px
     padding: 50px 0
     overflow: hidden
     &::before
@@ -196,6 +264,12 @@
         align-items: center
         gap: 50px
         padding: 50px 0
+        @include beforeLayerBlur
+        &::before
+            top: 60%
+        @include afterLayerBlur
+        &::after
+            left: 70%
         figure
             width: 580px
             height: 416px
@@ -237,6 +311,7 @@
 
 .prodcut-details-secB
     padding: 50px 0 
+    @include afterLayerBlur
     .table-container
         max-width: 969px
         margin: 0 auto
@@ -268,11 +343,6 @@
                 font-weight: 500
                 font-size: 14px
                 line-height: 20px
-
-
-
-
-
 
 .prodcut-details-secC
     padding: 50px 0
@@ -309,6 +379,13 @@
                         padding: 20px
 
 .prodcut-details-secD
+    position: relative
+    @include beforeLayerBlur
+    &::before
+        top: -50%
+    @include afterLayerBlur
+    &::after
+        left: 60%
     .container
         background: $white
         border-radius: 10px
@@ -348,5 +425,37 @@
                             background: url("../../../assets/icon/primary-right-arrow.svg")
                         strong
                             color: $black
-            
 
+.prodcut-details-secF
+    padding: 50px 0
+    @include afterLayerBlur
+    .more-product-slider
+        position: relative
+    .swiper
+        padding: 40px 0
+        max-width: 1230px
+        .swiper-wrapper
+            .swiper-slide
+                background: $white
+                border-radius: 10px
+                overflow: hidden
+                &:hover
+                    img
+                        scale: 1.2
+                figure
+                    height: 220px
+                    overflow: hidden
+                    @include shine
+                    img
+                        height: 100%
+                        width: 100%
+                        object-fit: cover
+                        transition: 0.5s ease
+                figcaption
+                    h4
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 24px
+                        color: $black
+                        text-align: center
+                        padding: 15px 20px

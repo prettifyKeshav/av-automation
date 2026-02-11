@@ -401,6 +401,7 @@ html {
   --headerheight: 88px;
   --headerfixed: 65px;
   --footerstrip: 66px;
+  --breadcrumbheight: 44px;
   --primary: #05B4C4;
   --secondary: #00838F;
   --bgcolor: $white;
@@ -2163,6 +2164,54 @@ button {
   .commen-last-sec .container .form .btn2 {
     margin: 10px auto 30px;
   }
+}
+
+.contact-form {
+  padding: 50px 0;
+}
+.contact-form .heading h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+  max-width: 725px;
+  margin: 0 auto 10px;
+}
+.contact-form .heading p {
+  margin: auto;
+  text-align: center;
+}
+.contact-form .form {
+  max-width: 558px;
+  margin: 60px auto 0px;
+  --item: 2;
+  --gaptb: 25px;
+  position: relative;
+}
+.contact-form .form::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  width: 667px;
+  height: 667px;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  filter: blur(60px);
+  border-radius: 50%;
+  z-index: -1;
+}
+@media only screen and (max-width: 540px) {
+  .contact-form .form::before {
+    content: none;
+  }
+}
+.contact-form .form .btn2 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  padding: 12px 50px;
 }
 
 header {

@@ -988,7 +988,7 @@
             smoothTouch: false,
             lerp: 0.05,
             prevent: (node) => {
-                return node.closest('.scroll, .list, .custom-select, .modal, .model-body ') !== null;
+                return node.closest('.scroll, .list, .custom-select, .modal, .model-body, .iti__country-list ') !== null;
             }
         });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }

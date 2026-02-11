@@ -310,6 +310,56 @@ $(function () {
         }
     });
 
+    new Swiper('.more-product-slider .swiper', {
+        loop: false,
+        navigation: {
+            prevEl: '.more-product-prev',
+            nextEl: '.more-product-next',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+                speed: 500,
+            },
+            675: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                speed: 1000,
+            },
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                speed: 1000,
+            }
+        }
+    });
+
+    new Swiper('.more-process-slider .swiper', {
+        loop: false,
+        navigation: {
+            prevEl: '.more-process-prev',
+            nextEl: '.more-process-next',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+                speed: 500,
+            },
+            675: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                speed: 1000,
+            },
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                speed: 1000,
+            }
+        }
+    });
+
     // industries-slider start
     new Swiper('.industries-swiper', {
         loop: false,
@@ -1177,7 +1227,7 @@ clearFormWhenClosing();
 
 //         //     // remove open from all groups (optional – accordion behavior)
 //         //     document.querySelectorAll('.filter-option-group').forEach(group => group.classList.remove('open'));
-            
+
 //         //     // add open only to clicked one
 //         //     parentGroup.classList.add('open');
 //         // });
@@ -1285,9 +1335,28 @@ document.addEventListener('DOMContentLoaded', filterOpenClose);
 //     const secondLastSegment = pathSegments[pathSegments.length - 2];
 //     const lastSegment = pathSegments[pathSegments.length - 1];
 //     console.log(pathSegments)
-    
+
 //     console.log(secondLastSegment)
 //     console.log(lastSegment)
-    
-    
+
+
 // });
+
+// phone cuntry code suggtion input code ===================================
+$(document).ready(function () {
+    $(window).on('load resize', () => {
+        $('.phone_input').each(function () {
+            const $input = $(this);
+            if ($input.data('iti')) return;
+            const iti = window.intlTelInput(this, {
+                initialCountry: 'in',
+                nationalMode: false,
+                separateDialCode: true,
+                autoPlaceholder: 'off',
+                utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js'
+            });
+            $input.data('iti', iti);
+        });
+    });
+});
+// phone cuntry code suggtion input code ===================================

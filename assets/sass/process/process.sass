@@ -1,0 +1,484 @@
+@import '../_var'
+
+section:has(.process-sec)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        top: 12%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+    &::before
+        content: ""
+        position: absolute
+        bottom: 0%
+        left: 50%
+        width: 667px
+        height: 667px
+        transform: translate(-50%)
+        background: #ffffff
+        filter: blur(60px)
+        border-radius: 50%
+        z-index: -1
+        @include media(540)
+            content: none
+
+
+.stikcy-breadcrumb
+    position: sticky
+    top: var(--headerheight)
+    z-index: 3
+.breadcrumb
+    background: #F4F4F4
+    ul
+        display: flex
+        align-items: center
+        padding: 10px
+        gap: 15px
+        @include media(540)
+            gap: 5px
+        li
+            a
+                color: $black
+                font-weight: 600
+                font-size: 14px
+                line-height: 16px
+                &.active
+                    color: $primary
+                @include media(540)
+                    font-size: 11px
+        span
+            @include media(540)
+                height: 8px
+                line-height: 0
+
+.process-banner
+    height: 343px
+    background: linear-gradient(270deg, #05B4C4 0%, #03565E 100%)
+    margin-top: var(--headerheight)
+    display: flex
+    justify-content: center
+    align-items: center
+    .triangle-wrap
+        position: absolute
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 30px
+        z-index: 0
+        width: 100%
+        overflow: hidden
+        @keyframes triangleMove
+            0%
+                transform: translateX(-550px)
+                opacity: 1
+            50%
+                transform: translateX(0)
+            85%
+                opacity: 1
+            100%
+                transform: translateX(550px)
+                opacity: 0
+        span
+            position: relative
+            width: 183px
+            height: 290px
+            background: #FFFFFF33
+            display: inline-block
+            clip-path: polygon(0% 0%, 0% 100%, 100% 50%)
+            animation: triangleMove 1.2s linear infinite
+            opacity: 0
+            &:nth-child(2)
+                background: #FFFFFF1A
+                animation-delay: 1s
+            &:nth-child(3)
+                background: #FFFFFF0D
+                animation-delay: 2s
+
+    .heading
+        position: relative
+        z-index: 1
+        h1
+            font-weight: 700
+            font-size: 48px
+            line-height: 55px
+            text-align: center
+            color: $white
+            max-width: 676px
+            margin: auto
+
+
+.process-sec
+    @include beforeLayerBlur
+    &::before
+        top: 10%
+    @include afterLayerBlur
+    &::after
+        top: 30%
+        left: 50%
+    .container
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            left: 50%
+            transform: translate(-50%)
+            background: #99999966
+            width: 1px
+            height: 100%
+        @include afterLayerBlur
+        &::after
+            left: initial
+            right: 0
+            transform: translateY(50%)
+            bottom: 0%
+        
+    .flex-box
+        padding: 50px 20px
+        display: flex
+        justify-content: center
+        gap: 150px
+        position: relative
+        overflow: hidden
+        &:nth-child(even)
+            flex-direction: row-reverse
+            align-items: center
+            &::before
+                left: 0
+                right: auto
+                top: 50%
+                transform: translateY(-50%)
+            @include media(768)
+                flex-direction: column
+                gap: 40px
+                padding: 50px 20px 0px 20px 
+            @include media(540)
+                padding: 30px 0 0 0
+            .flex-box-item:last-child
+                position: relative
+                z-index: 1
+                .number
+                    font-weight: 600
+                    font-size: 150px
+                    display: inline-block
+                    color: #FFFFFF80
+                    position: absolute
+                    z-index: -1
+                    left: -38%
+                    top: 50%
+                    transform: translateY(-50%)
+                    line-height: 1
+                    pointer-events: none
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 50%
+                    right: -18.7%
+                    transform: translate(50%, -50%)
+                    background: var(--primary)
+                    width: 20px
+                    height: 20px
+                    border-radius: 50%
+        &:nth-child(odd)
+            flex-direction: row
+            align-items: center
+            @include media(768)
+                flex-direction: column
+                gap: 40px
+                padding: 50px 20px 0px 20px 
+            @include media(540)
+                padding: 30px 0 0 0
+            .flex-box-item:last-child
+                position: relative
+                z-index: 1
+                .number
+                    font-weight: 600
+                    font-size: 150px
+                    display: inline-block
+                    color: #FFFFFF80
+                    position: absolute
+                    z-index: -1
+                    right: -21%
+                    top: 50%
+                    transform: translateY(-50%)
+                    line-height: 1
+                    pointer-events: none
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 50%
+                    left: -24%
+                    transform: translate(50%, -50%)
+                    background: var(--primary)
+                    width: 20px
+                    height: 20px
+                    border-radius: 50%
+        .flex-box-item:first-child
+            position: relative
+            figure
+                width: 401px
+                height: 175px
+                @include media(1024)
+                    width: auto
+                    height: auto
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+                    z-index: 1
+                    position: relative
+        .flex-box-item:last-child
+            position: relative
+            max-width: 401px
+            @include media(1024)
+                width: 60%
+            @include media(991)
+                width: 100%
+                text-align: center
+            h3
+                margin-bottom: 10px
+                max-width: 366px
+                font-weight: 700
+                font-size: 24px
+                color: $black
+                line-height: 1.1
+                @include media(1024)
+                    max-width: 100%
+                @include media(540)
+                    font-size: 25px
+                    line-height: 1.1
+            p
+                font-weight: 500
+                font-size: 16px
+                line-height: 1.5
+                color: $text
+                margin-bottom: 20px
+                max-width: 401px
+                @include media(1024)
+                    max-width: 100%
+                @include media(540)
+                    font-size: 14px
+            a
+                font-weight: 600
+                font-size: 16px
+                line-height: 1
+                color: $primary
+                display: flex
+                align-items: center
+                gap: 10px
+                transition: 0.3s ease
+                &:hover
+                    gap: 20px
+
+// PROCESS Detail =========================================================
+
+.process-detail-banner
+    position: relative
+    color: white
+    overflow: hidden
+    height: calc( 100vh -  var(--breadcrumbheight) - var(--headerheight) )
+    z-index: 1
+    margin-top: calc(var(--headerheight))
+    @include media(1024)
+        height: 80vh
+    @include media(991)
+        height: 50vh
+    @include media(540)
+        height: 60vh
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.629) 100%)
+    .common-background
+        video,img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            z-index: -1
+        .container
+            @include media(540)
+                padding: 0
+            .bg-wrapper
+                position: absolute
+                z-index: 1
+                width: 90%
+                left: 50%
+                bottom: 28%
+                transform: translate(-50%)
+                @include media(991)
+                    bottom: 10%
+                @include media(540)
+                    bottom: 10%
+                    margin-left: 0
+                h1
+                    font-weight: 700
+                    font-size: 48px
+                    line-height: 55px
+                    padding-left: 20px
+                    border-left: 8px solid $primary
+                    margin-bottom: 10px
+                    @include media(991)
+                        max-width: 70%
+                        line-height: 1.2
+                        font-size: 40px
+                    @include media(540)
+                        max-width: 100%
+                        font-size: 25px
+                        line-height: 1.1
+                        text-align: center
+                        padding: 0 20px
+                        margin-bottom: 20px
+                        border-left: 0
+                p
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 24px
+                    color: $white
+                    max-width: 609px
+                    @include media(540)
+                        text-align: center
+                        max-width: 90%
+                        margin: auto
+                        // font-weight: normal
+                        font-size: 15px
+                        line-height: 1.3
+
+.process-detail-secA
+    padding: 60px 0 
+    .flex-box
+        display: flex
+        justify-content: center
+        gap: 50px
+        figure
+            width: 483px
+            height: 330px
+            border-radius: 10px
+            background: $white
+            overflow: hidden
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 30px
+            img
+                height: 100%
+                width: 100%
+                object-fit: contain
+        p
+            max-width: 619px
+            margin-bottom: 20px
+
+.process-detail-secB
+    padding: 50px 0
+    @include afterLayerBlur
+    .more-product-slider
+        position: relative
+    .swiper
+        padding: 40px 0
+        max-width: 1230px
+        .swiper-wrapper
+            .swiper-slide
+                background: $white
+                border-radius: 10px
+                overflow: hidden
+                &:hover
+                    img
+                        scale: 1.2
+                figure
+                    height: 220px
+                    overflow: hidden
+                    @include shine
+                    img
+                        height: 100%
+                        width: 100%
+                        object-fit: cover
+                        transition: 0.5s ease
+                figcaption
+                    h4
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 24px
+                        color: $black
+                        text-align: center
+                        padding: 15px 20px
+
+.process-detail-secC
+    padding: 50px 0
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        height: 1px
+        width: 100%
+        background: $primary
+        top: 32.3%
+        left: 0
+    .heading
+        position: relative
+        .swiper-nav
+            position: absolute
+            right: 0
+            top: 0
+            transform: translateY(50%)
+    .more-product-slider
+        position: relative
+    .swiper
+        padding: 80px 0 40px 0
+        .swiper-wrapper
+            .swiper-slide
+                position: relative
+                &::before
+                    content: ""
+                    position: absolute
+                    top: -8%
+                    left: 50%
+                    transform: translateX(-50%)
+                    background: $primary
+                    width: 20px
+                    height: 20px
+                    border-radius: 50%
+                h3
+                    font-weight: 700
+                    font-size: 16px
+                    color: $black
+                    margin: 20px 0 20px 0
+
+                figure
+                    height: 110px
+                    img
+                        height: 100%
+                        width: 100%
+                        object-fit: contain
+                p
+                    font-weight: 500
+                    font-size: 14px
+                    color: $text
+                    max-width: 242px
+                    margin: auto
+                .read
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 1
+                    color: $primary
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    gap: 10px
+                    transition: 0.3s ease
+                    margin-top: 20px
+                    &:hover
+                        gap: 20px

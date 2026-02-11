@@ -25,7 +25,7 @@
 
     <!-- CUSTOM FONT -->
     <link rel="stylesheet" href="assets/font/font.css">
-
+    `
     <!-- intl-tel-input CDN -->
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.12.4/build/css/intlTelInput.min.css" rel="stylesheet">
@@ -719,6 +719,119 @@
             </div>
         </section>
 
+        <section>
+            <div class="contact-form">
+                <div class="container">
+                    <div class="heading">
+                        <h2>Customized solutions available. Please send an enquiry.</h2>
+                    </div>
+
+                    <form>
+                        <div class="form form-grid">
+
+                            <div class="form-group">
+                                <input type="text" class="form-control">
+                                <label>Name</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control">
+                                <label>Company name</label>
+                            </div>
+
+                            <div class="form-group">
+                                <input id="phone" class="form-control phone_input" type="tel" name="phone" />
+                                <label for=""></label>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-control">
+                                <label>Email</label>
+                            </div>
+
+                            <div class="form-group full">
+                                <textarea name="" id=""></textarea>
+                                <label for="">Specifications</label>
+                            </div>
+
+                            <button type="button" class="btn2 primary full">submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="prodcut-details-secF">
+                <div class="container text-center">
+                    <h2>More Products</h2>
+
+                    <div class="more-product-slider">
+                        <div class="swiper-nav center-full">
+                            <button class="more-product-next swiper-next gray-border">
+                                <img class="svg" src="assets/icon/right-white.svg" alt="white">
+                            </button>
+                            <button class="more-product-prev swiper-prev">
+                                <img class="svg" src="assets/icon/right-white.svg" alt="white">
+                            </button>
+                        </div>
+
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <a href="javascript:void(0);" class="swiper-slide">
+                                    <figure>
+                                        <img src="assets/images/other/product/listing/1.jpg" alt="img">
+                                    </figure>
+                                    <figcaption>
+                                        <h4>Modular belt conveyor</h4>
+                                    </figcaption>
+                                </a>
+
+                                <a href="javascript:void(0);" class="swiper-slide">
+                                    <figure>
+                                        <img src="assets/images/other/product/listing/2.jpg" alt="img">
+                                    </figure>
+                                    <figcaption>
+                                        <h4>Chain Conveyor</h4>
+                                    </figcaption>
+                                </a>
+
+                                <a href="javascript:void(0);" class="swiper-slide">
+                                    <figure>
+                                        <img src="assets/images/other/product/listing/3.jpg" alt="img">
+                                    </figure>
+                                    <figcaption>
+                                        <h4>Pallet Conveyor</h4>
+                                    </figcaption>
+                                </a>
+
+                                <a href="javascript:void(0);" class="swiper-slide">
+                                    <figure>
+                                        <img src="assets/images/other/product/listing/4.jpg" alt="img">
+                                    </figure>
+                                    <figcaption>
+                                        <h4>Telescopic Conveyor</h4>
+                                    </figcaption>
+                                </a>
+
+                                <a href="javascript:void(0);" class="swiper-slide">
+                                    <figure>
+                                        <img src="assets/images/other/product/listing/5.jpg" alt="img">
+                                    </figure>
+                                    <figcaption>
+                                        <h4>Straight</h4>
+                                    </figcaption>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- ================= FOOTER START ================= -->
@@ -1169,20 +1282,20 @@
     <!-- Lenis JS -->
     <script src="https://unpkg.com/lenis@latest/dist/lenis.min.js"></script>
 
-    <!-- FOR smooth scrolig JS -->
+    <!-- FOR smooth scrolig JS Should be apply on evry single page! -->
     <script>
         const lenis = new Lenis({
             smoothWheel: true,
             smoothTouch: false,
             lerp: 0.05,
             prevent: (node) => {
-                return node.closest('.scroll, .list, .custom-select, .modal, .model-body ') !== null;
+                return node.closest('.scroll, .list, .custom-select, .modal, .model-body, .iti__country-list ') !== null;
             }
         });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
     </script>
-    <!-- FOR smooth scrolig JS -->
+    <!-- FOR smooth scrolig JS END -->
 
 </body>
 

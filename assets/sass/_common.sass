@@ -20,6 +20,7 @@ html
     --headerheight: 88px
     --headerfixed: 65px
     --footerstrip: 66px
+    --breadcrumbheight: 44px
     @include media(768)
         --headerfixed: 50px
     @include media(540)
@@ -1350,3 +1351,34 @@ button
                 margin-top: 40px
                 @include media(540)
                     margin: 10px auto 30px
+
+
+// Commen contact form 
+.contact-form
+    padding: 50px 0
+    .heading
+        h2
+            font-weight: 700
+            font-size: 36px
+            line-height: 1.1
+            text-align: center
+            max-width: 725px
+            margin: 0 auto 10px
+        p
+            margin: auto
+            text-align: center
+    .form
+        max-width: 558px
+        margin: 60px auto 0px
+        --item: 2  
+        --gaptb: 25px
+        @include beforeLayerBlur
+        
+        .btn2
+            text-transform: uppercase
+            font-weight: 600
+            font-size: 16px
+            text-align: center
+            padding: 12px 50px
+
+
