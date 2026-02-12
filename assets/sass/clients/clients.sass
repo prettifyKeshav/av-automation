@@ -1,0 +1,133 @@
+@import '../_var'
+
+section:has(.client-sec)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        top: -13%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+    &::before
+        content: ""
+        position: absolute
+        top: 2%
+        left: -1%
+        width: 350px
+        height: 540px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+.certificate-banner
+    position: relative
+    color: white
+    overflow: hidden
+    height: 100vh
+    z-index: 1
+    @include media(1024)
+        height: 80vh
+    @include media(991)
+        height: 50vh
+    @include media(540)
+        height: 70vh
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%)
+
+    .video-background 
+        video 
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            z-index: -1
+        .container
+            @include media(540)
+                padding: 0
+            .bg-wrapper
+                position: absolute
+                z-index: 1
+                width: 90%
+                left: 50%
+                bottom: 15%
+                transform: translate(-50%)
+                @include media(1024)
+                    bottom: 10%
+                    width: 60%
+                @include media(768)
+                    width: 70%
+                @include media(540)
+                    bottom: 10%
+                    margin-left: 0
+                    width: 100%
+                h1
+                    font-weight: 800
+                    font-size: 48px
+                    line-height: 55px
+                    text-align: center
+                    margin: auto
+                    @include media(1024)
+                        max-width: 100%
+                        line-height: 1.2
+                        font-size: 40px
+                        margin-left: 0
+                        text-align: center
+                    @include media(540)
+                        max-width: 100%
+                        font-size: 25px
+                        line-height: 1.1
+                        text-align: center
+                        padding: 0 20px
+                        margin-bottom: 20px
+                p
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 24px
+                    text-align: center
+                    color: $white
+                    max-width: 436px
+                    margin: auto
+
+.client-sec
+    padding: 60px 0 
+    .heading
+        text-align: center
+        margin-bottom: 50px
+        h2
+            font-weight: 700
+            font-size: 48px
+            line-height: 55px
+
+    .grid-box
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        gap: 25px
+        .col
+            background: $white
+            height: 111px
+            border-radius: 10px
+            padding: 10px
+            overflow: hidden
+            display: flex
+            justify-content: center
+            align-items: center

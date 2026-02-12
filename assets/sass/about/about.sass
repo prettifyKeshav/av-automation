@@ -1,5 +1,120 @@
 @import '../_var'
 
+section:has(.about-secA)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        top: 12%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+section:has(.about-secB)
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        top: -37%
+        left: -1%
+        width: 350px
+        height: 540px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+section:has(.about-secC)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        top: 2%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+    &::before
+        content: ""
+        position: absolute
+        bottom: -7%
+        left: -1%
+        width: 350px
+        height: 540px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+section:has(.about-secD)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        top: -18%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+
+section:has(.about-secH)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        top: -18%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+    &::before
+        content: ""
+        position: absolute
+        top: 3%
+        left: -1%
+        width: 350px
+        height: 540px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+
 .about-banner
     position: relative
     color: white
@@ -75,6 +190,9 @@
 
 .about-secA
     padding: 50px 0
+    @include beforeLayerBlur
+    &::before
+        top: 30%
     .flex-box
         display: flex
         justify-content: center
@@ -137,6 +255,10 @@
     justify-content: center
     align-items: center
     gap: 80px
+    @include afterLayerBlur
+    &::after
+        bottom: -80%
+        left: 30%
     figure
         width: 291px
         height: 299px
@@ -303,3 +425,352 @@
         text-align: center
         .btn2 
             margin-top: 40px
+
+.about-secD
+    padding: 50px 0
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        height: 1px
+        width: 100%
+        background: $primary
+        top: 44%
+        left: 0
+    &::after
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 667px
+        height: 667px
+        transform: translate(-50%,-50%)
+        background: #ffffff57
+        filter: blur(60px)
+        border-radius: 50%
+        z-index: -1
+        @include media(540)
+            content: none
+    .heading
+        position: relative
+        margin-bottom: 30px
+        @include afterLayerBlur
+        &::after
+            bottom: -100%
+            left: 50%
+        p
+            max-width: 476px
+            margin: auto
+        .swiper-nav
+            position: absolute
+            right: 0
+            top: 0
+            transform: translateY(50%)
+    .more-product-slider
+        position: relative
+    .swiper
+        padding: 20px 0 40px 0
+        .swiper-wrapper
+            .swiper-slide
+                position: relative
+                &::before
+                    content: ""
+                    position: absolute
+                    top: -8%
+                    left: 50%
+                    transform: translateX(-50%)
+                    background: $primary
+                    width: 20px
+                    height: 20px
+                    border-radius: 50%
+                h3
+                    font-weight: 600
+                    font-size: 24px
+                    color: $black
+                    margin: 20px 0 20px 0
+
+
+                figure
+                    height: 110px
+                    img
+                        height: 100%
+                        width: 100%
+                        object-fit: contain
+                p
+                    font-weight: 500
+                    font-size: 16px
+                    color: $text
+                    max-width: 234px
+                    margin: auto
+
+                .read
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 1
+                    color: $primary
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    gap: 10px
+                    transition: 0.3s ease
+                    margin-top: 20px
+                    &:hover
+                        gap: 20px
+
+.about-secE
+    padding: 50px 0 
+    .flex-box
+        display: flex
+        justify-content: center
+        gap: 60px
+        @include afterLayerBlur
+        &::after
+            bottom: -70%
+            width: 605px
+            height: 605px
+        @include media(768)
+            gap: 30px
+        @include media(540)
+            flex-direction: column
+        .flex-box-item
+            width: 498px
+            height: 305px
+            border-radius: 10px
+            padding: 40px
+            position: relative
+            @include media(768)
+                width: fit-content
+                padding: 20px
+                height: 275px
+            @include media(540)
+                height: 245px
+            .flex-box
+                display: flex
+                justify-content: space-between
+                align-items: anchor-center
+                padding-bottom: 0px
+
+                position: absolute
+                bottom: 0
+                left: 0
+                padding: 40px
+                width: 100%
+                @include media(768)
+                    padding: 20px
+                    flex-direction: row
+                figure
+                    width: 66px
+                    height: 66px
+                    line-height: 0
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: contain
+                h4
+                    font-weight: 700
+                    font-size: 36px
+
+            p
+                max-width: 321px
+            &:first-child
+                background: $white
+                p
+                    position: relative
+                    &::before
+                        content: ""
+                        position: absolute
+                        top: 0
+                        left: -40px
+                        height: 100%
+                        width: 5px
+                        background: $primary
+                        @include media(768)
+                            left: -20px
+            &:last-child
+                background: $primary
+                p
+                    color: $white
+                h4
+                    color: $white
+
+
+.about-secF
+    padding: 30px 0
+    @include media(540)
+        padding: 30px 0 0 0 
+    .counter_sec
+        display: flex
+        justify-content: space-between
+        @include media(768)
+            text-align: center
+        @include media(540)
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 20px 5px
+        .count-info
+            &:last-child
+                @include media(540)
+                    grid-column: span 2 
+                    margin: auto
+            h4
+                font-weight: 700
+                font-size: 45px
+                line-height: 1.3
+                color: $primary
+                @include media(1024)
+                    font-size: 35px
+                @include media(768)
+                    font-size: 25px
+            
+            p
+                font-weight: 500
+                font-size: 16px
+                line-height: 24px
+                color: $text
+                @include media(540)
+                    font-size: 14px
+                    max-width: 80%
+                    margin: 5px auto 0
+                    line-height: 1.1
+
+.about-secG
+    padding: 50px 0
+    @include beforeLayerBlur
+    &::before
+        top: 50%
+    .flex-box
+        display: flex
+        justify-content: space-between
+        gap: 20px
+        .col
+            flex: 0 1 50%
+            width: 50%
+            border-radius: 10px
+            overflow: hidden
+        .col:first-child
+            .swiper
+                .pagination
+                    position: absolute
+                    z-index: 1
+                    width: fit-content
+                    left: initial
+                    bottom: 0
+                    right: 0
+                    padding: 40px
+                    .swiper-pagination-bullet
+                        background: $white
+                        opacity: 1
+                        &.swiper-pagination-bullet-active
+                            background: $primary
+                .swiper-wrapper
+                    .swiper-slide
+                        figure
+                            position: relative
+                            line-height: 0
+                            &::before
+                                content: ""
+                                position: absolute
+                                inset:  1 1 1 1
+                                width: 100%
+                                height: 100%
+                                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%),linear-gradient(270deg, rgba(0, 0, 0, 0) 48.08%, rgba(0, 0, 0, 0.5) 100%)
+                            img
+                                height: 100%
+                                width: 100%
+                                object-fit: cover
+                            figcaption
+                                height: 100%
+                                width: 100%
+                                display: flex
+                                flex-direction: column
+                                justify-content: space-between
+                                position: absolute
+                                bottom: 0
+                                left: 0
+                                padding: 40px
+                                h3
+                                    font-weight: 700
+                                    color: $white
+                                    font-size: 30px
+                                    line-height: 1
+                                .bottom
+                                    h4
+                                        max-width: 340px
+                                        font-weight: 700
+                                        font-size: 24px
+                                        line-height: 30px
+                                        color: $white
+        .col:last-child
+            figure
+                height: 417px
+                border-radius: 10px
+                overflow: hidden
+                position: relative
+                line-height: 0
+                &::before
+                    content: ""
+                    position: absolute
+                    inset:  1 1 1 1
+                    width: 100%
+                    height: 100%
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 16.35%, rgba(0, 0, 0, 0.65) 100%)
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: cover
+                figcaption
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    padding: 40px
+                    h4
+                        font-weight: 700
+                        font-size: 24px
+                        line-height: 30px
+                        color: $white
+
+.about-secH
+    padding: 50px 0
+    @include beforeLayerBlur
+    &::before
+        top: 50%
+    h2
+        max-width: 637px
+        margin: auto
+        font-weight: 700
+        font-size: 48px
+        text-align: center
+        line-height: 1
+        margin-bottom: 60px
+
+    .flex-box
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 80px
+        figure
+            width: 511px
+            height: 335px
+            border-radius: 10px
+            overflow: hidden
+            img,video
+                height: 100%
+                width: 100%
+                object-fit: cover
+        .content
+            ul
+                margin-top: 15px
+                li
+                    margin-bottom: 10px
+                    padding-left: 25px
+                    position: relative
+                    max-width: 509px
+                    &::before
+                        content: ""
+                        position: absolute
+                        top: -10%
+                        left: 0px
+                        transform: translateY(50%)
+                        width: 15px
+                        height: 15px
+                        background: url("../../../assets/icon/primary-right-arrow.svg")

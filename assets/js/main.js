@@ -671,10 +671,14 @@ $(function () {
 
     // home page banner slider
     //
-    new Swiper(".proejct-swiper-slider", {
+    new Swiper(".about-secG-swiper-slider", {
         pagination: {
-            el: '.proejct-slider-dots',
+            el: '.about-secG-slider-dots',
             clickable: true,
+        },
+        autoplay: {
+            delay: 2000,
+            pauseOnMouseEnter: true,
         },
         loop: true,
         breakpoints: {
@@ -684,27 +688,8 @@ $(function () {
                 speed: 1000,
                 centeredSlides: true,
             },
-            520: {
-                slidesPerView: 1,
-                spaceBetween: 50,
-                speed: 1000,
-                centeredSlides: true,
-            },
-            769: {
-                slidesPerView: 1,
-                spaceBetween: 50,
-                speed: 1000,
-                centeredSlides: true,
-            },
-            991: {
-                slidesPerView: 1,
-                spaceBetween: 70,
-                speed: 1000,
-                centeredSlides: true,
-            },
             1100: {
                 slidesPerView: 1,
-                spaceBetween: 80,
                 speed: 1000,
                 centeredSlides: true
             }

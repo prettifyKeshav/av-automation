@@ -231,7 +231,7 @@
   font-size: inherit;
   line-height: calc(var(--inputsize) - var(--borderwidth));
   padding-left: var(--paddingleftright);
-  color: var(--color);
+  color: var(--black);
   width: 80%;
   overflow: hidden;
   text-overflow: ellipsis;
