@@ -1,0 +1,214 @@
+@import '../_var'
+
+section:has(.contact-secA)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        bottom: -45%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+section:has(.contact-form)
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        top: 9%
+        left: -1%
+        width: 350px
+        height: 540px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+section:has(.careers-secA)
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        bottom: -25%
+        right: 0%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1) scaleX(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
+
+
+// .industries-detail-banner ===============================================>>>
+
+.our-work-banner
+    position: relative
+    color: white
+    overflow: hidden
+    height: calc( 100vh - var(--headerheight) )
+    z-index: 1
+    margin-top: calc(var(--headerheight))
+    @include media(1024)
+        height: 80vh
+    @include media(991)
+        height: 50vh
+    @include media(540)
+        height: 60vh
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0) 20.19%, rgba(0, 0, 0, 0.45) 100%),linear-gradient(180deg, rgba(0, 0, 0, 0) 39.42%, rgba(0, 0, 0, 0.2) 100%)
+    .common-background
+        video,img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            z-index: -1
+        .container
+            @include media(540)
+                padding: 0
+            .bg-wrapper
+                position: absolute
+                z-index: 1
+                width: 90%
+                left: 50%
+                bottom: 25%
+                transform: translate(-50%)
+                @include media(991)
+                    bottom: 10%
+                @include media(540)
+                    bottom: 10%
+                    margin-left: 0
+                h1
+                    font-weight: 700
+                    font-size: 48px
+                    line-height: 55px
+                    padding-left: 20px
+                    border-left: 8px solid $primary
+                    margin-bottom: 10px
+                    @include media(991)
+                        max-width: 70%
+                        line-height: 1.2
+                        font-size: 40px
+                    @include media(540)
+                        max-width: 100%
+                        font-size: 25px
+                        line-height: 1.1
+                        text-align: center
+                        padding: 0 20px
+                        margin-bottom: 20px
+                        border-left: 0
+                p
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 24px
+                    color: $white
+                    max-width: 609px
+                    @include media(540)
+                        text-align: center
+                        max-width: 90%
+                        margin: auto
+                        // font-weight: normal
+                        font-size: 15px
+                        line-height: 1.3
+
+.sticky
+    margin-bottom: 50px
+    background: $white
+    .flex-box
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .tab-nav
+            display: flex
+            align-items: center
+            gap: 50px
+            li
+                padding: 20px 30px
+                font-weight: 600
+                font-size: 16px
+                line-height: 100%
+                text-align: center
+                position: relative
+                transition: 0.5s ease
+
+                display: flex
+                justify-content: center
+                align-items: center
+                gap: 15px
+                &::before
+                    content: ""
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    width: 0%
+                    height: 5px
+                    background: $primary
+                    transition: 0.5s ease
+                svg
+                    height: 22px
+                    path
+                        fill: $text
+                &:first-child
+                    svg
+                        path
+                            fill: $white
+                            stroke: $text
+                &.active
+                    &::before
+                        width: 100%
+                    color: $primary
+                    svg
+                        path
+                            fill: $primary
+                    &:first-child
+                        svg
+                            path
+                                fill: $white
+                                stroke: $primary
+                    
+        .custom-select
+            padding: 10px
+            border: 1px solid #6666668A
+            width: 214px
+            height: 36px
+            border-radius: 5px
+            gap: 10px
+
+            display: flex
+            justify-content: space-between
+            align-items: center
+            --paddingleftright: 10px
+            width: fit-content
+            .current
+                font-weight: 400
+                font-size: 16px
+                line-height: 16px
+                color: $text
+
+.grid-box
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 20px
+
+
