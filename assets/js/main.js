@@ -1140,7 +1140,7 @@ $(function () {
         const $headerSearchBtn = $('.header_search_btn');
         const $headerOpenImg = $('.header-search-open-img');
         const $headerCloseImg = $('.header-search-close-img');
-        const $pageBody = $('section')
+        const $pageSection = $('section')
 
         // Input typing
         $headerSearchInput.on('input', function () {
@@ -1161,8 +1161,11 @@ $(function () {
             }
         });
 
+
         $headerOpenImg.on('click', function () {
             $headerSearchWrap.addClass("dropdown-show");
+            $headerSearchInput.val('');
+            $headerSearchInput.focus();
 
         });
 
@@ -1193,13 +1196,13 @@ $(function () {
             }
         });
 
-        $pageBody.on('click', function () {
+        // Close on body
+        $pageSection.on('click', function () {
             $headerSearchWrap.removeClass("dropdown-show");
             $headerCloseImg.hide();
             $headerOpenImg.show();
 
         });
-
 
 
     });
