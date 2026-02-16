@@ -345,7 +345,6 @@ section:has(.prodcut-details-secF)::after {
   gap: 50px;
   padding: 50px 0;
   position: relative;
-  position: relative;
 }
 .prodcut-details-secA .flex-box::before {
   content: "";
@@ -367,6 +366,9 @@ section:has(.prodcut-details-secF)::after {
 }
 .prodcut-details-secA .flex-box::before {
   top: 60%;
+}
+.prodcut-details-secA .flex-box {
+  position: relative;
 }
 .prodcut-details-secA .flex-box::after {
   content: "";
@@ -556,7 +558,6 @@ section:has(.prodcut-details-secF)::after {
 .prodcut-details-secD {
   position: relative;
   position: relative;
-  position: relative;
 }
 .prodcut-details-secD::before {
   content: "";
@@ -578,6 +579,9 @@ section:has(.prodcut-details-secF)::after {
 }
 .prodcut-details-secD::before {
   top: -50%;
+}
+.prodcut-details-secD {
+  position: relative;
 }
 .prodcut-details-secD::after {
   content: "";

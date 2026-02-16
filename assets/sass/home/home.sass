@@ -34,6 +34,21 @@ section:has(.home-secB)
         
 section:has(.home-secC)
 section:has(.home-secD)
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        top: 7%
+        left: -1%
+        width: 350px
+        height: 538px
+        background: url("../../../assets/images/Vectors/vector.png") no-repeat
+        z-index: -1
+        transform: scaleY(-1)
+        @include media(540)
+            width: 250px
+            height: 350px
+            background-size: contain
 section:has(.home-secE)
 section:has(.home-secF)
     position: relative
@@ -447,6 +462,98 @@ section:has(.home-secJ)
                     width: 100%
 .home-secD
     padding: 50px 0
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        height: 1px
+        width: 100%
+        background: $primary
+        top: 33.6%
+        left: 0
+    @include afterLayerBlur
+    &::after
+        left: 60%
+        bottom: -40%
+    .more-product-slider
+        position: relative
+    .swiper
+        padding: 80px 0 40px 0
+        .swiper-wrapper
+            .swiper-slide
+                position: relative
+                display: flex
+                align-items: center
+                gap: 30px
+                &::before
+                    content: ""
+                    position: absolute
+                    top: -21%
+                    left: 40%
+                    transform: translateX(-50%)
+                    background: $primary
+                    width: 20px
+                    height: 20px
+                    border-radius: 50%
+                figure
+                    height: 144px
+                    width: 279px
+                    img
+                        height: 100%
+                        width: 100%
+                        object-fit: contain
+                figcaption
+                    flex: 1
+                    h3
+                        font-weight: 700
+                        font-size: 16px
+                        color: $black
+                        margin: 20px 0 10px 0
+
+                        font-weight: 700
+                        font-size: 24px
+                        line-height: 1.2
+                    p
+                        font-weight: 500
+                        font-size: 14px
+                        color: $text
+                        max-width: 401px
+                        display: -webkit-box
+                        -webkit-line-clamp: 3
+                        -webkit-box-orient: vertical
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        text-align: justify
+                    .read
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 1
+                        color: $primary
+                        display: flex
+                        align-items: center
+                        gap: 10px
+                        transition: 0.3s ease
+                        margin-top: 20px
+                        &:hover
+                            gap: 20px
+                    .number
+                        font-weight: 600
+                        font-size: 150px
+                        display: inline-block
+                        color: #FFFFFF80
+                        position: absolute
+                        z-index: -1
+                        right: -2%
+                        top: 50%
+                        transform: translateY(-50%)
+                        line-height: 1
+                        pointer-events: none
+    .bottom
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 40px
+        margin-top: 20px
 
 .home-secE
     padding: 50px 0

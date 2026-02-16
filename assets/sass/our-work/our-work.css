@@ -189,6 +189,7 @@ section:has(.careers-secA)::after {
 .sticky {
   margin-bottom: 50px;
   background: var(--white);
+  z-index: 2 !important;
 }
 .sticky .flex-box {
   display: flex;
@@ -233,11 +234,11 @@ section:has(.careers-secA)::after {
   fill: var(--white);
   stroke: var(--text);
 }
-.sticky .flex-box .tab-nav li.active {
-  color: var(--primary);
-}
 .sticky .flex-box .tab-nav li.active::before {
   width: 100%;
+}
+.sticky .flex-box .tab-nav li.active {
+  color: var(--primary);
 }
 .sticky .flex-box .tab-nav li.active svg path {
   fill: var(--primary);
@@ -267,8 +268,167 @@ section:has(.careers-secA)::after {
   color: var(--text);
 }
 
-.grid-box {
+.tab-nav-content .tabs {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: 0.5s ease;
+}
+.tab-nav-content .tabs.active {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.tab-nav-content .tabs.photo-grid-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px 20px;
+  margin-bottom: 80px;
+}
+.tab-nav-content .tabs.photo-grid-box .col {
+  height: 324px;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+.tab-nav-content .tabs.photo-grid-box .col::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+  z-index: 1;
+  transition: 0.7s ease;
+}
+.tab-nav-content .tabs.photo-grid-box .col::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5882352941);
+  z-index: 0;
+  transition: 0.7s ease;
+  opacity: 0;
+}
+.tab-nav-content .tabs.photo-grid-box .col:hover::before {
+  opacity: 0;
+}
+.tab-nav-content .tabs.photo-grid-box .col:hover::after {
+  opacity: 1;
+}
+.tab-nav-content .tabs.photo-grid-box .col:hover figcaption {
+  bottom: 45%;
+  padding: 0;
+  z-index: 1;
+}
+.tab-nav-content .tabs.photo-grid-box .col:hover img {
+  scale: 1.1;
+}
+.tab-nav-content .tabs.photo-grid-box .col img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.7s ease;
+}
+.tab-nav-content .tabs.photo-grid-box .col figcaption {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  z-index: 1;
+  text-align: center;
+  width: 90%;
+  padding: 40px 0;
+  transition: 0.7s ease;
+}
+.tab-nav-content .tabs.photo-grid-box .col figcaption h4 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--white);
+}
+@media only screen and (max-width: 1024px) {
+  .tab-nav-content .tabs.photo-grid-box .col figcaption h4 {
+    font-size: 18px;
+  }
+}
+.tab-nav-content .tabs.video-grid-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 20px;
+  margin-bottom: 80px;
+}
+.tab-nav-content .tabs.video-grid-box .col {
+  height: 324px;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  cursor: context-menu;
+}
+.tab-nav-content .tabs.video-grid-box .col::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+  z-index: 1;
+  transition: 0.7s ease;
+}
+.tab-nav-content .tabs.video-grid-box .col::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5882352941);
+  z-index: 0;
+  transition: 0.7s ease;
+  opacity: 0;
+}
+.tab-nav-content .tabs.video-grid-box .col:hover::before {
+  opacity: 0;
+}
+.tab-nav-content .tabs.video-grid-box .col:hover::after {
+  opacity: 1;
+}
+.tab-nav-content .tabs.video-grid-box .col:hover img {
+  scale: 1.1;
+}
+.tab-nav-content .tabs.video-grid-box .col img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.7s ease;
+}
+.tab-nav-content .tabs.video-grid-box .col figcaption {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%);
+  z-index: 1;
+  text-align: center;
+  width: 90%;
+  padding: 40px 0;
+  transition: 0.7s ease;
+}
+.tab-nav-content .tabs.video-grid-box .col figcaption .play-button {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 70px;
+}
+.tab-nav-content .tabs.video-grid-box .col figcaption h4 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--white);
+}
+@media only screen and (max-width: 1024px) {
+  .tab-nav-content .tabs.video-grid-box .col figcaption h4 {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=our-work.css.map */

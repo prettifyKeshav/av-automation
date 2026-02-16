@@ -284,6 +284,33 @@ $(function () {
     });
     // Home-Swiper==========================>>>>
 
+    // MORE BLOG DETAILS PAGE SLIDER START ======================>
+    new Swiper('.blog-details-slider', {
+        loop: false,
+        navigation: {
+            prevEl: '.blog-details-prev',
+            nextEl: '.blog-details-next',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+                speed: 500,
+            },
+            675: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                speed: 1000,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                speed: 1000,
+            }
+        }
+    });
+    // MORE BLOG DETAILS PAGE SLIDER END ======================>
+
 
     new Swiper('.options-available-slider .swiper', {
         loop: false,
@@ -330,6 +357,31 @@ $(function () {
             992: {
                 slidesPerView: 4,
                 spaceBetween: 20,
+                speed: 1000,
+            }
+        }
+    });
+
+    new Swiper('.solutions-by-process-slider .swiper', {
+        loop: false,
+        navigation: {
+            prevEl: '.solutions-by-process-slider-prev',
+            nextEl: '.solutions-by-process-slider-next',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+                speed: 500,
+            },
+            675: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                speed: 1000,
+            },
+            992: {
+                slidesPerView: 1.7,
+                spaceBetween: 90,
                 speed: 1000,
             }
         }
@@ -1088,6 +1140,7 @@ $(function () {
         const $headerSearchBtn = $('.header_search_btn');
         const $headerOpenImg = $('.header-search-open-img');
         const $headerCloseImg = $('.header-search-close-img');
+        const $pageBody = $('section')
 
         // Input typing
         $headerSearchInput.on('input', function () {
@@ -1107,6 +1160,12 @@ $(function () {
                 $parent.removeClass("radius-open");
             }
         });
+
+        $headerOpenImg.on('click', function () {
+            $headerSearchWrap.addClass("dropdown-show");
+
+        });
+
 
         // Focus
         $headerSearchInput.on('focus', function () {
@@ -1129,9 +1188,19 @@ $(function () {
                 $headerCloseImg.hide();
                 $headerSearchBtn.removeClass('close-search-btn');
                 $headerSearchWrap.removeClass('search_wrap_active');
+                $headerSearchWrap.removeClass("dropdown-show");
                 $('.header-form-group').removeClass('radius-open');
             }
         });
+
+        $pageBody.on('click', function () {
+            $headerSearchWrap.removeClass("dropdown-show");
+            $headerCloseImg.hide();
+            $headerOpenImg.show();
+
+        });
+
+
 
     });
 });
@@ -1345,3 +1414,57 @@ $(document).ready(function () {
     });
 });
 // phone cuntry code suggtion input code ===================================
+
+
+// Data-FancyBox=====================>
+$(function () {
+    Fancybox.bind("[data-fancybox]", {
+        autoStart: false,
+        contentClick: "iterateZoom",
+        Images: {
+            Panzoom: {
+                maxScale: 3,
+            },
+        },
+        keyboard: true,
+        Thumbs: true,
+        Toolbar: {
+            display: {
+                left: ["infobar"],
+                middle: ["toggle1to1", "rotateCCW", "rotateCW"],
+                right: ["close"],
+                bottom: [],
+            },
+        },
+    });
+});
+// Data-FancyBox =====================>
+
+// Our Work Banner change
+const bannerVideo = document.querySelector(".our-work-banner .bg-video source");
+const tabItems = document.querySelectorAll(".sticky .container .flex-box .tab-nav li");
+// function to set video from active tab
+const updateBannerVideo = (activeTab) => {
+    const videoSrc = activeTab.getAttribute("banner-video");
+    if (videoSrc) {
+        bannerVideo.setAttribute("src", videoSrc);
+        // reload video
+        bannerVideo.parentElement.load();
+    }
+};
+// set video on page load (default active li)
+const defaultActive = document.querySelector(".tab-nav li.active");
+if (defaultActive) {
+    updateBannerVideo(defaultActive);
+}
+// change video on tab click
+tabItems.forEach(item => {
+    item.addEventListener("click", function () {
+        // remove active from all
+        tabItems.forEach(li => li.classList.remove("active"));
+        // add active to clicked
+        this.classList.add("active");
+        // update banner video
+        updateBannerVideo(this);
+    });
+});

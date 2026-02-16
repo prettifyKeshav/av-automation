@@ -288,11 +288,11 @@ section:has(.careers-secA)::after {
 .contact-form .heading h2 {
   max-width: 567px !important;
 }
-.contact-form .form-grid {
-  position: relative;
-}
 .contact-form .form-grid::before {
   top: 60% !important;
+}
+.contact-form .form-grid {
+  position: relative;
 }
 .contact-form .form-grid::after {
   content: "";

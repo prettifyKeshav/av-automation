@@ -138,6 +138,16 @@
                     @include media(540)
                         width: 95%
                         margin: auto
+                    position: relative
+                    &::before
+                        content: ""
+                        position: absolute
+                        top: -20px
+                        left: -20px
+                        width: 100%
+                        height: 100%
+                        border: 2px solid #05B4C4
+                        border-radius: 10px
                     img
                         width: 100%
                         height: 100%
@@ -146,6 +156,7 @@
                         overflow: hidden
                         z-index: 1
                         position: relative
+                        
             .flex-box-item:last-child
                 position: relative
                 max-width: 480px

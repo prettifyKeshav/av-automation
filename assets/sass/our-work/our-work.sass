@@ -135,6 +135,7 @@ section:has(.careers-secA)
 .sticky
     margin-bottom: 50px
     background: $white
+    z-index: 2 !important
     .flex-box
         display: flex
         justify-content: space-between
@@ -206,9 +207,137 @@ section:has(.careers-secA)
                 line-height: 16px
                 color: $text
 
-.grid-box
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    gap: 20px
-
-
+.tab-nav-content
+    .tabs
+        opacity: 0
+        transform: translateY(20%)
+        transition: 0.5s ease
+        &.active
+            opacity: 1
+            transform: translateY(0%)
+        &.photo-grid-box
+            display: grid
+            grid-template-columns: repeat(3,1fr)
+            gap: 30px 20px
+            margin-bottom: 80px
+            .col
+                height: 324px
+                line-height: 0
+                overflow: hidden
+                border-radius: 10px
+                position: relative
+                &::before
+                    content: ""
+                    position: absolute
+                    inset: 0
+                    top: 0
+                    left: 0
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%)
+                    z-index: 1
+                    transition: 0.7s ease
+                &::after 
+                    content: ""
+                    position: absolute
+                    inset: 0
+                    top: 0
+                    left: 0
+                    background: #00000096
+                    z-index: 0
+                    transition: 0.7s ease
+                    opacity: 0
+                &:hover
+                    &::before
+                        opacity: 0
+                    &::after  
+                        opacity: 1
+                    figcaption
+                        bottom: 45%
+                        padding: 0
+                        z-index: 1
+                    img
+                        scale: 1.1
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: cover
+                    transition: 0.7s ease
+                figcaption
+                    position: absolute
+                    left: 50%
+                    bottom: 0
+                    transform: translate(-50%)
+                    z-index: 1
+                    text-align: center
+                    width: 90%
+                    padding: 40px 0
+                    transition: 0.7s ease
+                    h4
+                        font-weight: 600
+                        font-size: 20px
+                        line-height: 1.2
+                        color: $white
+                        @include media(1024)
+                            font-size: 18px
+        &.video-grid-box
+            display: grid
+            grid-template-columns: repeat(3,1fr)
+            gap: 30px 20px
+            margin-bottom: 80px
+            .col
+                height: 324px
+                line-height: 0
+                overflow: hidden
+                border-radius: 10px
+                position: relative
+                cursor: context-menu
+                &::before
+                    content: ""
+                    position: absolute
+                    inset: 0
+                    top: 0
+                    left: 0
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%)
+                    z-index: 1
+                    transition: 0.7s ease
+                &::after 
+                    content: ""
+                    position: absolute
+                    inset: 0
+                    top: 0
+                    left: 0
+                    background: #00000096
+                    z-index: 0
+                    transition: 0.7s ease
+                    opacity: 0
+                &:hover
+                    &::before
+                        opacity: 0
+                    &::after  
+                        opacity: 1
+                    img
+                        scale: 1.1
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: cover
+                    transition: 0.7s ease
+                figcaption
+                    position: absolute
+                    left: 50%
+                    bottom: 5%
+                    transform: translate(-50%)
+                    z-index: 1
+                    text-align: center
+                    width: 90%
+                    padding: 40px 0
+                    transition: 0.7s ease
+                    .play-button
+                        width: fit-content
+                        margin: 0 auto 70px
+                    h4
+                        font-weight: 600
+                        font-size: 20px
+                        line-height: 1.2
+                        color: $white
+                        @include media(1024)
+                            font-size: 18px

@@ -39,6 +39,7 @@
 
     <!-- ================= Animate CSS ================= -->
     <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/fancybox.css">
 
     <!-- ================= Fucntion JS FILE ================= -->
     <script type="text/javascript" src="assets/js/function.js"></script>
@@ -427,9 +428,8 @@
         <section>
             <div class="our-work-banner">
                 <div class="common-background">
-                    <!-- <img src="assets/images/contact/contact-banner.jpg" alt="banner"> -->
                     <video autoplay muted playsinline loop class="bg-video">
-                        <source src="assets/video/photo-gallery-banner.mp4" type="video/mp4">
+                        <source src="" type="video/mp4">
                     </video>
 
                     <div class="container">
@@ -449,11 +449,11 @@
             <div class="container">
                 <div class="flex-box">
                     <ul class="tab-nav">
-                        <li class="active" data-tab="photo_gallery">
+                        <li class="active" data-tab="photo_gallery" banner-video="assets/video/photo-gallery-banner.mp4">
                             <img class="svg" src="assets/images/OurWork/photo.svg" alt="ico">
                             Photo Gallery
                         </li>
-                        <li data-tab="video_gallery">
+                        <li data-tab="video_gallery" banner-video="assets/video/home-secG.mp4">
                             <img class="svg" src="assets/images/OurWork/video.svg" alt="ico">
                             Video Gallery
                         </li>
@@ -472,11 +472,120 @@
 
         <section>
             <div class="container">
-                <div class="grid-box">
-                    <div class="grid-box-item">
-                        <img src="assets/images/OurWork/photo-galllery/1.jpg" alt="ico">
+                <div class="tab-nav-content">
+                    <div class="tabs active grid-box photo-grid-box" data-tab="photo_gallery">
+                        <a href="assets/images/OurWork/photo-galllery/1.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/1.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Turn Key Project of Sorting Conveyor</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/2.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/2.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Enclosures</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/3.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/3.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Bottling Industry Conveyor</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/4.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/4.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Grocery Rack</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/5.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/5.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Pipe & Joint work Station</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/6.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/6.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Conveyor</h4>
+                            </figcaption>
+                        </a>
+                    </div>
+
+                    <div class="tabs grid-box video-grid-box" data-tab="video_gallery">
+                        <a href="javascript:void(0);" class="col">
+                            <img src="assets/images/OurWork/photo-galllery/1.jpg" alt="ico">
+                            <figcaption>
+                                <div class="play-button" data-model=".video-pop"
+                                    data-video="https://www.youtube.com/embed/ZvzKuqSDyG8?si=nxZ2Hl-cNhq_uEsV">
+                                    <button type="button" class="play-btn"></button>
+                                </div>
+                                <h4>Video 1</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="javascript:void(0);" class="col">
+                            <img src="assets/images/OurWork/photo-galllery/2.jpg" alt="ico">
+                            <figcaption>
+                                <div class="play-button" data-model=".video-pop"
+                                    data-video="https://www.youtube.com/embed/ZvzKuqSDyG8?si=nxZ2Hl-cNhq_uEsV">
+                                    <button type="button" class="play-btn"></button>
+                                </div>
+                                <h4>Video 2</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="javascript:void(0);" class="col">
+                            <img src="assets/images/OurWork/photo-galllery/3.jpg" alt="ico">
+                            <figcaption>
+                                <div class="play-button" data-model=".video-pop"
+                                    data-video="https://www.youtube.com/embed/ZvzKuqSDyG8?si=nxZ2Hl-cNhq_uEsV">
+                                    <button type="button" class="play-btn"></button>
+                                </div>
+                                <h4>Video 3</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="javascript:void(0);" class="col">
+                            <img src="assets/images/OurWork/photo-galllery/4.jpg" alt="ico">
+                            <figcaption>
+                                <div class="play-button" data-model=".video-pop"
+                                    data-video="https://www.youtube.com/embed/ZvzKuqSDyG8?si=nxZ2Hl-cNhq_uEsV">
+                                    <button type="button" class="play-btn"></button>
+                                </div>
+                                <h4>Video 4</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="javascript:void(0);" class="col">
+                            <img src="assets/images/OurWork/photo-galllery/5.jpg" alt="ico">
+                            <figcaption>
+                                <div class="play-button" data-model=".video-pop"
+                                    data-video="https://www.youtube.com/embed/ZvzKuqSDyG8?si=nxZ2Hl-cNhq_uEsV">
+                                    <button type="button" class="play-btn"></button>
+                                </div>
+                                <h4>Video 5</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="javascript:void(0);" class="col">
+                            <img src="assets/images/OurWork/photo-galllery/6.jpg" alt="ico">
+                            <figcaption>
+                                <div class="play-button" data-model=".video-pop"
+                                    data-video="https://www.youtube.com/embed/ZvzKuqSDyG8?si=nxZ2Hl-cNhq_uEsV">
+                                    <button type="button" class="play-btn"></button>
+                                </div>
+                                <h4>Video 6</h4>
+                            </figcaption>
+                        </a>
                     </div>
                 </div>
+
             </div>
         </section>
 

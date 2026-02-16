@@ -447,7 +447,6 @@ section:has(.contact-form)::after {
   grid-template-columns: repeat(4, 1fr);
   position: relative;
   position: relative;
-  position: relative;
 }
 .industries-detail-secA .grid-box::after {
   content: "";
@@ -466,6 +465,9 @@ section:has(.contact-form)::after {
   .industries-detail-secA .grid-box::after {
     content: none;
   }
+}
+.industries-detail-secA .grid-box {
+  position: relative;
 }
 .industries-detail-secA .grid-box::after {
   left: 70%;
@@ -621,11 +623,11 @@ section:has(.contact-form)::after {
 .contact-form .heading h2 {
   max-width: 567px !important;
 }
-.contact-form .form-grid {
-  position: relative;
-}
 .contact-form .form-grid::before {
   top: 60% !important;
+}
+.contact-form .form-grid {
+  position: relative;
 }
 .contact-form .form-grid::after {
   content: "";
