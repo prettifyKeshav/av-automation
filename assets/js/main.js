@@ -337,6 +337,57 @@ $(function () {
         }
     });
 
+
+    new Swiper('.environmental-responsibility-swiper', {
+        loop: false,
+        navigation: {
+            prevEl: '.environmental-responsibility-prev',
+            nextEl: '.environmental-responsibility-next',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+                speed: 500,
+            },
+            675: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                speed: 1000,
+            },
+            992: {
+                slidesPerView: 3.4,
+                spaceBetween: 20,
+                speed: 1000,
+            }
+        }
+    });
+
+    new Swiper('.machinery-infrastructure-swiper .swiper', {
+        loop: false,
+        navigation: {
+            prevEl: '.machinery-infrastructure-prev',
+            nextEl: '.machinery-infrastructure-next',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+                speed: 500,
+            },
+            675: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                speed: 1000,
+            },
+            992: {
+                slidesPerView: 3.4,
+                spaceBetween: 20,
+                speed: 1000,
+            }
+        }
+    });
+
     new Swiper('.more-product-slider .swiper', {
         loop: false,
         navigation: {

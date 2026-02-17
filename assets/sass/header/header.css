@@ -1124,6 +1124,16 @@ button {
 .btn2.primarywhite:hover::after {
   border: none;
 }
+.btn2.whiteBorder {
+  gap: 10px;
+}
+.btn2.whiteBorder svg {
+  width: 20px;
+  height: 20px;
+}
+.btn2.whiteBorder svg path {
+  fill: var(--white);
+}
 
 .bottom-btn {
   display: flex;

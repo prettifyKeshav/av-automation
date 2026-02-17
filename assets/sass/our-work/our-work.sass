@@ -1,59 +1,5 @@
 @import '../_var'
 
-section:has(.contact-secA)
-    position: relative
-    &::after
-        content: ""
-        position: absolute
-        bottom: -45%
-        right: 0%
-        width: 350px
-        height: 538px
-        background: url("../../../assets/images/Vectors/vector.png") no-repeat
-        z-index: -1
-        transform: scaleY(-1) scaleX(-1)
-        @include media(540)
-            width: 250px
-            height: 350px
-            background-size: contain
-
-section:has(.contact-form)
-    position: relative
-    &::before
-        content: ""
-        position: absolute
-        top: 9%
-        left: -1%
-        width: 350px
-        height: 540px
-        background: url("../../../assets/images/Vectors/vector.png") no-repeat
-        z-index: -1
-        transform: scaleY(-1)
-        @include media(540)
-            width: 250px
-            height: 350px
-            background-size: contain
-
-section:has(.careers-secA)
-    position: relative
-    &::after
-        content: ""
-        position: absolute
-        bottom: -25%
-        right: 0%
-        width: 350px
-        height: 538px
-        background: url("../../../assets/images/Vectors/vector.png") no-repeat
-        z-index: -1
-        transform: scaleY(-1) scaleX(-1)
-        @include media(540)
-            width: 250px
-            height: 350px
-            background-size: contain
-
-
-// .industries-detail-banner ===============================================>>>
-
 .our-work-banner
     position: relative
     color: white
