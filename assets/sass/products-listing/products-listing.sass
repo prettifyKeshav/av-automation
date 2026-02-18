@@ -20,7 +20,7 @@
         width: 100%
         height: 100%
         background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%)
-        @include media(540)
+        @include media(768)
             background: linear-gradient(184deg, rgba(0, 0, 0, 0) 8.08%, rgba(0, 0, 0, 0.85) 100%)
     .common-background
         video,img
@@ -43,6 +43,10 @@
                 transform: translate(-50%)
                 @include media(991)
                     bottom: 10%
+                @include media(768)
+                    width: 100%
+                    margin: auto
+                    text-align: center
                 @include media(540)
                     bottom: 10%
                     margin-left: 0
@@ -58,6 +62,9 @@
                         max-width: 70%
                         line-height: 1.2
                         font-size: 40px
+                    @include media(768)
+                        width: fit-content
+                        margin:0  auto 20px
                     @include media(540)
                         max-width: 100%
                         font-size: 25px
@@ -72,6 +79,9 @@
                     line-height: 24px
                     color: $white
                     max-width: 517px
+                    @include media(768)
+                        width: fit-content
+                        margin:0  auto 20px
                     @include media(540)
                         text-align: center
                         max-width: 90%
@@ -215,8 +225,10 @@
                     width: 580px
                     height: 380px
                     @include media(1024)
-                        width: auto
+                        width: 470px
                         height: auto
+                    @include media(768)
+                        width: auto
                     @include media(540)
                         width: 95%
                         margin: auto
@@ -245,6 +257,11 @@
                     position: relative
                     @include media(1024)
                         max-width: 100%
+                        font-size: 38px
+                        line-height: 1.2
+                    @include media(768)
+                        width: fit-content
+                        margin: 0 auto 30px 
                     @include media(540)
                         font-size: 25px
                         line-height: 1.1
@@ -271,6 +288,9 @@
                     margin-bottom: 1.5rem
                     @include media(1024)
                         max-width: 100%
+                    @include media(768)
+                        max-width: 70%
+                        margin: 0 auto 30px
                     @include media(540)
                         font-size: 14px
                         max-width: 90%

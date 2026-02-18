@@ -42,7 +42,7 @@
   height: 100%;
   background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%);
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .product-banner::before {
     background: linear-gradient(184deg, rgba(0, 0, 0, 0) 8.08%, rgba(0, 0, 0, 0.85) 100%);
   }
@@ -75,6 +75,13 @@
     bottom: 10%;
   }
 }
+@media only screen and (max-width: 768px) {
+  .product-banner .common-background .container .bg-wrapper {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+}
 @media only screen and (max-width: 540px) {
   .product-banner .common-background .container .bg-wrapper {
     bottom: 10%;
@@ -97,6 +104,13 @@
     font-size: 40px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .product-banner .common-background .container .bg-wrapper h1 {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto 20px;
+  }
+}
 @media only screen and (max-width: 540px) {
   .product-banner .common-background .container .bg-wrapper h1 {
     max-width: 100%;
@@ -114,6 +128,13 @@
   line-height: 24px;
   color: var(--white);
   max-width: 517px;
+}
+@media only screen and (max-width: 768px) {
+  .product-banner .common-background .container .bg-wrapper p {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto 20px;
+  }
 }
 @media only screen and (max-width: 540px) {
   .product-banner .common-background .container .bg-wrapper p {
@@ -264,8 +285,13 @@
 }
 @media only screen and (max-width: 1024px) {
   .product-secB .flex-box .container .flex-box-item:first-child figure {
-    width: auto;
+    width: 470px;
     height: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .product-secB .flex-box .container .flex-box-item:first-child figure {
+    width: auto;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -310,6 +336,15 @@
 @media only screen and (max-width: 1024px) {
   .product-secB .flex-box .container .flex-box-item:last-child h3 {
     max-width: 100%;
+    font-size: 38px;
+    line-height: 1.2;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .product-secB .flex-box .container .flex-box-item:last-child h3 {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto 30px;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -348,6 +383,12 @@
 @media only screen and (max-width: 1024px) {
   .product-secB .flex-box .container .flex-box-item:last-child p {
     max-width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .product-secB .flex-box .container .flex-box-item:last-child p {
+    max-width: 70%;
+    margin: 0 auto 30px;
   }
 }
 @media only screen and (max-width: 540px) {

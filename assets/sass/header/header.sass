@@ -1303,22 +1303,21 @@ footer
 
 // Dropdown Search 
 .header_search_wrap
-    width: 100%
-    max-width: 100%
     position: relative
     transition: 0.5s ease
     --triangle: 0px
     position: absolute
     bottom: -56px
-    left: 0
-    right: 0
+    // left: 0
+    
+    right: 100px
     // translate: -23% 0
     transform: perspective(2000px) translate3d(0px, 0px, 50px) rotateX(-90deg) scale3d(0.86, 0.75, 1) translateY(50px)
     transform-origin: top
     transition: .4s ease
     opacity: 0
-    width: 100%
-    min-width: 100%
+    width: 30%
+    min-width: 30%
     &.dropdown-show
         opacity: 1
         transform: scale3d(1, 1, 1) 
@@ -1463,6 +1462,8 @@ footer
             padding: 15px 10px
             .searched_pro
                 display: flex
+                align-items: center
+                gap: 20px
                 padding: 10px
                 border-radius: 10px
                 width: 100%
@@ -1470,12 +1471,12 @@ footer
                 &:hover
                     background: #f7f7f7
                 figure
-                    width: 30px
+                    width: 50px
                     height: 30px
                     line-height: 0
-                    img
-                        width: 100%
+                    img,svg
                         height: 100%
+                        width: 100%
                         object-fit: contain
                 .info
                     flex: 1

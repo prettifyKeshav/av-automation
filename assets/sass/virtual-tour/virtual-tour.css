@@ -33,22 +33,88 @@ section:has(.virtual-tour-secA)::after {
   }
 }
 
-section:has(.virtual-tour-secB) {
+section:has(.virtual-tour-secB-B) {
   position: relative;
 }
-section:has(.virtual-tour-secB)::before {
+section:has(.virtual-tour-secB-B)::before {
   content: "";
   position: absolute;
-  top: -1%;
+  bottom: -5%;
   left: -1%;
   width: 350px;
   height: 540px;
   background: url("../../../assets/images/Vectors/vector.png") no-repeat;
   z-index: -1;
-  transform: scaleY(-1);
+  transform: scaleY(1);
 }
 @media only screen and (max-width: 540px) {
-  section:has(.virtual-tour-secB)::before {
+  section:has(.virtual-tour-secB-B)::before {
+    width: 250px;
+    height: 350px;
+    background-size: contain;
+  }
+}
+
+section:has(.virtual-tour-secB) {
+  position: relative;
+}
+section:has(.virtual-tour-secB)::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  right: 0%;
+  width: 350px;
+  height: 538px;
+  background: url("../../../assets/images/Vectors/vector.png") no-repeat;
+  z-index: -1;
+  transform: scaleY(-1) scaleX(-1);
+}
+@media only screen and (max-width: 540px) {
+  section:has(.virtual-tour-secB)::after {
+    width: 250px;
+    height: 350px;
+    background-size: contain;
+  }
+}
+
+section:has(.machinery-infrastructure-swiper) {
+  position: relative;
+}
+section:has(.machinery-infrastructure-swiper)::before {
+  content: "";
+  position: absolute;
+  bottom: -5%;
+  left: -1%;
+  width: 350px;
+  height: 540px;
+  background: url("../../../assets/images/Vectors/vector.png") no-repeat;
+  z-index: -1;
+  transform: scaleY(1);
+}
+@media only screen and (max-width: 540px) {
+  section:has(.machinery-infrastructure-swiper)::before {
+    width: 250px;
+    height: 350px;
+    background-size: contain;
+  }
+}
+
+section:has(.virtual-tour-secC) {
+  position: relative;
+}
+section:has(.virtual-tour-secC)::after {
+  content: "";
+  position: absolute;
+  bottom: -15%;
+  right: 0%;
+  width: 350px;
+  height: 538px;
+  background: url("../../../assets/images/Vectors/vector.png") no-repeat;
+  z-index: -1;
+  transform: scaleY(1) scaleX(-1);
+}
+@media only screen and (max-width: 540px) {
+  section:has(.virtual-tour-secC)::after {
     width: 250px;
     height: 350px;
     background-size: contain;
@@ -61,13 +127,13 @@ section:has(.virtual-tour-secD) {
 section:has(.virtual-tour-secD)::before {
   content: "";
   position: absolute;
-  top: 19%;
+  bottom: -5%;
   left: -1%;
   width: 350px;
   height: 540px;
   background: url("../../../assets/images/Vectors/vector.png") no-repeat;
   z-index: -1;
-  transform: scaleY(-1);
+  transform: scaleY(1);
 }
 @media only screen and (max-width: 540px) {
   section:has(.virtual-tour-secD)::before {
@@ -80,19 +146,19 @@ section:has(.virtual-tour-secD)::before {
 section:has(.virtual-tour-secE) {
   position: relative;
 }
-section:has(.virtual-tour-secE)::after {
+section:has(.virtual-tour-secE)::before {
   content: "";
   position: absolute;
-  bottom: -15%;
-  right: 0%;
+  bottom: -5%;
+  left: -1%;
   width: 350px;
-  height: 538px;
+  height: 540px;
   background: url("../../../assets/images/Vectors/vector.png") no-repeat;
-  z-index: -1;
-  transform: scaleY(-1) scaleX(-1);
+  z-index: 0;
+  transform: scaleY(1);
 }
 @media only screen and (max-width: 540px) {
-  section:has(.virtual-tour-secE)::after {
+  section:has(.virtual-tour-secE)::before {
     width: 250px;
     height: 350px;
     background-size: contain;
@@ -242,6 +308,7 @@ section:has(.virtual-tour-secE)::after {
   margin-bottom: 50px;
   background: var(--white);
   z-index: 2 !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .sticky .flex-box {
   display: flex;
@@ -386,6 +453,124 @@ section:has(.virtual-tour-secE)::after {
   background: var(--primary);
 }
 
+.virtual-tour-secB-B {
+  padding: 50px 0;
+}
+.virtual-tour-secB-B h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  max-width: 522px;
+  margin: auto;
+  text-align: center;
+}
+.virtual-tour-secB-B .custom-swiper {
+  margin: 50px 0 0 0;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper {
+  display: flex;
+  gap: 20px;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide {
+  width: 20%;
+  height: 422px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.7s ease;
+  position: relative;
+  cursor: pointer;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide:hover {
+  width: 23%;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide.active {
+  width: 100%;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide.active::after {
+  backdrop-filter: blur(0px);
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide.active figcaption {
+  height: auto;
+  padding: 30px 30px;
+  gap: 30px;
+  display: initial;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide.active figcaption span {
+  opacity: 0;
+  scale: 0;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide.active figcaption h3 {
+  margin: 0;
+  position: static;
+  bottom: 55%;
+  max-width: 325px;
+  transform: rotate(0deg);
+  margin: 0;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(25px);
+  z-index: 0;
+  transition: 0.7s ease;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 30px 20px;
+  z-index: 1;
+  transition: 0.7s ease;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 30px;
+  align-items: center;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide figcaption span {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  border-radius: 25px;
+  transition: 0.7s ease;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide figcaption span img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.virtual-tour-secB-B .custom-swiper .custom-swiper-wrapper .custom-swiper-slide figcaption h3 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--white);
+  position: absolute;
+  bottom: 55%;
+  width: 20rem;
+  transition: transform 1s ease, margin 1s ease;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
 .virtual-tour-secB {
   padding: 50px 0;
   position: relative;
@@ -454,4 +639,228 @@ section:has(.virtual-tour-secE)::after {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper {
+  padding: 50px 0;
+  position: relative;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper .swiper-nav {
+  width: 103%;
+  max-width: 103%;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper .swiper .swiper-wrapper .swiper-slide {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper .swiper .swiper-wrapper .swiper-slide:hover figure img {
+  scale: 1.1;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper .swiper .swiper-wrapper .swiper-slide figure {
+  height: 288px;
+  overflow: hidden;
+  padding: 20px;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper .swiper .swiper-wrapper .swiper-slide figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: 0.5s ease;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper .swiper .swiper-wrapper .swiper-slide figcaption {
+  padding: 20px 50px 50px 50px;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper .swiper .swiper-wrapper .swiper-slide figcaption h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 23px;
+}
+.virtual-tour-secB .machinery-infrastructure-swiper .swiper .swiper-wrapper .swiper-slide figcaption p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.virtual-tour-secC {
+  padding: 50px 0;
+}
+.virtual-tour-secC h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+.virtual-tour-secC .grid-box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.virtual-tour-secC .grid-box .grid-box-item {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 30px 20px;
+}
+.virtual-tour-secC .grid-box .grid-box-item figure {
+  height: 63px;
+  width: 63px;
+  line-height: 0;
+  margin: 0 auto 20px;
+}
+.virtual-tour-secC .grid-box .grid-box-item figure img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.virtual-tour-secC .grid-box .grid-box-item p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--text);
+}
+.virtual-tour-secC .flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: var(--primary);
+  padding: 20px 30px;
+  margin-top: 40px;
+  gap: 120px;
+}
+.virtual-tour-secC .flex-box p {
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--white);
+  max-width: 782px;
+}
+.virtual-tour-secC .flex-box p strong {
+  font-weight: 700;
+}
+
+.virtual-tour-secD h2 {
+  text-align: center;
+}
+.virtual-tour-secD .photo-grid-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 20px;
+  margin: 40px auto 80px;
+}
+.virtual-tour-secD .photo-grid-box .col {
+  height: 324px;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+.virtual-tour-secD .photo-grid-box .col::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+  z-index: 1;
+  transition: 0.7s ease;
+}
+.virtual-tour-secD .photo-grid-box .col::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5882352941);
+  z-index: 0;
+  transition: 0.7s ease;
+  opacity: 0;
+}
+.virtual-tour-secD .photo-grid-box .col:hover::before {
+  opacity: 0;
+}
+.virtual-tour-secD .photo-grid-box .col:hover::after {
+  opacity: 1;
+}
+.virtual-tour-secD .photo-grid-box .col:hover figcaption {
+  bottom: 45%;
+  padding: 0;
+  z-index: 1;
+}
+.virtual-tour-secD .photo-grid-box .col:hover img {
+  scale: 1.1;
+}
+.virtual-tour-secD .photo-grid-box .col img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.7s ease;
+}
+.virtual-tour-secD .photo-grid-box .col figcaption {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  z-index: 1;
+  text-align: center;
+  width: 90%;
+  padding: 40px 0;
+  transition: 0.7s ease;
+}
+.virtual-tour-secD .photo-grid-box .col figcaption h4 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--white);
+}
+@media only screen and (max-width: 1024px) {
+  .virtual-tour-secD .photo-grid-box .col figcaption h4 {
+    font-size: 18px;
+  }
+}
+
+.virtual-tour-secE {
+  background: white;
+  padding: 70px 0;
+}
+.virtual-tour-secE .flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+}
+.virtual-tour-secE .flex-box .col .top {
+  border-left: 5px solid var(--primary);
+  padding-left: 30px;
+}
+.virtual-tour-secE .flex-box .col .top h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.virtual-tour-secE .flex-box .col .top p {
+  max-width: 380px;
+}
+.virtual-tour-secE .flex-box .col .btn2 {
+  display: inline-block;
+  margin: 20px 0 0 30px;
+}
+.virtual-tour-secE .flex-box .col:last-child {
+  width: 548px;
+  height: 407px;
+  line-height: 0;
+}
+.virtual-tour-secE .flex-box .col:last-child img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=virtual-tour.css.map */

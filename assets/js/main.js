@@ -330,6 +330,11 @@ $(function () {
                 speed: 1000,
             },
             992: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                speed: 1000,
+            },
+            1300: {
                 slidesPerView: 4,
                 spaceBetween: 20,
                 speed: 1000,
@@ -381,7 +386,7 @@ $(function () {
                 speed: 1000,
             },
             992: {
-                slidesPerView: 3.4,
+                slidesPerView: 3,
                 spaceBetween: 20,
                 speed: 1000,
             }
@@ -406,6 +411,11 @@ $(function () {
                 speed: 1000,
             },
             992: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                speed: 1000,
+            },
+            1300: {
                 slidesPerView: 4,
                 spaceBetween: 20,
                 speed: 1000,
@@ -426,7 +436,7 @@ $(function () {
                 speed: 500,
             },
             675: {
-                slidesPerView: 2,
+                slidesPerView: 1.4,
                 spaceBetween: 12,
                 speed: 1000,
             },
@@ -1521,4 +1531,29 @@ tabItems.forEach(item => {
         // update banner video
         updateBannerVideo(this);
     });
+});
+
+
+$(document).ready(function () {
+  $(".sticky .tab-nav li").on("click", function () {
+    const target = $(this).attr("slideTo");
+    if ($(target).length) {
+      $("html, body").animate({
+        scrollTop: $(target).offset().top - 150
+      }, 0.2);
+    }
+  });
+});
+
+
+const customSwiperSlides = document.querySelectorAll(".virtual-tour-secB-B .custom-swiper-slide");
+
+customSwiperSlides.forEach((customSwiperSlide) => {
+  customSwiperSlide.addEventListener("click", () => {
+    // remove active from all
+    customSwiperSlides.forEach((item) => item.classList.remove("active"));
+    // add active to clicked one
+    customSwiperSlide.classList.add("active");
+
+  });
 });

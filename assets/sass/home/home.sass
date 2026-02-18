@@ -463,6 +463,8 @@ section:has(.home-secJ)
 .home-secD
     padding: 50px 0
     position: relative
+    @include media(540)
+        padding: 50px 0 20px 0
     &::before
         content: ""
         position: absolute
@@ -471,20 +473,30 @@ section:has(.home-secJ)
         background: $primary
         top: 33.6%
         left: 0
+        @include media(540)
+            top: 27%
     @include afterLayerBlur
     &::after
-        left: 60%
+        left: 50%
         bottom: -40%
     .more-product-slider
         position: relative
+    .swiper-nav
+        @include media(540)
+            display: none
     .swiper
         padding: 80px 0 40px 0
+        @include media(540)
+            padding: 60px 0 0px 0px
         .swiper-wrapper
             .swiper-slide
                 position: relative
                 display: flex
                 align-items: center
                 gap: 30px
+                @include media(540)
+                    gap: 0px
+                    flex-direction: column
                 &::before
                     content: ""
                     position: absolute
@@ -495,6 +507,12 @@ section:has(.home-secJ)
                     width: 20px
                     height: 20px
                     border-radius: 50%
+                    @include media(1024)
+                        top: -14%
+                    @include media(768)
+                        top: -5%
+                    @include media(540)
+                        left: 50%
                 figure
                     height: 144px
                     width: 279px
@@ -504,6 +522,8 @@ section:has(.home-secJ)
                         object-fit: contain
                 figcaption
                     flex: 1
+                    @include media(540)
+                        text-align: center
                     h3
                         font-weight: 700
                         font-size: 16px
@@ -523,7 +543,6 @@ section:has(.home-secJ)
                         -webkit-box-orient: vertical
                         overflow: hidden
                         text-overflow: ellipsis
-                        text-align: justify
                     .read
                         font-weight: 600
                         font-size: 16px
@@ -534,6 +553,8 @@ section:has(.home-secJ)
                         gap: 10px
                         transition: 0.3s ease
                         margin-top: 20px
+                        @include media(540)
+                            justify-content: center
                         &:hover
                             gap: 20px
                     .number

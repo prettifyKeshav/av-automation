@@ -175,6 +175,11 @@
 .sub_productA .main_wrapper .colA {
   flex: 0 1 25%;
 }
+@media only screen and (max-width: 1024px) {
+  .sub_productA .main_wrapper .colA {
+    flex: 0 1 33%;
+  }
+}
 .sub_productA .main_wrapper .colA .filter_option_wrapper {
   position: sticky;
   top: calc(var(--headerheight) + 20px);
@@ -356,7 +361,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1024px) {
   .sub_productA .main_wrapper .colB .grid-box {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -79,8 +79,10 @@ section:has(.prodcut-details-secF)
         align-items: center
         padding: 10px
         gap: 15px
+        flex-wrap: wrap
         @include media(540)
-            gap: 5px
+            gap: 0 5px
+            padding: 10px 0
         li
             a
                 color: $black
@@ -131,33 +133,56 @@ section:has(.prodcut-details-secF)
         gap: 50px
         position: relative
         z-index: 1
+        @include media(1024)
+            flex-direction: column
         .flex-box-item:first-child
             flex: 0 1 50%
+            @include media(1024)
+                text-align: center
+                margin: auto
             h1
                 font-weight: 600
                 font-size: 36px
                 max-width: 551px
                 color: $white
                 margin-bottom: 15px
+                @include media(1024)
+                    text-align: center
+                    margin: 0 auto 15px
+                    line-height: 1.2
+                @include media(540)
+                    font-size: 26px
             p
                 font-weight: 500
                 font-size: 16px
                 line-height: 1.4
                 color: $white
                 max-width: 517px
+                @include media(1024)
+                    text-align: center
+                    margin: 0 auto 15px
             .btn-flex
                 display: flex
                 align-items: center
                 gap: 30px
                 justify-content: start
                 margin-top: 40px
+                @include media(1024)
+                    justify-content: center
+                @include media(540)
+                    flex-wrap: wrap
+                    gap: 15px
                 .wtp
                     line-height: 0
                 .btn2
+                    @include media(540)
+                        font-size: 12px
                     &.primary
                         margin: initial
                 .whitewhtie
                     color: $primary
+                    @include media(540)
+                        font-size: 12px
                     &::before
                         background: white
                         color: $primary
@@ -173,6 +198,8 @@ section:has(.prodcut-details-secF)
                 line-height: 24px
                 color: $white
                 margin-top: 20px
+                @include media(540)
+                    line-height: 1.2
                 strong
                     font-weight: 700
 
@@ -181,9 +208,17 @@ section:has(.prodcut-details-secF)
                 align-items: center
                 gap: 25px
                 margin-top: 100px
+                @include media(1024)
+                    margin-top: 30px
+                    justify-content: center
+                @include media(540)
+                    flex-direction: column
+                    gap: 15px
                 span
                     border: 1px solid #FFFFFF80
                     height: 30px
+                    @include media(540)
+                        display: none
                 .col
                     display: flex
                     justify-content: space-between
@@ -203,11 +238,20 @@ section:has(.prodcut-details-secF)
                         color: $white
                         border: none
                         line-height: 2
+                        display: block
         .flex-box-item:last-child
+            flex: 0 1 50%
+            @include media(540)
+                width: 100%
             figure
                 height: 412px
                 border-radius: 10px
                 overflow: hidden
+                line-height: 0
+                @include media(1024)
+                    height: 362px
+                @include media(540)
+                    height: fit-content
                 img
                     height: 100%
                     width: 100%
@@ -217,6 +261,7 @@ section:has(.prodcut-details-secF)
                 grid-template-columns: repeat(6, 1fr)
                 gap: 15px
                 margin-top: 15px
+                overflow: auto
                 .grid-box-item
                     width: 86px
                     height: 77px
@@ -237,6 +282,10 @@ section:has(.prodcut-details-secF)
         display: flex
         justify-content: center
         gap: 80px
+        width: 100%
+        @include media(540)
+            gap: 30px
+            overflow: auto
         li 
             color: #00000080
             font-weight: 600
@@ -245,6 +294,9 @@ section:has(.prodcut-details-secF)
             transition: 0.5s ease
             position: relative
             padding-bottom: 15px
+            @include media(540)
+                font-size: 14px
+                white-space: nowrap
             &::before
                 content: ""
                 position: absolute
@@ -264,17 +316,26 @@ section:has(.prodcut-details-secF)
         align-items: center
         gap: 50px
         padding: 50px 0
+        @include media(768)
+            flex-direction: column-reverse
+            padding: 30px 0 50px 0
         @include beforeLayerBlur
         &::before
             top: 60%
         @include afterLayerBlur
         &::after
             left: 70%
+            @include media(1024)
+                left: 50%
         figure
             width: 580px
             height: 416px
             border-radius: 10px
             overflow: hidden
+            line-height: 0
+            @include media(768)
+                width: 100%
+                height: 100%
             img
                 height: 100%
                 width: 100%
@@ -346,18 +407,27 @@ section:has(.prodcut-details-secF)
 
 .prodcut-details-secC
     padding: 50px 0
+    @include media(540)
+        padding: 20px 0 50px 0
     h2
         text-align: center
         font-weight: 700
         font-size: 36px
         line-height: 48px
+        @include media(540)
+            font-size: 32px
     .options-available-slider
         position: relative
         .swiper-nav
             top: 42%
+            @include media(768)
+                width: 105%
+                max-width: 105%
     .swiper
         padding: 40px 0
         max-width: 1230px
+        @include media(540)
+            padding: 20px 0 0px 0
         .swiper-wrapper
             .swiper-slide
                 figure
@@ -385,17 +455,24 @@ section:has(.prodcut-details-secF)
         top: -50%
     @include afterLayerBlur
     &::after
-        left: 60%
+        left: 50%
     .container
         background: $white
         border-radius: 10px
         border-bottom: 5px solid #05B4C4
         padding: 30px 60px 30px 30px
         margin-bottom: 50px
+        @include media(540)
+            padding: 40px 20px
+            width: 92%
         .flex-box
             display: flex
             justify-content: space-between
             gap: 50px
+            @include media(768)
+                gap: 20px
+            @include media(540)
+                flex-direction: column
             .line
                 border-left: 1px solid #00000036 
             .col
@@ -428,12 +505,20 @@ section:has(.prodcut-details-secF)
 
 .prodcut-details-secF
     padding: 50px 0
+    @include media(540)
+        padding: 20px 0 50px 0
     @include afterLayerBlur
     .more-product-slider
         position: relative
+        .swiper-nav
+            @include media(768)
+                width: 105%
+                max-width: 105%
     .swiper
         padding: 40px 0
         max-width: 1230px
+        @include media(540)
+            padding: 20px 0
         .swiper-wrapper
             .swiper-slide
                 background: $white

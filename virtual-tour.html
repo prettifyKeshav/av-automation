@@ -455,16 +455,19 @@
             <div class="container">
                 <div class="flex-box">
                     <ul class="tab-nav">
-                        <li class="active" data-tab="video_gallery" banner-video="assets/video/home-secG.mp4">
+                        <li slideTo="#virtual-tour-secA" class="" data-tab="video_gallery"
+                            banner-video="assets/video/home-secG.mp4">
                             <img class="svg" src="assets/images/OurWork/video.svg" alt="ico">
                             Corporate Video
                         </li>
-                        <li data-tab="photo_gallery" banner-video="assets/video/photo-gallery-banner.mp4">
-                            <img class="svg" src="assets/images/OurWork/photo.svg" alt="ico">
-                            Gallery & Brochure
+                        <li slideTo="#virtual-tour-secB" data-tab="In_House"
+                            banner-video="assets/video/photo-gallery-banner.mp4">
+                            <img class="svg" src="assets/images/virtual-tour/conveyor-belt.svg" alt="ico">
+                            In-House Machinery Setup
                         </li>
 
-                        <li data-tab="photo_gallery" banner-video="assets/video/photo-gallery-banner.mp4">
+                        <li slideTo="#virtual-tour-secD" data-tab="photo_gallery"
+                            banner-video="assets/video/photo-gallery-banner.mp4">
                             <img class="svg" src="assets/images/OurWork/photo.svg" alt="ico">
                             Gallery & Brochure
                         </li>
@@ -474,7 +477,7 @@
         </section>
 
         <section>
-            <div class="virtual-tour-secA">
+            <div class="virtual-tour-secA" id="virtual-tour-secA">
                 <div class="container">
                     <div class="flex-box">
                         <figure data-animate="fade-up">
@@ -503,7 +506,69 @@
         </section>
 
         <section>
-            <div class="virtual-tour-secB">
+            <div class="virtual-tour-secB-B">
+                <div class="container" data-animate="fade-up">
+                    <h2>Complete In-House Capabilities</h2>
+
+                    <div class="custom-swiper">
+                        <div class="custom-swiper-wrapper">
+                            <div class="custom-swiper-slide active">
+                                <img src="assets/images/virtual-tour/capabilities/1.jpg" alt="">
+                                <figcaption>
+                                    <span>
+                                        <img src="assets/images/plus-icon.png" alt="ico">
+                                    </span>
+                                    <h3>Dedicated Design & Engineering team</h3>
+                                </figcaption>
+                            </div>
+
+                            <div class="custom-swiper-slide">
+                                <img src="assets/images/virtual-tour/capabilities/2.jpg" alt="">
+                                <figcaption>
+                                    <span>
+                                        <img class="svg" src="assets/images/plus-icon.png" alt="ico">
+                                    </span>
+                                    <h3>Advanced R&D and Product Development</h3>
+                                </figcaption>
+                            </div>
+
+                            <div class="custom-swiper-slide">
+                                <img src="assets/images/virtual-tour/capabilities/3.jpg" alt="">
+                                <figcaption>
+                                    <span>
+                                        <img src="assets/images/plus-icon.png" alt="ico">
+                                    </span>
+                                    <h3>Stringent Quality Control Systems</h3>
+                                </figcaption>
+                            </div>
+
+                            <div class="custom-swiper-slide">
+                                <img src="assets/images/virtual-tour/capabilities/4.jpg" alt="">
+                                <figcaption>
+                                    <span>
+                                        <img src="assets/images/plus-icon.png" alt="ico">
+                                    </span>
+                                    <h3>High-capacity Production & Assembly Lines</h3>
+                                </figcaption>
+                            </div>
+
+                            <div class="custom-swiper-slide">
+                                <img src="assets/images/virtual-tour/capabilities/5.jpg" alt="">
+                                <figcaption>
+                                    <span>
+                                        <img src="assets/images/plus-icon.png" alt="ico">
+                                    </span>
+                                    <h3>End-to-end Machinery & Tool Room Infrastructure</h3>
+                                </figcaption>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="virtual-tour-secB" id="virtual-tour-secB">
                 <div class="container">
                     <h2 data-animate="fade-up">Machinery & Infrastructure</h2>
 
@@ -515,36 +580,194 @@
                         </div>
                     </div>
 
-                    <div class="machinery-infrastructure-swiper">
+                    <div class="machinery-infrastructure-swiper" data-animate="fade-up">
+                        <div class="swiper-nav center-full">
+                            <button class="machinery-infrastructure-next swiper-next gray-border">
+                                <img class="svg" src="assets/icon/right-white.svg" alt="white">
+                            </button>
+                            <button class="machinery-infrastructure-prev swiper-prev">
+                                <img class="svg" src="assets/icon/right-white.svg" alt="white">
+                            </button>
+                        </div>
                         <div class="swiper">
-                            <div class="swiper-warpper">
-                                <div class="swiper-slide">
+                            <div class="swiper-wrapper">
+                                <a href="javascript:void(0)" class="swiper-slide">
                                     <figure>
                                         <img src="assets/images/virtual-tour/1.jpg" alt="ico">
                                     </figure>
-                                    <h3>CNC Milling & Turning</h3>
-                                    <p>High-accuracy machining for complex and tight-tolerance components.</p>
-                                </div>
+                                    <figcaption>
+                                        <h3>CNC Milling & Turning</h3>
+                                        <p>High-accuracy machining for complex and tight-tolerance components.</p>
+                                    </figcaption>
+                                </a>
 
-                                <div class="swiper-slide">
+                                <a href="javascript:void(0)" class="swiper-slide">
                                     <figure>
                                         <img src="assets/images/virtual-tour/2.jpg" alt="ico">
                                     </figure>
-                                    <h3>Lathe Machines</h3>
-                                    <p>Precision shaping and finishing of cylindrical parts.</p>
-                                </div>
+                                    <figcaption>
+                                        <h3>Lathe Machines</h3>
+                                        <p>Precision shaping and finishing of cylindrical parts.</p>
+                                    </figcaption>
+                                </a>
 
-                                <div class="swiper-slide">
+                                <a href="javascript:void(0)" class="swiper-slide">
                                     <figure>
                                         <img src="assets/images/virtual-tour/3.jpg" alt="ico">
                                     </figure>
-                                    <h3>Vertical Milling Machines</h3>
-                                    <p>Accurate milling for heavy and intricate components.</p>
-                                </div>
+                                    <figcaption>
+                                        <h3>Vertical Milling Machines</h3>
+                                        <p>Accurate milling for heavy and intricate components.</p>
+                                    </figcaption>
+                                </a>
+                                <a href="javascript:void(0)" class="swiper-slide">
+                                    <figure>
+                                        <img src="assets/images/virtual-tour/3.jpg" alt="ico">
+                                    </figure>
+                                    <figcaption>
+                                        <h3>Vertical Milling Machines</h3>
+                                        <p>Accurate milling for heavy and intricate components.</p>
+                                    </figcaption>
+                                </a>
+                                <a href="javascript:void(0)" class="swiper-slide">
+                                    <figure>
+                                        <img src="assets/images/virtual-tour/3.jpg" alt="ico">
+                                    </figure>
+                                    <figcaption>
+                                        <h3>Vertical Milling Machines</h3>
+                                        <p>Accurate milling for heavy and intricate components.</p>
+                                    </figcaption>
+                                </a>
                             </div>
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="virtual-tour-secC">
+                <div class="container" data-animate="fade-up">
+                    <h2>Why Our Infrastructure Matters</h2>
+                    <div class="grid-box">
+                        <div class="grid-box-item">
+                            <figure>
+                                <img src="assets/images/virtual-tour/ico/1.png" alt="ico">
+                            </figure>
+                            <p>Complete process control</p>
+                        </div>
+
+                        <div class="grid-box-item">
+                            <figure>
+                                <img src="assets/images/virtual-tour/ico/2.png" alt="ico">
+                            </figure>
+                            <p>Faster turnaround times</p>
+                        </div>
+
+                        <div class="grid-box-item">
+                            <figure>
+                                <img src="assets/images/virtual-tour/ico/3.png" alt="ico">
+                            </figure>
+                            <p>Zero dependency on third parties</p>
+                        </div>
+
+                        <div class="grid-box-item">
+                            <figure>
+                                <img src="assets/images/virtual-tour/ico/4.png" alt="ico">
+                            </figure>
+                            <p>Consistent quality across projects</p>
+                        </div>
+
+                        <div class="grid-box-item">
+                            <figure>
+                                <img src="assets/images/virtual-tour/ico/5.png" alt="ico">
+                            </figure>
+                            <p>Scalable production for large and complex orders</p>
+                        </div>
+                    </div>
+
+                    <div class="flex-box">
+                        <figure>
+                            <img src="assets/images/virtual-tour/ico/qoma.png" alt="ico">
+                        </figure>
+                        <p><strong>Our Virtual</strong> Tour reflects not just our facilities, but our commitment to
+                            <strong>
+                                precision, reliability, and manufacturing excellence.
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="virtual-tour-secD" id="virtual-tour-secD">
+                <div class="container" data-animate="fade-up">
+                    <h2>Photo Gallery</h2>
+
+                    <div class="grid-box photo-grid-box" data-tab="photo_gallery">
+                        <a href="assets/images/OurWork/photo-galllery/1.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/1.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Turn Key Project of Sorting Conveyor</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/2.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/2.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Enclosures</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/3.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/3.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Bottling Industry Conveyor</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/4.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/4.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Grocery Rack</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/5.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/5.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Pipe & Joint work Station</h4>
+                            </figcaption>
+                        </a>
+
+                        <a href="assets/images/OurWork/photo-galllery/6.jpg" class="col" data-fancybox="gallery">
+                            <img src="assets/images/OurWork/photo-galllery/6.jpg" alt="ico">
+                            <figcaption>
+                                <h4>Conveyor</h4>
+                            </figcaption>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="virtual-tour-secE">
+                <div class="container">
+                    <div class="flex-box">
+                        <div class="col" data-animate="fade-up">
+                            <div class="top">
+                                <h2>Download Brochure</h2>
+                                <p>Get a quick overview of our products, services, and capabilities.</p>
+                            </div>
+                            <a href="javascript:void(0);" class="btn2 primary">Download Now</a>
+                        </div>
+                        <div class="col" data-animate="fade-up">
+                            <img src="assets/images/virtual-tour/im.png" alt="ico">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

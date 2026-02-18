@@ -135,6 +135,8 @@
             gap: 40px
         .colA
             flex: 0 1 25%
+            @include media(1024)
+                flex: 0 1 33%
             .filter_option_wrapper
                 position: sticky
                 top: calc( var(--headerheight) + 20px )
@@ -478,7 +480,7 @@
                 display: grid
                 grid-template-columns: repeat(3, 1fr)
                 gap: 20px
-                @include media(991)
+                @include media(1024)
                     grid-template-columns: repeat(2, 1fr)
                 @include media(540)
                     grid-template-columns: repeat(1, 1fr)
