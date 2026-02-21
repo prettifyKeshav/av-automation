@@ -358,6 +358,7 @@ section:has(.prodcut-details-secF)::after {
   border-radius: 10px;
   overflow: hidden;
   line-height: 0;
+  position: relative;
 }
 @media only screen and (max-width: 1024px) {
   .product-details-banner .flex-box .flex-box-item:last-child figure {
@@ -375,6 +376,11 @@ section:has(.prodcut-details-secF)::after {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.product-details-banner .flex-box .flex-box-item:last-child figure .play-button {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
 }
 .product-details-banner .flex-box .flex-box-item:last-child .grid-box {
   display: grid;

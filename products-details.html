@@ -478,9 +478,15 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="flex-box-item" data-animate="fade-up">
+
+                        <div class="flex-box-item right-img" data-animate="fade-up">
                             <figure>
-                                <img src="assets/images/other/product/detail/product-detail-banner.jpg" alt="img">
+                                <img src="" alt="img">
+
+                                <div class="play-button" data-model=".video-pop"
+                                    data-video="https://www.youtube.com/embed/EG3n3TRMDXo?si=2vwfe-wyhrs6g8-0">
+                                    <button type="button" class="play-btn"></button>
+                                </div>
                             </figure>
 
                             <div class="grid-box">
@@ -1322,6 +1328,22 @@
         }
         logoChange()
         // White Header Aplly script ================================================
+
+        $(document).ready(function () {
+            $(".flex-box-item.right-img").each(function () {
+                var $section = $(this);
+                // On load - set active image
+                var activeImg = $section.find(".grid-box-item.active img").attr("src");
+                $section.find("figure > img").attr("src", activeImg);
+                // On click
+                $section.find(".grid-box-item").on("click", function () {
+                    $section.find(".grid-box-item").removeClass("active");
+                    $(this).addClass("active");
+                    var newImg = $(this).find("img").attr("src");
+                    $section.find("figure > img").attr("src", newImg);
+                });
+            });
+        });
     </script>
 
 </body>
