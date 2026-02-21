@@ -131,6 +131,11 @@ section:has(.esg-report-secE)::after {
   height: 100%;
   background: linear-gradient(270deg, rgba(0, 0, 0, 0) 14.81%, rgba(0, 0, 0, 0.45) 95.4%);
 }
+@media only screen and (max-width: 768px) {
+  .esg-report-banner::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14.81%, rgba(0, 0, 0, 0.69) 95.4%);
+  }
+}
 .esg-report-banner .common-background video, .esg-report-banner .common-background img {
   position: absolute;
   top: 0;
@@ -180,15 +185,20 @@ section:has(.esg-report-secE)::after {
     font-size: 40px;
   }
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .esg-report-banner .common-background .container .bg-wrapper h1 {
     max-width: 100%;
-    font-size: 25px;
+    font-size: 48px;
     line-height: 1.1;
     text-align: center;
     padding: 0 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-left: 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-banner .common-background .container .bg-wrapper h1 {
+    font-size: 26px;
   }
 }
 .esg-report-banner .common-background .container .bg-wrapper p {
@@ -198,11 +208,11 @@ section:has(.esg-report-secE)::after {
   color: var(--white);
   max-width: 609px;
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .esg-report-banner .common-background .container .bg-wrapper p {
     text-align: center;
     max-width: 90%;
-    margin: auto;
+    margin: 0 auto 30px;
     font-size: 15px;
     line-height: 1.3;
   }
@@ -240,6 +250,13 @@ section:has(.esg-report-secE)::after {
 
 .esg-report-secA {
   padding: 50px 0;
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secA {
+    padding: 40px 0 0 0;
+  }
+}
+.esg-report-secA {
   position: relative;
 }
 .esg-report-secA::before {
@@ -264,11 +281,21 @@ section:has(.esg-report-secE)::after {
   top: 50%;
   left: 60%;
 }
+@media only screen and (max-width: 768px) {
+  .esg-report-secA::before {
+    left: 50%;
+  }
+}
 .esg-report-secA .flex-box {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 60px;
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secA .flex-box {
+    flex-direction: column;
+  }
 }
 .esg-report-secA .flex-box figure {
   width: 50%;
@@ -276,6 +303,18 @@ section:has(.esg-report-secE)::after {
   height: 416px;
   border-radius: 10px;
   overflow: hidden;
+  line-height: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .esg-report-secA .flex-box figure {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secA .flex-box figure {
+    width: 100%;
+  }
 }
 .esg-report-secA .flex-box figure img, .esg-report-secA .flex-box figure video {
   height: 100%;
@@ -285,6 +324,11 @@ section:has(.esg-report-secE)::after {
 }
 .esg-report-secA .flex-box .content {
   width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secA .flex-box .content {
+    width: 100%;
+  }
 }
 .esg-report-secA .flex-box .content h2 {
   font-weight: 700;
@@ -303,9 +347,46 @@ section:has(.esg-report-secE)::after {
   height: 5px;
   background: var(--primary);
 }
+@media only screen and (max-width: 768px) {
+  .esg-report-secA .flex-box .content h2 {
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+  }
+  .esg-report-secA .flex-box .content h2::before {
+    content: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secA .flex-box .content h2 {
+    font-size: 26px;
+    max-width: 90%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secA .flex-box .content p {
+    text-align: center;
+    max-width: 70%;
+    margin: 20px auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secA .flex-box .content p {
+    font-size: 14px;
+    max-width: 90%;
+    margin: 20px auto 0;
+  }
+}
 
 .esg-report-secB {
   padding: 50px 0;
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secB {
+    padding: 50px 0 0 0;
+  }
+}
+.esg-report-secB {
   position: relative;
 }
 .esg-report-secB::before {
@@ -338,6 +419,12 @@ section:has(.esg-report-secE)::after {
   line-height: 1.1;
   margin: auto;
 }
+@media only screen and (max-width: 540px) {
+  .esg-report-secB h2 {
+    font-size: 26px;
+    max-width: 90%;
+  }
+}
 .esg-report-secB .esg-report-secB-banner {
   position: relative;
   color: white;
@@ -355,12 +442,12 @@ section:has(.esg-report-secE)::after {
 }
 @media only screen and (max-width: 991px) {
   .esg-report-secB .esg-report-secB-banner {
-    height: 50vh;
+    height: 60vh;
   }
 }
 @media only screen and (max-width: 540px) {
   .esg-report-secB .esg-report-secB-banner {
-    height: 60vh;
+    height: 70vh;
   }
 }
 .esg-report-secB .esg-report-secB-banner::before {
@@ -371,6 +458,11 @@ section:has(.esg-report-secE)::after {
   width: 100%;
   height: 100%;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secB .esg-report-secB-banner::before {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(348deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+  }
 }
 .esg-report-secB .esg-report-secB-banner .common-background video {
   position: absolute;
@@ -396,22 +488,51 @@ section:has(.esg-report-secE)::after {
   transform: translate(-50%);
   padding: 70px 0 0 70px;
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 1024px) {
   .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper {
     bottom: 10%;
+    padding: 50px 0 0 50px;
   }
 }
 @media only screen and (max-width: 540px) {
   .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper {
     bottom: 10%;
     margin-left: 0;
+    padding: 0;
   }
 }
-.esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper h2 {
+.esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper h3 {
   font-weight: 700;
-  margin-bottom: 10px;
+  padding-bottom: 15px;
   font-size: 30px;
   line-height: 40px;
+  position: relative;
+}
+.esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper h3::before {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  height: 5px;
+  width: 70px;
+  background: var(--primary);
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper h3 {
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper h3::before {
+    content: none;
+  }
 }
 .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper p {
   font-weight: 600;
@@ -432,8 +553,23 @@ section:has(.esg-report-secE)::after {
 .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper-nav {
   margin-right: 60px;
 }
+@media only screen and (max-width: 540px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper-nav {
+    display: none;
+  }
+}
 .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper {
   margin-top: 50px;
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper {
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper {
+    padding: 20px 0 0 20px;
+  }
 }
 .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide {
   background: white;
@@ -444,12 +580,27 @@ section:has(.esg-report-secE)::after {
   justify-content: space-between;
   gap: 40px;
 }
+@media only screen and (max-width: 540px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide .flex-box {
+    gap: 20px;
+  }
+}
 .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide .flex-box h3 {
   color: var(--black);
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 10px;
+}
+@media only screen and (max-width: 1024px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide .flex-box h3 {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide .flex-box h3 {
+    margin-bottom: 10px;
+  }
 }
 .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide .flex-box figure {
   width: 42px;
@@ -466,6 +617,12 @@ section:has(.esg-report-secE)::after {
   color: var(--text);
   font-size: 14px;
   line-height: 1.4;
+  text-align: left;
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secB .esg-report-secB-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide p {
+    margin: 0;
+  }
 }
 
 .esg-report-secC {
@@ -519,10 +676,20 @@ section:has(.esg-report-secE)::after {
   bottom: -10%;
   left: 60%;
 }
+@media only screen and (max-width: 768px) {
+  .esg-report-secC::after {
+    left: 50%;
+  }
+}
 .esg-report-secC .flex-box {
   justify-content: center;
   gap: 80px;
   padding: 50px 0 0 0;
+}
+@media only screen and (max-width: 1024px) {
+  .esg-report-secC .flex-box {
+    gap: 60px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .esg-report-secC .flex-box {
@@ -531,16 +698,22 @@ section:has(.esg-report-secE)::after {
     padding: 0;
   }
 }
+@media only screen and (max-width: 540px) {
+  .esg-report-secC .flex-box {
+    gap: 30px;
+  }
+}
 .esg-report-secC .flex-box .flex-box-item:first-child {
   width: 580px;
   height: 416px;
   border-radius: 10px;
   overflow: hidden;
+  line-height: 0;
 }
 @media only screen and (max-width: 768px) {
   .esg-report-secC .flex-box .flex-box-item:first-child {
     margin: auto;
-    width: 180px;
+    width: 100%;
     height: auto;
   }
 }
@@ -587,18 +760,43 @@ section:has(.esg-report-secE)::after {
   width: 70px;
   background: var(--primary);
 }
+@media only screen and (max-width: 768px) {
+  .esg-report-secC .flex-box .flex-box-item:last-child .heading h3 {
+    text-align: center;
+    max-width: 70%;
+    margin: 10px auto 20px;
+  }
+  .esg-report-secC .flex-box .flex-box-item:last-child .heading h3::before {
+    content: none;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secC .flex-box .flex-box-item:last-child .heading h3 {
+    max-width: 100%;
+  }
+}
 .esg-report-secC .flex-box .flex-box-item:last-child .heading p {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   max-width: 534px;
 }
+@media only screen and (max-width: 768px) {
+  .esg-report-secC .flex-box .flex-box-item:last-child .heading p {
+    text-align: center;
+  }
+}
 .esg-report-secC .flex-box .flex-box-item:last-child .summery-detail-content {
   padding: 10px 0px 40px 50px;
   margin-top: 20px;
-  border-left: 1px solid #303030;
+  border-left: 1px solid var(--primary);
   width: -moz-fit-content;
   width: fit-content;
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secC .flex-box .flex-box-item:last-child .summery-detail-content {
+    padding: 10px 0px 10px 40px;
+  }
 }
 .esg-report-secC .flex-box .flex-box-item:last-child .col {
   transition: 0.5s ease;
@@ -625,7 +823,7 @@ section:has(.esg-report-secE)::after {
   margin-bottom: 10px;
 }
 .esg-report-secC .flex-box .flex-box-item:last-child .col .title .outer-circle {
-  border: 1px solid var(--black);
+  border: 1px solid var(--primary);
   border-radius: 50%;
   background-color: var(--white);
   padding: 10px;
@@ -637,7 +835,7 @@ section:has(.esg-report-secE)::after {
 }
 @media only screen and (max-width: 540px) {
   .esg-report-secC .flex-box .flex-box-item:last-child .col .title .outer-circle {
-    margin-left: 5px;
+    margin-left: 15px;
     padding: 7px;
     top: 6px;
   }
@@ -646,7 +844,7 @@ section:has(.esg-report-secE)::after {
   flex: 0 1 auto;
   --size: 18px;
   --border: 2px;
-  --bgcolor: var(--black);
+  --bgcolor: var(--primary);
   height: var(--size);
   width: var(--size);
   position: relative;
@@ -767,7 +965,14 @@ section:has(.esg-report-secE)::after {
 }
 @media only screen and (max-width: 540px) {
   .esg-report-secD .esg-report-secD-banner {
+    height: 50vh;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .esg-report-secD .esg-report-secD-banner {
     height: 60vh;
+    margin-top: 20px;
   }
 }
 .esg-report-secD .esg-report-secD-banner::before {
@@ -815,6 +1020,7 @@ section:has(.esg-report-secE)::after {
 }
 @media only screen and (max-width: 540px) {
   .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper {
+    width: 100%;
     bottom: 10%;
     margin-left: 0;
   }
@@ -835,6 +1041,18 @@ section:has(.esg-report-secE)::after {
   height: 5px;
   width: 70px;
   background: var(--primary);
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper h2 {
+    font-size: 20px;
+    line-height: 1.2;
+    max-width: 80%;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+  .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper h2::before {
+    content: none;
+  }
 }
 .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper p {
   font-weight: 600;
@@ -858,6 +1076,12 @@ section:has(.esg-report-secE)::after {
 .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper .swiper {
   margin-top: 50px;
 }
+@media only screen and (max-width: 540px) {
+  .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper .swiper {
+    margin-top: 30px;
+    padding-left: 20px;
+  }
+}
 .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide {
   background: white;
   padding: 20px;
@@ -867,6 +1091,11 @@ section:has(.esg-report-secE)::after {
   justify-content: space-between;
   gap: 40px;
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide .flex-box {
+    gap: 10px;
+  }
 }
 .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide .flex-box h3 {
   color: var(--black);
@@ -886,6 +1115,15 @@ section:has(.esg-report-secE)::after {
   color: var(--text);
   font-size: 14px;
   line-height: 1.4;
+  text-align: left;
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secD .esg-report-secD-banner .common-background .container .bg-wrapper .swiper .swiper-wrapper .swiper-slide p {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.2;
+  }
 }
 
 .esg-report-secE {
@@ -920,12 +1158,30 @@ section:has(.esg-report-secE)::after {
   align-items: center;
   gap: 60px;
 }
+@media only screen and (max-width: 768px) {
+  .esg-report-secE .flex-box {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+}
 .esg-report-secE .flex-box figure {
   width: 50%;
   max-width: 580px;
   height: 416px;
   border-radius: 10px;
   overflow: hidden;
+  line-height: 0;
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secE .flex-box figure {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secE .flex-box figure {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
 }
 .esg-report-secE .flex-box figure img, .esg-report-secE .flex-box figure video {
   height: 100%;
@@ -937,6 +1193,13 @@ section:has(.esg-report-secE)::after {
   max-width: 50%;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secE .flex-box .content {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
 }
 .esg-report-secE .flex-box .content h2 {
   color: var(--black);
@@ -955,6 +1218,11 @@ section:has(.esg-report-secE)::after {
   height: 5px;
   background: var(--primary);
 }
+@media only screen and (max-width: 768px) {
+  .esg-report-secE .flex-box .content h2::before {
+    content: none;
+  }
+}
 .esg-report-secE .flex-box .content p {
   font-weight: 500;
   font-size: 16px;
@@ -963,6 +1231,16 @@ section:has(.esg-report-secE)::after {
   margin-bottom: 10px;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secE .flex-box .content p {
+    margin: 0 auto 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secE .flex-box .content p {
+    margin: 0 auto 0px;
+  }
 }
 .esg-report-secE .flex-box .content h3 {
   font-weight: 700;
@@ -973,4 +1251,16 @@ section:has(.esg-report-secE)::after {
   max-width: 478px;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media only screen and (max-width: 768px) {
+  .esg-report-secE .flex-box .content h3 {
+    margin: 0 auto 20px;
+    max-width: 60%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .esg-report-secE .flex-box .content h3 {
+    max-width: 100%;
+    margin: 10px auto 20px;
+  }
 }/*# sourceMappingURL=esg-report.css.map */

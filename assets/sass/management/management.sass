@@ -30,6 +30,8 @@
         margin: 160px auto 50px
         position: relative
         z-index: 1
+        @include media(540)
+            margin: 140px auto 50px
         h1
             max-width: 576px
             margin-bottom: 20px
@@ -37,7 +39,8 @@
             text-align: center
             font-weight: 700
             font-size: 48px
-
+            @include media(540)
+                font-size: 28px
         p
             max-width: 548px
             margin: auto
@@ -49,6 +52,7 @@
             @include media(540)
                 max-width: 90%
                 margin: 20px  auto 0
+                font-size: 14px
 
 .management-secB
     overflow: hidden
@@ -127,7 +131,14 @@
             gap: 90px
             position: relative
             overflow: hidden
+            @include media(1024)
+                gap: 50px
+                max-width: 880px
             .flex-box-item:first-child
+                @include media(1024)
+                    width: 50%
+                @include media(768)
+                    width: 80%
                 figure
                     width: 416px
                     height: 458px
@@ -135,6 +146,10 @@
                     @include media(1024)
                         width: auto
                         height: auto
+
+                        // width: 80%
+                        // height: auto
+                        // margin-left: auto
                     @include media(540)
                         width: 95%
                         margin: auto
@@ -161,7 +176,7 @@
                 position: relative
                 max-width: 480px
                 @include media(1024)
-                    width: 60%
+                    width: 50%
                 @include media(991)
                     width: 100%
                     text-align: center
@@ -179,13 +194,15 @@
                         line-height: 1.1
                         width: fit-content
                         max-width: 90%
-                        margin:0  auto 25px 
+                        margin: 0 auto 5px
                 h4
                     font-weight: 600
                     font-size: 20px
                     line-height: 24px
                     position: relative
                     margin-bottom: 30px
+                    @include media(768)
+                        margin-bottom: 10px
                     &::before
                         content: ""
                         position: absolute
@@ -194,10 +211,8 @@
                         height: 5px
                         width: 66px
                         background: $primary
-                        @include media(540)
-                            left: 50%
-                            bottom: -30%
-                            transform: translate(-50%)
+                        @include media(768)
+                            content: none
                 p
                     font-weight: 400
                     font-size: 16px
@@ -209,3 +224,4 @@
                         font-size: 14px
                         max-width: 90%
                         margin: 0 auto 20px
+                        line-height: 1.5

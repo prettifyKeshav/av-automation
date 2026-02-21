@@ -43,6 +43,11 @@
   height: 100%;
   background: linear-gradient(270deg, rgba(0, 0, 0, 0) 20.19%, rgba(0, 0, 0, 0.45) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 39.42%, rgba(0, 0, 0, 0.2) 100%);
 }
+@media only screen and (max-width: 768px) {
+  .our-work-banner::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20.19%, rgba(0, 0, 0, 0.45) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 39.42%, rgba(0, 0, 0, 0.2) 100%);
+  }
+}
 .our-work-banner .common-background video, .our-work-banner .common-background img {
   position: absolute;
   top: 0;
@@ -92,15 +97,20 @@
     font-size: 40px;
   }
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .our-work-banner .common-background .container .bg-wrapper h1 {
     max-width: 100%;
-    font-size: 25px;
+    font-size: 48px;
     line-height: 1.1;
     text-align: center;
     padding: 0 20px;
     margin-bottom: 20px;
     border-left: 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .our-work-banner .common-background .container .bg-wrapper h1 {
+    font-size: 36px;
   }
 }
 .our-work-banner .common-background .container .bg-wrapper p {
@@ -110,13 +120,19 @@
   color: var(--white);
   max-width: 609px;
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .our-work-banner .common-background .container .bg-wrapper p {
     text-align: center;
-    max-width: 90%;
+    max-width: 70%;
     margin: auto;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.3;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .our-work-banner .common-background .container .bg-wrapper p {
+    max-width: 90%;
+    font-weight: normal;
   }
 }
 
@@ -125,15 +141,39 @@
   background: var(--white);
   z-index: 2 !important;
 }
+@media only screen and (max-width: 540px) {
+  .sticky {
+    margin-bottom: 30px;
+  }
+}
 .sticky .flex-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+@media only screen and (max-width: 540px) {
+  .sticky .flex-box {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 .sticky .flex-box .tab-nav {
   display: flex;
   align-items: center;
   gap: 50px;
+}
+@media only screen and (max-width: 1024px) {
+  .sticky .flex-box .tab-nav {
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .sticky .flex-box .tab-nav {
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1882352941);
+    gap: 34px;
+  }
 }
 .sticky .flex-box .tab-nav li {
   padding: 20px 30px;
@@ -158,11 +198,21 @@
   background: var(--primary);
   transition: 0.5s ease;
 }
+@media only screen and (max-width: 540px) {
+  .sticky .flex-box .tab-nav li::before {
+    height: 3px;
+  }
+}
 .sticky .flex-box .tab-nav li svg {
   height: 22px;
 }
 .sticky .flex-box .tab-nav li svg path {
   fill: var(--text);
+}
+@media only screen and (max-width: 540px) {
+  .sticky .flex-box .tab-nav li {
+    padding: 20px 0px 13px 0px;
+  }
 }
 .sticky .flex-box .tab-nav li:first-child svg path {
   fill: var(--white);
@@ -195,6 +245,12 @@
   width: -moz-fit-content;
   width: fit-content;
 }
+@media only screen and (max-width: 540px) {
+  .sticky .flex-box .custom-select {
+    margin-bottom: 15px;
+    margin-left: auto;
+  }
+}
 .sticky .flex-box .custom-select .current {
   font-weight: 400;
   font-size: 16px;
@@ -216,6 +272,16 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px 20px;
   margin-bottom: 80px;
+}
+@media only screen and (max-width: 768px) {
+  .tab-nav-content .tabs.photo-grid-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .tab-nav-content .tabs.photo-grid-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .tab-nav-content .tabs.photo-grid-box .col {
   height: 324px;
@@ -293,6 +359,16 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px 20px;
   margin-bottom: 80px;
+}
+@media only screen and (max-width: 768px) {
+  .tab-nav-content .tabs.video-grid-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .tab-nav-content .tabs.video-grid-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .tab-nav-content .tabs.video-grid-box .col {
   height: 324px;

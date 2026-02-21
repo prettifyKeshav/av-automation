@@ -126,6 +126,8 @@ section:has(.contact-form)
                     max-width: 458px
                     margin: auto
                     text-align: center
+                    @include media(540)
+                        max-width: 90%
 
 .industries-cards
     padding: 60px 0 
@@ -133,6 +135,10 @@ section:has(.contact-form)
         display: grid
         grid-template-columns: repeat(3,1fr)
         gap: 30px 20px
+        @include media(768)
+            grid-template-columns: repeat(2,1fr)
+        @include media(540)
+            grid-template-columns: repeat(1,1fr)
         .col
             height: 272px
             line-height: 0
@@ -294,6 +300,10 @@ section:has(.contact-form)
                         max-width: 70%
                         line-height: 1.2
                         font-size: 40px
+                    @include media(768)
+                        text-align: center
+                        border-left: 0
+                        margin: 0 auto 20px
                     @include media(540)
                         max-width: 100%
                         font-size: 25px
@@ -308,6 +318,10 @@ section:has(.contact-form)
                     line-height: 24px
                     color: $white
                     max-width: 609px
+                    @include media(768)
+                        text-align: center
+                        max-width: 70%
+                        margin: auto
                     @include media(540)
                         text-align: center
                         max-width: 90%
@@ -318,16 +332,25 @@ section:has(.contact-form)
 
 .industries-detail-secA
     padding: 50px 0 
+    @include media(540)
+        padding: 40px 0 0px 0
     h2
         margin-bottom: 30px
         text-align: left
         font-weight: 700
         font-size: 30px
+        @include media(540)
+            font-size: 26px
+            text-align: center
     .grid-box
         display: grid
         gap: 20px
         grid-template-columns: repeat(4, 1fr)
         position: relative
+        @include media(1024)
+            grid-template-columns: repeat(2, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
         @include afterLayerBlur
         position: relative
         &::after
@@ -335,6 +358,8 @@ section:has(.contact-form)
             width: 605px
             height: 605px
             background: rgb(5 180 196 / 11%)
+            @include media(768)
+                left: 50%
         &::before
             content: ""
             position: absolute
@@ -379,10 +404,15 @@ section:has(.contact-form)
         font-size: 36px
         line-height: 48px
         margin-bottom: 50px
+        @include media(540)
+            font-size: 26px
+            margin-bottom: 20px
     .grid-box
         display: grid
         grid-template-columns: repeat(4, 1fr)
         gap: 30px 20px 
+        @include media(1024)
+            grid-template-columns: repeat(3, 1fr)
         @include media(991)
             grid-template-columns: repeat(2, 1fr)
         @include media(540)
@@ -434,3 +464,5 @@ section:has(.contact-form)
             height: 500px
             bottom: -70%
             left: 100%
+            @include media(768)
+                left: 50%

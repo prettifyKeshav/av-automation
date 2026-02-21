@@ -91,6 +91,9 @@ section:has(.esg-report-secE)
         width: 100%
         height: 100%
         background: linear-gradient(270deg, rgba(0, 0, 0, 0) 14.81%, rgba(0, 0, 0, 0.45) 95.4%)
+        @include media(768)
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 14.81%, rgb(0 0 0 / 69%) 95.4%)
+
     .common-background
         video,img
             position: absolute
@@ -126,25 +129,26 @@ section:has(.esg-report-secE)
                         max-width: 70%
                         line-height: 1.2
                         font-size: 40px
-                    @include media(540)
+                    @include media(768)
                         max-width: 100%
-                        font-size: 25px
+                        font-size: 48px
                         line-height: 1.1
                         text-align: center
                         padding: 0 20px
-                        margin-bottom: 20px
+                        margin-bottom: 10px
                         border-left: 0
+                    @include media(540)
+                        font-size: 26px
                 p
                     font-weight: 600
                     font-size: 16px
                     line-height: 24px
                     color: $white
                     max-width: 609px
-                    @include media(540)
+                    @include media(768)
                         text-align: center
                         max-width: 90%
-                        margin: auto
-                        // font-weight: normal
+                        margin: 0 auto 30px
                         font-size: 15px
                         line-height: 1.3
                 .right
@@ -171,27 +175,40 @@ section:has(.esg-report-secE)
 
 .esg-report-secA
     padding: 50px 0
+    @include media(768)
+        padding: 40px 0 0 0 
     @include beforeLayerBlur
     &::before
         top: 50%
         left: 60%
+        @include media(768)
+            left: 50%
     .flex-box
         display: flex
         justify-content: center
         align-items: center
         gap: 60px
+        @include media(768)
+            flex-direction: column
         figure
             width: 50%
             max-width: 580px
             height: 416px
             border-radius: 10px
             overflow: hidden
+            line-height: 0
+            @include media(1024)
+                height: fit-content
+            @include media(768)
+                width: 100%
             img,video
                 height: 100%
                 width: 100%
                 object-fit: cover
         .content
             width: 50%
+            @include media(768)
+                width: 100%
             h2
                 font-weight: 700
                 font-size: 36px
@@ -207,9 +224,29 @@ section:has(.esg-report-secE)
                     width: 45px
                     height: 5px
                     background: $primary
+                @include media(768)
+                    text-align: center
+                    max-width: 70%
+                    margin: auto
+                    &::before
+                        content: none
+                @include media(540)
+                    font-size: 26px
+                    max-width: 90%
+            p
+                @include media(768)
+                    text-align: center
+                    max-width: 70%
+                    margin: 20px auto
+                @include media(540)
+                    font-size: 14px
+                    max-width: 90%
+                    margin: 20px auto 0 
            
 .esg-report-secB
     padding: 50px 0 
+    @include media(540)
+        padding: 50px 0 0 0
     @include beforeLayerBlur
     &::before
        top: 20%
@@ -221,6 +258,9 @@ section:has(.esg-report-secE)
         max-width: 400px
         line-height: 1.1
         margin: auto
+        @include media(540)
+            font-size: 26px
+            max-width: 90%
     .esg-report-secB-banner
         position: relative
         color: white
@@ -234,9 +274,9 @@ section:has(.esg-report-secE)
         @include media(1024)
             height: 80vh
         @include media(991)
-            height: 50vh
-        @include media(540)
             height: 60vh
+        @include media(540)
+            height: 70vh
         &::before
             content: ''
             position: absolute
@@ -245,6 +285,8 @@ section:has(.esg-report-secE)
             width: 100%
             height: 100%
             background: linear-gradient(0deg, #ffffff00, #ffffff00), linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%)
+            @include media(540)
+                background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(348deg, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 90%) 100%)
         .common-background
             video
                 position: absolute
@@ -265,25 +307,43 @@ section:has(.esg-report-secE)
                     bottom: 17%
                     transform: translate(-50%)
                     padding: 70px 0 0 70px
-                    @include media(991)
+                    @include media(1024)
                         bottom: 10%
+                        padding: 50px 0 0 50px
                     @include media(540)
                         bottom: 10%
                         margin-left: 0
-                    h2
+                        padding: 0
+                    h3
                         font-weight: 700
-                        margin-bottom: 10px
+                        padding-bottom: 15px
                         font-size: 30px
                         line-height: 40px
-                        @include media(991)
+                        position: relative
+                        &::before
+                            content: ""
+                            position: absolute
+                            bottom: 0%
+                            left: 0
+                            height: 5px
+                            width: 70px
+                            background: $primary
+                        @include media(768)
+                            margin-bottom: 20px
                         @include media(540)
+                            font-size: 20px
+                            line-height: 1.2
+                            max-width: 80%
+                            margin: auto
+                            text-align: center
+                            &::before
+                                content: none
                     p
                         font-weight: 600
                         font-size: 16px
                         line-height: 24px
                         color: $white
                         max-width: 609px
-
                         @include media(540)
                             text-align: center
                             max-width: 90%
@@ -293,9 +353,15 @@ section:has(.esg-report-secE)
                             line-height: 1.3
                     .swiper-nav
                         margin-right: 60px
+                        @include media(540)
+                            display: none
                     .swiper
                         margin-top: 50px
+                        @include media(540)
+                            margin-top: 20px
                         .swiper-wrapper
+                            @include media(540)
+                                padding: 20px 0 0 20px
                             .swiper-slide
                                 background: white
                                 padding: 20px
@@ -303,12 +369,18 @@ section:has(.esg-report-secE)
                                 .flex-box
                                     justify-content: space-between
                                     gap: 40px
+                                    @include media(540)
+                                        gap: 20px
                                     h3
                                         color: $black
                                         font-weight: 600
                                         font-size: 16px
                                         line-height: 20px
                                         margin-bottom: 10px
+                                        @include media(1024)
+                                            margin-bottom: 40px
+                                        @include media(540)
+                                            margin-bottom: 10px
                                     figure
                                         width: 42px
                                         height: 42px
@@ -321,6 +393,9 @@ section:has(.esg-report-secE)
                                     color: $text
                                     font-size: 14px
                                     line-height: 1.4
+                                    text-align: left
+                                    @include media(540)
+                                        margin: 0
 
 .esg-report-secC
     padding: 50px 0
@@ -332,22 +407,29 @@ section:has(.esg-report-secE)
     &::after
         bottom: -10%
         left: 60%
+        @include media(768)
+            left: 50%
     .flex-box
         justify-content: center
         gap: 80px
         padding: 50px 0 0 0
+        @include media(1024)
+            gap: 60px
         @include media(768)
             flex-direction: column-reverse
             gap: 50px
             padding: 0
+        @include media(540)
+            gap: 30px
         .flex-box-item:first-child
             width: 580px
             height: 416px
             border-radius: 10px
             overflow: hidden
+            line-height: 0
             @include media(768)
                 margin: auto
-                width: 180px
+                width: 100%
                 height: auto
             img
                 height: 100%
@@ -378,17 +460,29 @@ section:has(.esg-report-secE)
                         height: 5px
                         width: 70px
                         background: $primary
+                    @include media(768)
+                        text-align: center
+                        max-width: 70%
+                        margin: 10px auto 20px
+                        &::before
+                            content: none
+                    @include media(540)
+                        max-width: 100%
                 p
                     font-weight: 500
                     font-size: 16px
                     line-height: 24px
                     max-width: 534px
+                    @include media(768)
+                        text-align: center
 
             .summery-detail-content
                 padding: 10px 0px 40px 50px
                 margin-top: 20px
-                border-left: 1px solid #303030
+                border-left: 1px solid $primary
                 width: fit-content
+                @include media(540)
+                    padding: 10px 0px 10px 40px
             .col
                 transition: 0.5s ease
                 max-width: fit-content
@@ -407,7 +501,7 @@ section:has(.esg-report-secE)
                         line-height: 24px
                         margin-bottom: 10px
                     .outer-circle
-                        border: 1px solid $black
+                        border: 1px solid $primary
                         border-radius: 50%
                         background-color: $white
                         padding: 10px
@@ -416,14 +510,14 @@ section:has(.esg-report-secE)
                         position: absolute
                         left: -71px
                         @include media(540) 
-                            margin-left: 5px
+                            margin-left: 15px
                             padding: 7px
                             top: 6px
                     .ico
                         flex: 0 1 auto
                         --size: 18px
                         --border: 2px
-                        --bgcolor: var(--black)
+                        --bgcolor: var(--primary)
                         height: var(--size)
                         width: var(--size)
                         @include before(var(--bgcolor))
@@ -481,7 +575,11 @@ section:has(.esg-report-secE)
         @include media(991)
             height: 50vh
         @include media(540)
+            height: 50vh
+            margin-top: 20px
+        @include media(360)
             height: 60vh
+            margin-top: 20px
         &::before
             content: ''
             position: absolute
@@ -516,6 +614,7 @@ section:has(.esg-report-secE)
                     @include media(991)
                         bottom: 10%
                     @include media(540)
+                        width: 100%
                         bottom: 10%
                         margin-left: 0
                     h2
@@ -535,6 +634,14 @@ section:has(.esg-report-secE)
                             background: $primary
                         @include media(991)
                         @include media(540)
+                            font-size: 20px
+                            line-height: 1.2
+                            max-width: 80%
+                            margin: 0 auto 20px
+                            text-align: center
+                            &::before
+                                content: none
+                                
                     p
                         font-weight: 600
                         font-size: 16px
@@ -553,6 +660,9 @@ section:has(.esg-report-secE)
                         margin-right: 60px
                     .swiper
                         margin-top: 50px
+                        @include media(540)
+                            margin-top: 30px
+                            padding-left: 20px
                         .swiper-wrapper
                             .swiper-slide
                                 background: white
@@ -562,6 +672,8 @@ section:has(.esg-report-secE)
                                     justify-content: space-between
                                     gap: 40px
                                     margin-bottom: 20px
+                                    @include media(540)
+                                        gap: 10px
                                     h3
                                         color: $black
                                         font-weight: 600
@@ -578,6 +690,13 @@ section:has(.esg-report-secE)
                                     color: $text
                                     font-size: 14px
                                     line-height: 1.4
+                                    text-align: left
+                                    @include media(540)
+                                        margin: 0
+                                        width: 100%
+                                        max-width: 100%
+                                        line-height: 1.2
+
 
 .esg-report-secE
     padding: 50px 0
@@ -590,12 +709,20 @@ section:has(.esg-report-secE)
         justify-content: center
         align-items: center
         gap: 60px
+        @include media(768)
+            flex-direction: column-reverse
+            gap: 30px
         figure
             width: 50%
             max-width: 580px
             height: 416px
             border-radius: 10px
             overflow: hidden
+            line-height: 0
+            @include media(768)
+                width: 100%
+            @include media(540)
+                height: fit-content
             img,video
                 height: 100%
                 width: 100%
@@ -603,6 +730,10 @@ section:has(.esg-report-secE)
         .content
             max-width: 50%
             width: fit-content
+            @include media(768)
+                width: 100%
+                max-width: 100%
+                text-align: center
             h2
                 color: $black
                 position: relative
@@ -618,6 +749,9 @@ section:has(.esg-report-secE)
                     width: 45px
                     height: 5px
                     background: $primary
+                @include media(768)
+                    &::before
+                        content: none
             p
                 font-weight: 500
                 font-size: 16px
@@ -625,6 +759,10 @@ section:has(.esg-report-secE)
                 max-width: 534px
                 margin-bottom: 10px
                 width: fit-content
+                @include media(768)
+                    margin: 0 auto 20px
+                @include media(768)
+                    margin: 0 auto 0px
             h3
                 font-weight: 700
                 font-size: 18px
@@ -633,3 +771,9 @@ section:has(.esg-report-secE)
                 margin-bottom: 10px
                 max-width: 478px
                 width: fit-content
+                @include media(768)
+                    margin: 0 auto 20px
+                    max-width: 60%
+                @include media(540)
+                    max-width: 100%
+                    margin: 10px auto 20px

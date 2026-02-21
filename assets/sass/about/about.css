@@ -176,7 +176,7 @@ section:has(.about-secH)::before {
 }
 @media only screen and (max-width: 540px) {
   .about-banner {
-    height: 70vh;
+    height: 60vh;
   }
 }
 .about-banner::before {
@@ -259,9 +259,23 @@ section:has(.about-secH)::before {
   margin: auto;
   text-align: center;
 }
+@media only screen and (max-width: 540px) {
+  .about-banner .video-background .container .bg-wrapper p {
+    max-width: 90%;
+    margin: auto;
+    line-height: 1.3;
+  }
+}
 
 .about-secA {
   padding: 50px 0;
+}
+@media only screen and (max-width: 768px) {
+  .about-secA {
+    padding: 50px 0 0 0;
+  }
+}
+.about-secA {
   position: relative;
 }
 .about-secA::before {
@@ -290,11 +304,34 @@ section:has(.about-secH)::before {
   justify-content: center;
   gap: 80px;
 }
+@media only screen and (max-width: 768px) {
+  .about-secA .flex-box {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+}
 .about-secA .flex-box figure {
   width: 511px;
   height: 408px;
   border-radius: 10px;
   overflow: hidden;
+  line-height: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .about-secA .flex-box figure {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-secA .flex-box figure {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secA .flex-box figure {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
 }
 .about-secA .flex-box figure img, .about-secA .flex-box figure video {
   height: 100%;
@@ -308,6 +345,19 @@ section:has(.about-secH)::before {
   color: var(--black);
   position: relative;
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .about-secA .flex-box .content h2 {
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto 30px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secA .flex-box .content h2 {
+    font-size: 26px;
+  }
 }
 .about-secA .flex-box .content h2::before {
   content: "";
@@ -325,11 +375,48 @@ section:has(.about-secH)::before {
   color: #00838F;
   margin-top: 25px;
 }
+@media only screen and (max-width: 768px) {
+  .about-secA .flex-box .content h3 {
+    max-width: 70%;
+    margin: 20px auto 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secA .flex-box .content h3 {
+    max-width: 100%;
+    margin: 20px auto 0;
+    text-align: center;
+  }
+}
 .about-secA .flex-box .content p {
   max-width: 501px;
 }
+@media only screen and (max-width: 768px) {
+  .about-secA .flex-box .content p {
+    text-align: center;
+    margin: 0 auto 30px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secA .flex-box .content p {
+    max-width: 95%;
+    margin: auto;
+  }
+}
 .about-secA .flex-box .content ul {
   margin-top: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .about-secA .flex-box .content ul {
+    max-width: 70%;
+    margin: 20px auto 0;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secA .flex-box .content ul {
+    max-width: 90%;
+    margin: 20px auto 0;
+  }
 }
 .about-secA .flex-box .content ul li {
   margin-bottom: 10px;
@@ -356,6 +443,25 @@ section:has(.about-secH)::before {
   justify-content: center;
   align-items: center;
   gap: 80px;
+}
+@media only screen and (max-width: 768px) {
+  .about-secB {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about-secB {
+    padding: 60px 30px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secB {
+    padding: 30px 30px;
+    gap: 20px;
+  }
+}
+.about-secB {
   position: relative;
 }
 .about-secB::after {
@@ -383,6 +489,13 @@ section:has(.about-secH)::before {
 .about-secB figure {
   width: 291px;
   height: 299px;
+  line-height: 0;
+}
+@media only screen and (max-width: 540px) {
+  .about-secB figure {
+    width: 50%;
+    height: auto;
+  }
 }
 .about-secB figure img {
   height: 100%;
@@ -393,10 +506,20 @@ section:has(.about-secH)::before {
 .about-secB .content {
   max-width: 500px;
 }
+@media only screen and (max-width: 768px) {
+  .about-secB .content {
+    text-align: center;
+  }
+}
 .about-secB .content h2 {
   font-weight: 700;
   font-size: 36px;
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 540px) {
+  .about-secB .content h2 {
+    font-size: 26px;
+  }
 }
 .about-secB .content h2 span {
   color: var(--primary);
@@ -405,9 +528,14 @@ section:has(.about-secH)::before {
 .about-secC {
   padding: 50px 0;
 }
+@media only screen and (max-width: 768px) {
+  .about-secC {
+    padding: 20px 0 50px 0;
+  }
+}
 @media only screen and (max-width: 540px) {
   .about-secC {
-    padding: 50px 0 0 0;
+    padding: 0 0 50px 0;
   }
 }
 .about-secC::before {
@@ -596,10 +724,20 @@ section:has(.about-secH)::before {
 .about-secC .bottom .btn2 {
   margin-top: 40px;
 }
+@media only screen and (max-width: 540px) {
+  .about-secC .bottom .btn2 {
+    margin-top: 30px;
+  }
+}
 
 .about-secD {
   padding: 50px 0;
   position: relative;
+}
+@media only screen and (max-width: 540px) {
+  .about-secD {
+    padding: 0 0 50px 0;
+  }
 }
 .about-secD::before {
   content: "";
@@ -609,6 +747,11 @@ section:has(.about-secH)::before {
   background: var(--primary);
   top: 44%;
   left: 0;
+}
+@media only screen and (max-width: 540px) {
+  .about-secD::before {
+    top: 41%;
+  }
 }
 .about-secD::after {
   content: "";
@@ -671,6 +814,11 @@ section:has(.about-secH)::before {
 .about-secD .swiper {
   padding: 20px 0 40px 0;
 }
+@media only screen and (max-width: 540px) {
+  .about-secD .swiper {
+    padding: 40px 0 0px 0;
+  }
+}
 .about-secD .swiper .swiper-wrapper .swiper-slide {
   position: relative;
 }
@@ -685,11 +833,26 @@ section:has(.about-secH)::before {
   height: 20px;
   border-radius: 50%;
 }
+@media only screen and (max-width: 768px) {
+  .about-secD .swiper .swiper-wrapper .swiper-slide::before {
+    top: -4%;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secD .swiper .swiper-wrapper .swiper-slide::before {
+    top: -25%;
+  }
+}
 .about-secD .swiper .swiper-wrapper .swiper-slide h3 {
   font-weight: 600;
   font-size: 24px;
   color: var(--black);
   margin: 20px 0 20px 0;
+}
+@media only screen and (max-width: 540px) {
+  .about-secD .swiper .swiper-wrapper .swiper-slide h3 {
+    margin: 0px 0 10px 0;
+  }
 }
 .about-secD .swiper .swiper-wrapper .swiper-slide figure {
   height: 110px;
@@ -725,6 +888,11 @@ section:has(.about-secH)::before {
 
 .about-secE {
   padding: 50px 0;
+}
+@media only screen and (max-width: 540px) {
+  .about-secE {
+    padding: 0 0 50px 0;
+  }
 }
 .about-secE .flex-box {
   display: flex;
@@ -941,11 +1109,20 @@ section:has(.about-secH)::before {
   justify-content: space-between;
   gap: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .about-secG .flex-box {
+    flex-direction: column;
+  }
+}
 .about-secG .flex-box .col {
   flex: 0 1 50%;
   width: 50%;
-  border-radius: 10px;
   overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  .about-secG .flex-box .col {
+    width: 100%;
+  }
 }
 .about-secG .flex-box .col:first-child .swiper .pagination {
   position: absolute;
@@ -957,6 +1134,11 @@ section:has(.about-secH)::before {
   right: 0;
   padding: 40px;
 }
+@media only screen and (max-width: 540px) {
+  .about-secG .flex-box .col:first-child .swiper .pagination {
+    padding: 20px;
+  }
+}
 .about-secG .flex-box .col:first-child .swiper .pagination .swiper-pagination-bullet {
   background: var(--white);
   opacity: 1;
@@ -967,6 +1149,8 @@ section:has(.about-secH)::before {
 .about-secG .flex-box .col:first-child .swiper .swiper-wrapper .swiper-slide figure {
   position: relative;
   line-height: 0;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .about-secG .flex-box .col:first-child .swiper .swiper-wrapper .swiper-slide figure::before {
   content: "";
@@ -993,6 +1177,11 @@ section:has(.about-secH)::before {
   left: 0;
   padding: 40px;
 }
+@media only screen and (max-width: 540px) {
+  .about-secG .flex-box .col:first-child .swiper .swiper-wrapper .swiper-slide figure figcaption {
+    padding: 20px;
+  }
+}
 .about-secG .flex-box .col:first-child .swiper .swiper-wrapper .swiper-slide figure figcaption h3 {
   font-weight: 700;
   color: var(--white);
@@ -1006,12 +1195,25 @@ section:has(.about-secH)::before {
   line-height: 30px;
   color: var(--white);
 }
+@media only screen and (max-width: 540px) {
+  .about-secG .flex-box .col:first-child .swiper .swiper-wrapper .swiper-slide figure figcaption .bottom h4 {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 80%;
+  }
+}
 .about-secG .flex-box .col:last-child figure {
   height: 417px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
   line-height: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .about-secG .flex-box .col:last-child figure {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
 }
 .about-secG .flex-box .col:last-child figure::before {
   content: "";
@@ -1033,15 +1235,35 @@ section:has(.about-secH)::before {
   left: 0;
   padding: 40px;
 }
+@media only screen and (max-width: 540px) {
+  .about-secG .flex-box .col:last-child figure figcaption {
+    width: 100%;
+    padding: 20px;
+  }
+}
 .about-secG .flex-box .col:last-child figure figcaption h4 {
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
   color: var(--white);
 }
+@media only screen and (max-width: 540px) {
+  .about-secG .flex-box .col:last-child figure figcaption h4 {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 80%;
+  }
+}
 
 .about-secH {
   padding: 50px 0;
+}
+@media only screen and (max-width: 540px) {
+  .about-secH {
+    padding: 20px 0 50px 0;
+  }
+}
+.about-secH {
   position: relative;
 }
 .about-secH::before {
@@ -1074,17 +1296,42 @@ section:has(.about-secH)::before {
   line-height: 1;
   margin-bottom: 60px;
 }
+@media only screen and (max-width: 768px) {
+  .about-secH h2 {
+    margin-bottom: 30px;
+    font-size: 38px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .about-secH h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+}
 .about-secH .flex-box {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 80px;
 }
+@media only screen and (max-width: 768px) {
+  .about-secH .flex-box {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+}
 .about-secH .flex-box figure {
   width: 511px;
   height: 335px;
   border-radius: 10px;
   overflow: hidden;
+  line-height: 0;
+}
+@media only screen and (max-width: 540px) {
+  .about-secH .flex-box figure {
+    width: 100%;
+    height: auto;
+  }
 }
 .about-secH .flex-box figure img, .about-secH .flex-box figure video {
   height: 100%;

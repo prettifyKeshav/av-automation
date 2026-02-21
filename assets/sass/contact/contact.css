@@ -30,6 +30,7 @@ section:has(.contact-secA)::after {
     width: 250px;
     height: 350px;
     background-size: contain;
+    bottom: 0;
   }
 }
 
@@ -52,6 +53,7 @@ section:has(.contact-form)::before {
     width: 250px;
     height: 350px;
     background-size: contain;
+    top: 49%;
   }
 }
 
@@ -109,6 +111,11 @@ section:has(.careers-secA)::after {
   height: 100%;
   background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%);
 }
+@media only screen and (max-width: 768px) {
+  .contact-banner::before {
+    background: linear-gradient(181deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%);
+  }
+}
 .contact-banner .common-background video, .contact-banner .common-background img {
   position: absolute;
   top: 0;
@@ -158,10 +165,10 @@ section:has(.careers-secA)::after {
     font-size: 40px;
   }
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .contact-banner .common-background .container .bg-wrapper h1 {
     max-width: 100%;
-    font-size: 25px;
+    font-size: 38px;
     line-height: 1.1;
     text-align: center;
     padding: 0 20px;
@@ -176,7 +183,7 @@ section:has(.careers-secA)::after {
   color: var(--white);
   max-width: 609px;
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .contact-banner .common-background .container .bg-wrapper p {
     text-align: center;
     max-width: 90%;
@@ -211,16 +218,44 @@ section:has(.careers-secA)::after {
 .contact-secA::after {
   left: 70%;
 }
+@media only screen and (max-width: 1024px) {
+  .contact-secA::after {
+    left: 50%;
+  }
+}
 .contact-secA .grid-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
+@media only screen and (max-width: 768px) {
+  .contact-secA .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .contact-secA .grid-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .contact-secA .grid-box .grid-box-item {
   background: var(--white);
-  height: 246px;
   border-radius: 10px;
   padding: 33px 26px;
+}
+@media only screen and (max-width: 768px) {
+  .contact-secA .grid-box .grid-box-item:last-child {
+    grid-column: span 2;
+    width: 50%;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .contact-secA .grid-box .grid-box-item:last-child {
+    grid-column: span 1;
+    width: 100%;
+    margin: auto;
+  }
 }
 .contact-secA .grid-box .grid-box-item h4 {
   font-weight: 700;
@@ -297,6 +332,13 @@ section:has(.careers-secA)::after {
 .contact-form {
   padding: 80px 0 !important;
   position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .contact-form {
+    padding: 30px 0 20px 0 !important;
+  }
+}
+.contact-form {
   position: relative;
 }
 .contact-form::after {
@@ -387,10 +429,37 @@ section:has(.careers-secA)::after {
   bottom: -10%;
   left: 70%;
 }
+@media only screen and (max-width: 768px) {
+  .contact-secC::after {
+    left: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .contact-secC .heading {
+    margin-bottom: 60px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .contact-secC .heading {
+    margin-bottom: 30px;
+  }
+}
 .contact-secC .map-wrapper {
-  width: 1015px;
+  max-width: 1015px;
   height: 490px;
   margin: 50px auto 50px;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .contact-secC .map-wrapper {
+    margin: 0px auto 0px;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .contact-secC .map-wrapper {
+    height: 40vh;
+  }
 }
 .contact-secC .map-wrapper img {
   height: 100%;
@@ -398,6 +467,12 @@ section:has(.careers-secA)::after {
   -o-object-fit: contain;
      object-fit: contain;
   display: block;
+}
+@media only screen and (max-width: 540px) {
+  .contact-secC .map-wrapper img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }
 .contact-secC .map-wrapper .pointer {
   position: absolute;
@@ -408,6 +483,52 @@ section:has(.careers-secA)::after {
   border: 3px solid #fff;
   cursor: pointer;
   transform: translate(-50%, -50%);
+}
+.contact-secC .map-wrapper .pointer.first {
+  top: 45.5%;
+  right: 39.4%;
+}
+@media only screen and (max-width: 540px) {
+  .contact-secC .map-wrapper .pointer.first {
+    right: 28.4%;
+  }
+}
+.contact-secC .map-wrapper .pointer.second {
+  top: 51%;
+  right: 39%;
+}
+@media only screen and (max-width: 540px) {
+  .contact-secC .map-wrapper .pointer.second {
+    right: 27%;
+  }
+}
+.contact-secC .map-wrapper .pointer.third {
+  top: 53%;
+  right: 36.5%;
+}
+@media only screen and (max-width: 540px) {
+  .contact-secC .map-wrapper .pointer.third {
+    right: 22.5%;
+  }
+}
+.contact-secC .map-wrapper .pointer.fourth {
+  top: 52%;
+  right: 29%;
+}
+@media only screen and (max-width: 540px) {
+  .contact-secC .map-wrapper .pointer.fourth {
+    right: 9%;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
 }
 .contact-secC .map-wrapper .pointer::after {
   content: "";
@@ -420,16 +541,6 @@ section:has(.careers-secA)::after {
   left: -29%;
   transform: translate(-50%, -50%);
   animation: pulse 1.8s infinite;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
 }
 .contact-secC .map-wrapper .pointer:hover .tooltip {
   opacity: 1;

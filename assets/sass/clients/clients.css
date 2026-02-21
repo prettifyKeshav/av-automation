@@ -158,6 +158,15 @@ section:has(.client-sec)::before {
   max-width: 436px;
   margin: auto;
 }
+@media only screen and (max-width: 540px) {
+  .certificate-banner .video-background .container .bg-wrapper p {
+    font-weight: normal;
+    max-width: 90%;
+    margin: auto;
+    line-height: 1.4;
+    font-size: 14px;
+  }
+}
 
 .client-sec {
   padding: 60px 0;
@@ -171,10 +180,38 @@ section:has(.client-sec)::before {
   font-size: 48px;
   line-height: 55px;
 }
+@media only screen and (max-width: 540px) {
+  .client-sec .heading h2 {
+    font-size: 38px;
+    line-height: 1;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .client-sec .heading p {
+    max-width: 90%;
+    margin: auto;
+  }
+}
 .client-sec .grid-box {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 25px;
+}
+@media only screen and (max-width: 1024px) {
+  .client-sec .grid-box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .client-sec .grid-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 540px) {
+  .client-sec .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
 }
 .client-sec .grid-box .col {
   background: var(--white);

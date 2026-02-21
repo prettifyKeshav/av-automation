@@ -186,16 +186,26 @@ section:has(.home-secJ)
     @include media(540)
         padding: 30px 0 0 0 
     .counter_sec
-        display: flex
-        justify-content: space-between
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
         @include media(768)
             text-align: center
+            grid-template-columns: repeat(3, 1fr)
+            gap: 20px 0px
+            .counter-info
+                &:nth-child(4),&:nth-child(5)
+                    grid-column: span 3
         @include media(540)
             display: grid
             grid-template-columns: repeat(2, 1fr)
             gap: 20px 5px
         .count-info
+            width: fit-content
+            @include media(768)
+                margin: auto
             &:last-child
+                h4
+                    white-space: nowrap
                 @include media(540)
                     grid-column: span 2 
                     margin: auto

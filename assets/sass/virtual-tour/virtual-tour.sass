@@ -142,6 +142,10 @@ section:has(.virtual-tour-secE)
         width: 100%
         height: 100%
         background: linear-gradient(270deg, rgba(0, 0, 0, 0) 14.81%, rgba(0, 0, 0, 0.45) 95.4%)
+        @include media(768)
+            background: linear-gradient(179deg, rgba(0, 0, 0, 0) 14.81%, rgba(0, 0, 0, 0.45) 95.4%)
+        @include media(540)
+            background: linear-gradient(179deg, rgba(0, 0, 0, 0) 14.81%, rgb(0 0 0 / 78%) 95.4%)
     .common-background
         video,img
             position: absolute
@@ -177,9 +181,9 @@ section:has(.virtual-tour-secE)
                         max-width: 70%
                         line-height: 1.2
                         font-size: 40px
-                    @include media(540)
+                    @include media(768)
                         max-width: 100%
-                        font-size: 25px
+                        font-size: 38px
                         line-height: 1.1
                         text-align: center
                         padding: 0 20px
@@ -191,13 +195,16 @@ section:has(.virtual-tour-secE)
                     line-height: 24px
                     color: $white
                     max-width: 609px
-                    @include media(540)
+                    @include media(768)
                         text-align: center
                         max-width: 90%
-                        margin: auto
+                        margin: 0 auto 20px
                         // font-weight: normal
-                        font-size: 15px
+                        font-size: 16px
                         line-height: 1.3
+                    @include media(540)
+                        font-size: 15px
+                        font-weight: normal
                 .btn2
                     border-radius: 5px
                     font-weight: 700
@@ -213,6 +220,8 @@ section:has(.virtual-tour-secE)
                         position: relative
                         width: fit-content
                         margin: 10px auto 0
+                    @include media(540)
+                        padding: 10px 26px
                     &::before
                         border-radius: 50px
                     &::after
@@ -229,23 +238,15 @@ section:has(.virtual-tour-secE)
         display: flex
         justify-content: space-between
         align-items: center
+        overflow-x: auto
         .tab-nav
             display: flex
             align-items: center
             gap: 10px
+            @include media(768)
+                gap: 0
             li
-                padding: 20px 30px
-                font-weight: 600
-                font-size: 16px
-                line-height: 100%
-                text-align: center
                 position: relative
-                transition: 0.5s ease
-
-                display: flex
-                justify-content: center
-                align-items: center
-                gap: 15px
                 &::before
                     content: ""
                     position: absolute
@@ -255,27 +256,48 @@ section:has(.virtual-tour-secE)
                     height: 5px
                     background: $primary
                     transition: 0.5s ease
-                svg
-                    height: 22px
-                    path
-                        fill: $text
-                &:nth-child(2),&:nth-child(3)
+                a
+                    padding: 20px 30px
+                    font-weight: 600
+                    font-size: 16px
+                    line-height: 100%
+                    text-align: center
+                    position: relative
+                    transition: 0.5s ease
+
+                    color: $text
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    gap: 15px
+                    white-space: nowrap
+                    @include media(768)
+                        gap: 8px
+                        font-size: 15px
                     svg
+                        height: 22px
                         path
-                            fill: $white
-                            stroke: $text
+                            fill: $text
+                &:nth-child(2),&:nth-child(3)
+                    a
+                        svg
+                            path
+                                fill: $white
+                                stroke: $text
                 &.active
                     &::before
                         width: 100%
                     color: $primary
-                    svg
-                        path
-                            fill: $primary
-                    &:nth-child(2),&:nth-child(3)
+                    a
                         svg
                             path
-                                fill: $white
-                                stroke: $primary
+                                fill: $primary
+                    &:nth-child(2),&:nth-child(3)
+                        a
+                            svg
+                                path
+                                    fill: $white
+                                    stroke: $primary
                     
         .custom-select
             padding: 10px
@@ -299,27 +321,41 @@ section:has(.virtual-tour-secE)
 
 .virtual-tour-secA
     padding: 50px 0
+    @include media(768)
+        padding: 0 0 50px 0 
     @include beforeLayerBlur
     &::before
         top: 50%
         left: 60%
+        @include media(768)
+            left: 50%
     .flex-box
         display: flex
         justify-content: center
         align-items: center
         gap: 60px
+        @include media(768)
+            flex-direction: column
+            gap: 30px
         figure
             width: 50%
             max-width: 580px
             height: 416px
             border-radius: 10px
             overflow: hidden
+            line-height: 0
+            @include media(768)
+                width: 100%
+            @include media(540)
+                height: fit-content
             img,video
                 height: 100%
                 width: 100%
                 object-fit: cover
         .content
             width: 50%
+            @include media(768)
+                width: 100%
             h2
                 font-weight: 700
                 font-size: 36px
@@ -327,6 +363,8 @@ section:has(.virtual-tour-secE)
                 position: relative
                 margin-bottom: 30px
                 line-height: 1.1
+                @include media(540)
+                    font-size: 26px
                 &::before
                     content: ""
                     position: absolute
@@ -335,9 +373,24 @@ section:has(.virtual-tour-secE)
                     width: 45px
                     height: 5px
                     background: $primary
+                @include media(768)
+                    text-align: center
+                    max-width: 70%
+                    margin: 0 auto 20px
+                    &::before
+                        content: none
+            p
+                @include media(768)
+                    text-align: center
+                    max-width: 70%
+                    margin: 0 auto 20px
+                @include media(540)
+                    max-width: 90%
            
 .virtual-tour-secB-B
     padding: 50px 0 
+    @include media(768)
+        padding: 0 0 50px 0
     h2
         font-weight: 700
         font-size: 36px
@@ -345,11 +398,17 @@ section:has(.virtual-tour-secE)
         max-width: 522px
         margin: auto
         text-align: center
+        @include media(540)
+            font-size: 26px
     .custom-swiper
         margin: 50px 0 0 0
+        @include media(540)
+            margin: 30px 0 0 0
         .custom-swiper-wrapper
             display: flex
             gap: 20px
+            @include media(768)
+                flex-direction: column
             .custom-swiper-slide
                 width: 20%
                 height: 422px
@@ -358,12 +417,17 @@ section:has(.virtual-tour-secE)
                 transition: 0.7s ease
                 position: relative
                 cursor: pointer
-                &:hover
-                    width: 23%
+                @include media(768)
+                    width: 100%
+                    height: 100px
                 &.active
                     width: 100%
                     &::after
                         backdrop-filter: blur(0px)
+                    @include media(768)
+                        height: 422px
+                    @include media(540)
+                        height: 312px
                     figcaption
                         height: auto
                         padding: 30px 30px
@@ -413,6 +477,10 @@ section:has(.virtual-tour-secE)
                     flex-direction: column-reverse
                     gap: 30px
                     align-items: center
+                    @include media(768)
+                        flex-direction: initial
+                    @include media(540)
+                        gap: 20px
                     span
                         display: inline-block
                         width: 46px
@@ -436,9 +504,22 @@ section:has(.virtual-tour-secE)
                         transition: transform 1s ease, margin 1s ease
                         transform: rotate(-90deg)
                         transform-origin: center
+                        @include media(1024)
+                            font-size: 18px
+                            line-height: 1.2
+                        @include media(768)
+                            transform: rotate(0deg)
+                            position: initial
+                            line-height: 1.5
+                        @include media(540)
+                            font-size: 16px
+                            line-height: 1.4
+                            width: 90%
 
 .virtual-tour-secB
     padding: 50px 0 
+    @include media(540)
+        padding: 0 0 50px 0 
     @include beforeLayerBlur
     &::before
        top: 20%
@@ -450,6 +531,10 @@ section:has(.virtual-tour-secE)
         max-width: 400px
         line-height: 1.1
         margin: auto
+        @include media(768)
+            font-size: 36px
+        @include media(540)
+            font-size: 26px
     .virtual-tour-secB-banner
         position: relative
         color: white
@@ -464,7 +549,7 @@ section:has(.virtual-tour-secE)
         @include media(991)
             height: 50vh
         @include media(540)
-            height: 60vh
+            height: 40vh
         .common-background
             video
                 position: absolute
@@ -477,6 +562,8 @@ section:has(.virtual-tour-secE)
     .machinery-infrastructure-swiper
         padding: 50px 0
         position: relative
+        @include media(768)
+            padding: 50px 0 0 0
         .swiper-nav
             width: 103%
             max-width: 103%
@@ -494,6 +581,8 @@ section:has(.virtual-tour-secE)
                         height: 288px
                         overflow: hidden
                         padding: 20px
+                        @include media(540)
+                            height: 200px
                         img
                             width: 100%
                             height: 100%
@@ -501,6 +590,8 @@ section:has(.virtual-tour-secE)
                             transition: 0.5s ease
                     figcaption
                         padding: 20px 50px 50px 50px
+                        @include media(540)
+                            padding: 20px
                         h3
                             font-weight: 700
                             font-size: 18px
@@ -512,18 +603,29 @@ section:has(.virtual-tour-secE)
                             text-align: center
                             font-weight: 400
                             font-size: 16px
+                            @include media(540)
+                                font-size: 14px
+                                line-height: 1.3
 
 .virtual-tour-secC
     padding: 50px 0
+    @include media(540)
+        padding: 0 0 50px 0
     h2
         text-align: center
         font-weight: 700
         font-size: 36px
         margin-bottom: 40px
+        @include media(540)
+            font-size: 26px
     .grid-box
         display: grid
         grid-template-columns: repeat(5, 1fr)
         gap: 20px
+        @include media(768)
+            grid-template-columns: repeat(3, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
         .grid-box-item
             background: $white
             border-radius: 10px
@@ -552,7 +654,12 @@ section:has(.virtual-tour-secE)
         padding: 20px 30px 
         margin-top: 40px
         gap: 120px
+        @include media(540)
+            flex-direction: column
+            gap: 20px
+            text-align: center
         figure
+            @include media(540)
 
         p
             font-size: 20px
@@ -565,11 +672,17 @@ section:has(.virtual-tour-secE)
 .virtual-tour-secD
     h2
         text-align: center
+        @include media(540)
+            margin-bottom: 0
     .photo-grid-box
         display: grid
         grid-template-columns: repeat(3,1fr)
         gap: 30px 20px
         margin: 40px auto 80px
+        @include media(768)
+            grid-template-columns: repeat(2,1fr)
+        @include media(768)
+            grid-template-columns: repeat(1,1fr)
         .col
             height: 324px
             line-height: 0
@@ -639,17 +752,30 @@ section:has(.virtual-tour-secE)
         gap: 50px
         position: relative
         z-index: 1
+        @include media(768)
+            flex-direction: column
         .col
+            @include media(768)
+                text-align: center
             .top
                 border-left: 5px solid $primary
                 padding-left: 30px
+                @include media(768)
+                    border-left: 0
+                @include media(540)
+                    padding: 0
                 h2
                     font-weight: 700
                     font-size: 36px
                     line-height: 1
                     margin-bottom: 10px
+                    @include media(540)
+                        font-size: 26px
                 p
                     max-width: 380px
+                    @include media(540)
+                        max-width: 80%
+                        margin: auto
             .btn2
                 display: inline-block
                 margin: 20px 0 0  30px
@@ -657,6 +783,9 @@ section:has(.virtual-tour-secE)
             width: 548px
             height: 407px
             line-height: 0
+            @include media(540)
+                width: 100%
+                height: auto
             img
                 height: 100%
                 width: 100%

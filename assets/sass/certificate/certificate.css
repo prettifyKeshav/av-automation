@@ -70,7 +70,7 @@ section:has(.certification-sec)::before {
 }
 @media only screen and (max-width: 540px) {
   .certificate-banner {
-    height: 70vh;
+    height: 50vh;
   }
 }
 .certificate-banner::before {
@@ -91,6 +91,7 @@ section:has(.certification-sec)::before {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+  margin-top: var(--headerfixed);
 }
 @media only screen and (max-width: 540px) {
   .certificate-banner .video-background .container {
@@ -155,6 +156,19 @@ section:has(.certification-sec)::before {
   display: flex;
   gap: 60px;
   padding: 100px 0;
+}
+@media only screen and (max-width: 768px) {
+  .certification-sec {
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .certification-sec {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+}
+.certification-sec {
   position: relative;
 }
 .certification-sec::before {
@@ -179,9 +193,24 @@ section:has(.certification-sec)::before {
   top: -10%;
   left: 70%;
 }
+@media only screen and (max-width: 1024px) {
+  .certification-sec::before {
+    left: 50%;
+  }
+}
 .certification-sec figure {
   max-width: 321px;
   height: 446px;
+  position: sticky;
+  top: calc(20px + var(--headerheight));
+}
+@media only screen and (max-width: 540px) {
+  .certification-sec figure {
+    position: static;
+    max-width: auto;
+    margin: auto;
+    height: auto;
+  }
 }
 .certification-sec figure img {
   width: 100%;
@@ -196,8 +225,18 @@ section:has(.certification-sec)::before {
   flex-direction: column;
   justify-content: space-between;
 }
+@media only screen and (max-width: 540px) {
+  .certification-sec .content {
+    gap: 100px;
+  }
+}
 .certification-sec .content .top {
   position: relative;
+}
+@media only screen and (max-width: 540px) {
+  .certification-sec .content .top {
+    text-align: center;
+  }
 }
 .certification-sec .content .top h3 {
   font-weight: 700;
@@ -216,6 +255,12 @@ section:has(.certification-sec)::before {
   right: 0;
   z-index: -1;
 }
+@media only screen and (max-width: 540px) {
+  .certification-sec .content .top .cup-img {
+    width: 40%;
+    top: 100%;
+  }
+}
 .certification-sec .content .bottom h3 {
   font-weight: 700;
   font-size: 24px;
@@ -223,10 +268,25 @@ section:has(.certification-sec)::before {
   margin-bottom: 30px;
   line-height: 1;
 }
+@media only screen and (max-width: 540px) {
+  .certification-sec .content .bottom h3 {
+    text-align: center;
+  }
+}
 .certification-sec .content .bottom .grid-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .certification-sec .content .bottom .grid-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .certification-sec .content .bottom .grid-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .certification-sec .content .bottom .grid-box .grid-box-item {
   border-radius: 10px;

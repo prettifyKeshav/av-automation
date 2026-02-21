@@ -16,6 +16,7 @@ section:has(.contact-secA)
             width: 250px
             height: 350px
             background-size: contain
+            bottom: 0
 
 section:has(.contact-form)
     position: relative
@@ -33,6 +34,7 @@ section:has(.contact-form)
             width: 250px
             height: 350px
             background-size: contain
+            top: 49%
 
 section:has(.careers-secA)
     position: relative
@@ -75,6 +77,8 @@ section:has(.careers-secA)
         width: 100%
         height: 100%
         background: linear-gradient(270deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%)
+        @include media(768)
+            background: linear-gradient(181deg, rgba(0, 0, 0, 0) 23.08%, rgba(0, 0, 0, 0.85) 100%)
     .common-background
         video,img
             position: absolute
@@ -110,9 +114,9 @@ section:has(.careers-secA)
                         max-width: 70%
                         line-height: 1.2
                         font-size: 40px
-                    @include media(540)
+                    @include media(768)
                         max-width: 100%
-                        font-size: 25px
+                        font-size: 38px
                         line-height: 1.1
                         text-align: center
                         padding: 0 20px
@@ -124,7 +128,7 @@ section:has(.careers-secA)
                     line-height: 24px
                     color: $white
                     max-width: 609px
-                    @include media(540)
+                    @include media(768)
                         text-align: center
                         max-width: 90%
                         margin: auto
@@ -137,15 +141,29 @@ section:has(.careers-secA)
     @include afterLayerBlur
     &::after
         left: 70%
+        @include media(1024)
+            left: 50%
     .grid-box
         display: grid
         grid-template-columns: repeat(3, 1fr)
         gap: 25px
+        @include media(768)
+            grid-template-columns: repeat(2, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(1, 1fr)
         .grid-box-item
             background: $white
-            height: 246px
             border-radius: 10px
             padding: 33px 26px
+            &:last-child
+                @include media(768)
+                    grid-column: span 2
+                    width: 50%
+                    margin: auto
+                @include media(540)
+                    grid-column: span 1
+                    width: 100%
+                    margin: auto
             h4
                 font-weight: 700
                 font-size: 18px
@@ -208,6 +226,8 @@ section:has(.careers-secA)
 .contact-form
     padding: 80px 0 !important
     position: relative
+    @include media(768)
+        padding: 30px 0 20px 0 !important
     @include afterLayerBlur
     &::after
         width: 500px
@@ -236,15 +256,30 @@ section:has(.careers-secA)
         height: 500px
         bottom: -10%
         left: 70%
+        @include media(768)
+            left: 50%
+    .heading
+        @include media(768)
+            margin-bottom: 60px
+        @include media(540)
+            margin-bottom: 30px
     .map-wrapper
-        width: 1015px
+        max-width: 1015px
         height: 490px
         margin: 50px auto 50px
+        position: relative
+        @include media(768)
+            margin: 0px auto 0px
+            height: auto
+        @include media(540)
+            height: 40vh
         img
             height: 100%
             width: 100%
             object-fit: contain
             display: block
+            @include media(540)
+                object-fit: cover
         .pointer 
             position: absolute
             width: 18px
@@ -254,6 +289,33 @@ section:has(.careers-secA)
             border: 3px solid #fff
             cursor: pointer
             transform: translate(-50%, -50%)
+            &.first
+                top: 45.5%
+                right: 39.4%
+                @include media(540)
+                    right: 28.4%
+            &.second
+                top: 51% 
+                right: 39%                
+                @include media(540)
+                    right: 27%
+            &.third
+                top: 53%
+                right: 36.5%
+                @include media(540)
+                    right: 22.5%
+            &.fourth
+                top: 52%
+                right: 29%
+                @include media(540)
+                    right: 9%
+            @keyframes pulse 
+                0% 
+                    transform: scale(1)
+                    opacity: 1
+                100% 
+                    transform: scale(2.5)
+                    opacity: 0
             &::after 
                 content: ""
                 position: absolute
@@ -265,13 +327,6 @@ section:has(.careers-secA)
                 left: -29%
                 transform: translate(-50%,-50%)
                 animation: pulse 1.8s infinite
-            @keyframes pulse 
-                0% 
-                    transform: scale(1)
-                    opacity: 1
-                100% 
-                    transform: scale(2.5)
-                    opacity: 0
             &:hover .tooltip 
                 opacity: 1
                 bottom: 25px

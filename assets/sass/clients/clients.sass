@@ -107,6 +107,12 @@ section:has(.client-sec)
                     color: $white
                     max-width: 436px
                     margin: auto
+                    @include media(540)
+                        font-weight: normal
+                        max-width: 90%
+                        margin: auto
+                        line-height: 1.4
+                        font-size: 14px
 
 .client-sec
     padding: 60px 0 
@@ -117,11 +123,26 @@ section:has(.client-sec)
             font-weight: 700
             font-size: 48px
             line-height: 55px
+            @include media(540)
+                font-size: 38px
+                line-height: 1
+        p
+            @include media(540)
+                max-width: 90%
+                margin: auto
 
     .grid-box
         display: grid
         grid-template-columns: repeat(6, 1fr)
         gap: 25px
+        @include media(1024)
+            grid-template-columns: repeat(4, 1fr)
+        @include media(768)
+            grid-template-columns: repeat(3, 1fr)
+        @include media(540)
+            grid-template-columns: repeat(2, 1fr)
+            gap: 8px
+            
         .col
             background: $white
             height: 111px

@@ -356,12 +356,43 @@ $(function () {
                 speed: 500,
             },
             675: {
-                slidesPerView: 2,
+                slidesPerView: 1.4,
                 spaceBetween: 12,
                 speed: 1000,
             },
             992: {
+                slidesPerView: 2.4,
+                spaceBetween: 20,
+                speed: 1000,
+            },
+            1300: {
                 slidesPerView: 3.4,
+                spaceBetween: 20,
+                speed: 1000,
+            }
+        }
+    });
+
+    new Swiper('.esg-report-secD-swiper', {
+        loop: false,
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+                speed: 500,
+            },
+            675: {
+                slidesPerView: 2.3,
+                spaceBetween: 12,
+                speed: 1000,
+            },
+            992: {
+                slidesPerView: 2.4,
+                spaceBetween: 20,
+                speed: 1000,
+            },
+            1300: {
+                slidesPerView: 3,
                 spaceBetween: 20,
                 speed: 1000,
             }
@@ -386,6 +417,11 @@ $(function () {
                 speed: 1000,
             },
             992: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                speed: 1000,
+            },
+            1300: {
                 slidesPerView: 3,
                 spaceBetween: 20,
                 speed: 1000,
@@ -466,6 +502,11 @@ $(function () {
                 speed: 1000,
             },
             992: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                speed: 1000,
+            },
+            1300: {
                 slidesPerView: 4,
                 spaceBetween: 20,
                 speed: 1000,
@@ -1534,16 +1575,16 @@ tabItems.forEach(item => {
 });
 
 
-$(document).ready(function () {
-  $(".sticky .tab-nav li").on("click", function () {
-    const target = $(this).attr("slideTo");
-    if ($(target).length) {
-      $("html, body").animate({
-        scrollTop: $(target).offset().top - 150
-      }, 0.2);
-    }
-  });
-});
+// $(document).ready(function () {
+//   $(".sticky .tab-nav li").on("click", function () {
+//     const target = $(this).attr("slideTo");
+//     if ($(target).length) {
+//       $("html, body").animate({
+//         scrollTop: $(target).offset().top - 150
+//       }, 0.2);
+//     }
+//   });
+// });
 
 
 const customSwiperSlides = document.querySelectorAll(".virtual-tour-secB-B .custom-swiper-slide");

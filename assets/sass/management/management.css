@@ -45,6 +45,11 @@
   position: relative;
   z-index: 1;
 }
+@media only screen and (max-width: 540px) {
+  .management-banner .bg-wrapper {
+    margin: 140px auto 50px;
+  }
+}
 .management-banner .bg-wrapper h1 {
   max-width: 576px;
   margin-bottom: 20px;
@@ -52,6 +57,11 @@
   text-align: center;
   font-weight: 700;
   font-size: 48px;
+}
+@media only screen and (max-width: 540px) {
+  .management-banner .bg-wrapper h1 {
+    font-size: 28px;
+  }
 }
 .management-banner .bg-wrapper p {
   max-width: 548px;
@@ -66,6 +76,7 @@
   .management-banner .bg-wrapper p {
     max-width: 90%;
     margin: 20px auto 0;
+    font-size: 14px;
   }
 }
 
@@ -212,6 +223,22 @@
   position: relative;
   overflow: hidden;
 }
+@media only screen and (max-width: 1024px) {
+  .management-secB .flex-box .container {
+    gap: 50px;
+    max-width: 880px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .management-secB .flex-box .container .flex-box-item:first-child {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .management-secB .flex-box .container .flex-box-item:first-child {
+    width: 80%;
+  }
+}
 .management-secB .flex-box .container .flex-box-item:first-child figure {
   width: 416px;
   height: 458px;
@@ -258,7 +285,7 @@
 }
 @media only screen and (max-width: 1024px) {
   .management-secB .flex-box .container .flex-box-item:last-child {
-    width: 60%;
+    width: 50%;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -287,7 +314,7 @@
     width: -moz-fit-content;
     width: fit-content;
     max-width: 90%;
-    margin: 0 auto 25px;
+    margin: 0 auto 5px;
   }
 }
 .management-secB .flex-box .container .flex-box-item:last-child h4 {
@@ -296,6 +323,11 @@
   line-height: 24px;
   position: relative;
   margin-bottom: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .management-secB .flex-box .container .flex-box-item:last-child h4 {
+    margin-bottom: 10px;
+  }
 }
 .management-secB .flex-box .container .flex-box-item:last-child h4::before {
   content: "";
@@ -306,11 +338,9 @@
   width: 66px;
   background: var(--primary);
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
   .management-secB .flex-box .container .flex-box-item:last-child h4::before {
-    left: 50%;
-    bottom: -30%;
-    transform: translate(-50%);
+    content: none;
   }
 }
 .management-secB .flex-box .container .flex-box-item:last-child p {
@@ -329,5 +359,6 @@
     font-size: 14px;
     max-width: 90%;
     margin: 0 auto 20px;
+    line-height: 1.5;
   }
 }/*# sourceMappingURL=management.css.map */
