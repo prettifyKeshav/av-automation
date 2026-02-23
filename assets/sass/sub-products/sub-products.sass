@@ -107,36 +107,24 @@
  
 .sub_productA
     position: relative
-    // overflow: hidden
-    // &::before
-    //     content: ''
-    //     position: absolute
-    //     z-index: 0
-    //     left: 0
-    //     top: 10px
-    //     width: 100%
-    //     height: fit-content
-    //     border-bottom: 2px dashed var(--secondary)
-    // &::after
-    //     content: ""
-    //     position: absolute
-    //     right: 2px
-    //     top: 3px
-    //     transform: rotate(1deg)
-    //     width: 215px
-    //     height: 76px
-    //     z-index: 0
-    //     background: url(../../images/home/pin.svg) no-repeat
-    //     background-position: 100% 100%
     .main_wrapper
         gap: 30px
         @include media(768)
             flex-direction: column
             gap: 40px
+        @include media(675)
+            padding: 0
         .colA
             flex: 0 1 25%
+            transition: 1s ease
             @include media(1024)
                 flex: 0 1 33%
+            @include media(675)
+                position: sticky
+                top: calc( var(--headerheight) + 0px )
+                background: var(--white)
+                z-index: 4
+                border-bottom: 1px solid #E0E0E0
             .filter_option_wrapper
                 position: sticky
                 top: calc( var(--headerheight) + 20px )
@@ -148,7 +136,17 @@
                     padding: 10px 20px
                     background: $gradient-a
                     border-radius: 10px 10px 0 0 
+                    @include media(675)
+                        border-radius: 0
                     h6
+                        font-size: 20px
+                        font-weight: 600
+                        color: $white
+                    .filter-btn-btn
+                        display: flex
+                        align-items: center
+                        gap: 7px
+
                         font-size: 20px
                         font-weight: 600
                         color: $white
@@ -156,22 +154,37 @@
                         font-size: 14px
                         font-weight: 500
                         color: $white
+                        opacity: 0
+                        scale: 0
+                        transition: 0.5s ease
+                .cancel_apply
+                    display: none
                 .filter_options
                     overflow-y: auto
                     max-height: calc(100vh - 200px)
                     scrollbar-width: thin
                     scrollbar-color: #cdcdcd #ffffff
-                    padding: 20px 0 
+                    padding: 20px 0
+                    transition: 0.6s ease
                     &::-webkit-scrollbar
                         width: 8px
                     &::-webkit-scrollbar-thumb
                         border-radius: 25px
+                    @include media(675)
+                        position: absolute
+                        height: 100vh
+                        width: 100%
+                        background: white
+                        max-height: 100vh
+                        opacity: 0.8
+                        // transform: translateY(200%)
+                        transform: translateY(200%) scale(0)
                     .filter-option-group
                         margin-bottom: 10px
                         .filter-option-header
                             background: #DEDEDE61
                             // padding: 1rem 1.5rem
-                            padding: 0.6rem 1.5rem
+                            padding: 0.6rem 2.6rem 0.6rem 1.5rem
                             position: relative
                             label
                                 font-weight: 600
@@ -238,6 +251,9 @@
                                     width: fit-content
                                     &:last-child
                                         padding: 0px 20px 0px 20px
+                                    span
+                                        flex: 1
+                                        line-height: 1.1
                                     input
                                         position: absolute
                                         left: 0
@@ -267,215 +283,54 @@
                                         transition: .5s ease
                                         &::before
                                             opacity: 1
+            &.filter-open
+                z-index: 99
+                @include media(675)
+                    top: 0
+                    position: fixed
+                    width: 100%
+                    .filter_option_wrapper
+                        .clear_all_btn
+                            scale: 1
+                            opacity: 1
 
+                    .filter_options
+                        opacity: 1
+                        scale: 1
+                        padding-bottom: 20px
+                        max-height: calc(100vh - 88px)
+                        transform: translateY(0%) scale(1)
+                    .cancel_apply
+                        opacity: 1
+                        scale: 1
+                        position: fixed
+                        bottom: 0
+                        left: 0
+                        width: 100%
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        background: #fff
+                        box-shadow: 1px 1px 5px 2px rgba(99, 99, 99, 0.2)
+                        border-top: 1px solid var(--primary)
+                        button
+                            width: 50%
+                            padding: 14px 20px
+                            font-size: 16px
+                            font-weight: 600
+                            text-transform: uppercase
+                        .cancel-btn
+                            color: #3f3f3f
+                            background: white
+                        .apply-btn
+                            background: $primary
+                            color: #fff
 
-
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-                    // .col
-                    //     &.active
-                    //         .title
-                    //             h6
-                    //                 color: var(--primary)
-                    //             .icon
-                    //                 --bgcolor: var(--primary)
-                    //                 &::after
-                    //                     transform: scale(0)
-                    //     .title
-                    //         padding: 10px 20px
-                    //         border-bottom: 1px solid #D9D9D9
-                    //         display: flex
-                    //         align-items: center
-                    //         h6
-                    //             flex: 1
-                    //             font-size: 16px
-                    //             font-weight: 500
-                    //             color: $black
-                    //         .icon
-                    //             flex: 0 1 auto
-                    //             --size: 18px
-                    //             --border: 2px
-                    //             --bgcolor: var(--black)
-                    //             height: var(--size)
-                    //             width: var(--size)
-                    //             position: relative
-                    //             &::before, &::after
-                    //                 content: ""
-                    //                 position: absolute
-                    //                 left: 0
-                    //                 right: 0
-                    //                 z-index: 0 
-                    //                 transition: .5s ease
-                    //                 background: var(--bgcolor)
-                    //             &::after
-                    //                 left: calc( var(--size) / 2  )
-                    //                 translate: -50% 0
-                    //                 right: auto
-                    //                 width: var(--border)
-                    //                 height: 100%
-                    //             &::before
-                    //                 top: calc( var(--size) / 2 - var(--border) / 2 )
-                    //                 bottom: auto
-                    //                 height: var(--border)
-                    //                 width: 100%
-
-                    //     article
-                    //         padding: 10px 20px 10px 0
-                    //         .hasDropdown
-                    //             position: relative
-                    //             .plu-ico
-                    //                 position: absolute
-                    //                 right: 0
-                    //                 top: 0px
-                    //                 --sizeplu: 22px
-                    //                 height: var(--sizeplu)
-                    //                 width: var(--sizeplu)
-                    //                 cursor: pointer
-                    //                 &::before,&::after
-                    //                     content: ''
-                    //                     position: absolute
-                    //                     top: 50%
-                    //                     translate: 0 -50%
-                    //                     left: 0
-                    //                     right: 0
-                    //                     height: 2px
-                    //                     width: 100%
-                    //                     background: $black
-                    //                     transition: .5s ease
-                    //                 &::before
-                    //                     transform: rotate(90deg)
-                    //                 &.active
-                    //                     &::before
-                    //                         transform: rotate(0deg)
-                    //                         opacity: 0
-                    //             .dropdown-menu-ham
-                    //                 display: none
-                    //                 border: 1px solid #ccc
-                    //                 border-right: none
-                    //                 border-left: none
-                    //                 margin: 12px 0
-                    //                 padding: 15px 0
-                    //                 li
-                    //                     padding-left: 10px
-                    //                     &.hasDropdownChild
-                    //                         position: relative
-                    //                         .plu-ico-child
-                    //                             position: absolute
-                    //                             right: 0
-                    //                             top: 0px
-                    //                             --sizeplu: 16px
-                    //                             height: var(--sizeplu)
-                    //                             width: var(--sizeplu)
-                    //                             cursor: pointer
-                    //                             &::before,&::after
-                    //                                 content: ''
-                    //                                 position: absolute
-                    //                                 top: 50%
-                    //                                 translate: 0 -50%
-                    //                                 left: 0
-                    //                                 right: 0
-                    //                                 height: 2px
-                    //                                 width: 100%
-                    //                                 background: $black
-                    //                                 transition: .5s ease
-                    //                             &::before
-                    //                                 transform: rotate(90deg)
-                    //                             &.active
-                    //                                 &::before
-                    //                                     transform: rotate(0deg)
-                    //                                     opacity: 0
-                    //                         .dropdown-menu-ham-child
-                    //                             display: none
-                    //                             border: 1px solid #ccc
-                    //                             border-right: none
-                    //                             border-left: none
-                    //                             margin: 12px 0
-                    //                             padding: 15px 0
-                    //                             li
-                    //                                 padding-left: 10px
-                    //                                 &:not(:last-child)
-                    //                                     margin-bottom: 5px
-                    //                                 a
-                    //                                     color: $text
-                    //                                     &:hover
-                    //                                         color: $black
-                    //                     &:not(:last-child)
-                    //                         margin-bottom: 5px
-                    //                     a
-                    //                         color: #444
-                    //                         font-size: 20px
-                    //                         font-weight: 600
-                    //                         @include media(540)
-                    //                             &:first-child
-                    //                                 color: $text
-                    //                                 font-size: 16px
-                    //                                 font-weight: normal
-                    //                         &:hover
-                    //                             color: $black
-
-
-                    //         .scroll
-                    //             border-right: 1px solid #D9D9D9
-                    //             ul
-                    //                 margin-right: -5px
-                    //                 padding: 10px 0
-                    //                 overflow-y: auto
-                    //                 max-height: 200px
-                    //                 &::-webkit-scrollbar
-                    //                     width: 8px
-                    //                     height: 4px
-                    //                 &::-webkit-scrollbar-thumb
-                    //                     border-radius: 25px
-                    //                     background-color: var(--primary) 
-                    //                 li
-                    //                     padding: 3px 20px
-                    //                     display: flex
-                    //                     position: relative
-                    //                     align-items: center
-                    //                     gap: 12px
-                    //                     input
-                    //                         position: absolute
-                    //                         left: 0
-                    //                         top: 0
-                    //                         width: 100%
-                    //                         height: 100%
-                    //                         appearance: none
-                    //                         opacity: 0
-                    //                     .chk_box    
-                    //                         --chk_height: 20px
-                    //                         height: var(--chk_height)
-                    //                         width: var(--chk_height)
-                    //                         border-radius: 5px
-                    //                         background-color: #D9D9D9
-                    //                         position: relative
-                    //                         transition: .5s ease
-                    //                         @include before(url(../../icon/tick-white.svg))
-                    //                         &::before
-                    //                             background-repeat: no-repeat
-                    //                             background-size: 48%
-                    //                             background-position: center center
-                    //                             opacity: 0
-                    //                     &:has(input:checked) .chk_box
-                    //                         background-color: var(--secondary)
-                    //                         border-color: var(--secondary)
-                    //                         transition: .5s ease
-                    //                         &::before
-                    //                             opacity: 1
-                                    
         .colB
             flex: 1
             width: 100%
+            @include media(675)
+                padding: 0 15px
             .grid-box
                 display: grid
                 grid-template-columns: repeat(3, 1fr)

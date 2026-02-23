@@ -462,7 +462,13 @@
                     <div class="colA">
                         <div class="filter_option_wrapper">
                             <div class="title_head flex">
-                                <h6>Filters</h6>
+                                <button type="button" class="filter-btn-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill="#ffffff"
+                                            d="M15 19.88c.04.3-.06.62-.29.83a.996.996 0 0 1-1.41 0L9.29 16.7a.99.99 0 0 1-.29-.83v-5.12L4.21 4.62a1 1 0 0 1 .17-1.4c.19-.14.4-.22.62-.22h14c.22 0 .43.08.62.22a1 1 0 0 1 .17 1.4L15 10.75zM7.04 5L11 10.06v5.52l2 2v-7.53L16.96 5z" />
+                                    </svg>
+                                    Filters
+                                </button>
                                 <button type="button" class="clear_all_btn">Clear all</button>
                             </div>
 
@@ -560,6 +566,81 @@
                                                 <span>Barcode Scanning Solutions </span>
                                                 <input type="checkbox" name="" id="">
                                             </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
+                                            <li>
+                                                <div class="chk_box"></div>
+                                                <span>Barcode Scanning Solutions </span>
+                                                <input type="checkbox" name="" id="">
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -638,6 +719,11 @@
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="cancel_apply flex">
+                                <button type="button" class="cancel-btn">cancel</button>
+                                <button type="button" class="apply-btn">Apply</button>
                             </div>
                         </div>
                     </div>
@@ -1607,13 +1693,29 @@
             smoothTouch: false,
             lerp: 0.05,
             prevent: (node) => {
-                return node.closest('.scroll, .list, .custom-select, .modal, .model-body, .iti__country-list ') !== null;
+                return node.closest('.scroll, .list, .custom-select, .modal, .model-body, .iti__country-list , .filter_options ') !== null;
             }
         });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
     </script>
     <!-- FOR smooth scrolig JS -->
+
+    <script>
+        $(document).ready(function () {
+            // Open filter (only on max-width: 675px)
+            $('.filter-btn-btn').on('click', function () {
+                if (window.matchMedia("(max-width: 675px)").matches) {
+                    $(this).closest('.colA').toggleClass('filter-open');
+                }
+            });
+
+            // Cancel button → always remove class
+            $('.cancel-btn, .apply-btn').on('click', function () {
+                $(this).closest('.colA').removeClass('filter-open');
+            });
+        });
+    </script>
 
 </body>
 
